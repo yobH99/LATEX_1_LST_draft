@@ -1,0 +1,195 @@
+\begin{thebibliography}{46}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Baltzer and Livescu(2020)]{baltzer-livescu-2020}
+Baltzer, J.~R. \& Livescu, D. 2020 Variable-density effects in incompressible non-buoyant shear-driven turbulent mixing layers.
+\newblock \emph{Journal of Fluid Mechanics} 900, A16.
+
+\bibitem[Banerjee and Mutnuri(2012)]{banerjee-mutnuri-et-al-2012}
+Banerjee, A. \& Mutnuri, L. 2012 Passive and reactive scalar measurements in a transient high-{{Schmidt-number Rayleigh}}--{{Taylor}} mixing layer.
+\newblock \emph{Experiments in Fluids} 53, 717--729.
+
+\bibitem[Bretonnet et~al.(2007)Bretonnet, Cazalbou, Chassaing and Braza]{bretonnet-et-al-2007}
+Bretonnet, L., Cazalbou, J.-B., Chassaing, P. \& Braza, M. 2007 Deflection, drift, and advective growth in variable-density, laminar mixing layers.
+\newblock \emph{Physics of Fluids} 19, 103601.
+
+\bibitem[Chandrasekhar(1961)]{chandrasekhar-1961}
+Chandrasekhar, S.
+\newblock \emph{Hydrodynamic and Hydromagnetic Stability}.
+\newblock 1961.
+
+\bibitem[Daniel et~al.(2013)Daniel, Tilton and Riaz]{don-nils-amir-2013}
+Daniel, D., Tilton, N. \& Riaz, A. 2013 Optimal perturbations of gravitationally unstable, transient boundary layers in porous media.
+\newblock \emph{Journal of Fluid Mechanics} 727, 456--487.
+
+\bibitem[Dimonte(2004)]{dimonte-2004}
+Dimonte, G. 2004 Dependence of turbulent {{Rayleigh-Taylor}} instability on initial perturbations.
+\newblock \emph{Physical Review E} 69, 056305.
+
+\bibitem[Dimonte et~al.(2004)Dimonte, Youngs, Dimits, Weber, Marinak, Wunsch, Garasi, Robinson, Andrews, Ramaprabhu, Calder, Fryxell, Biello, Dursi, MacNeice, Olson, Ricker, Rosner, Timmes, Tufo, Young and Zingale]{dimonte-et-al-2004}
+Dimonte, G., Youngs, D.~L., Dimits, A., Weber, S., Marinak, M., Wunsch, S., Garasi, C., Robinson, A., Andrews, M.~J., Ramaprabhu, P., Calder, A.~C., Fryxell, B., Biello, J., Dursi, L., MacNeice, P., Olson, K., Ricker, P., Rosner, R., Timmes, F., Tufo, H., Young, Y.-N. \& Zingale, M. 2004 A comparative study of the turbulent {{Rayleigh}}--{{Taylor}} instability using high-resolution three-dimensional numerical simulations: {{The Alpha-Group}} collaboration.
+\newblock \emph{Physics of Fluids} 16, 1668--1693.
+
+\bibitem[Duff et~al.(1962)Duff, Harlow and Hirt]{duff-harlow-hirt-1962}
+Duff, R.~E., Harlow, F.~H. \& Hirt, C.~W. 1962 Effects of {{Diffusion}} on {{Interface Instability}} between {{Gases}}.
+\newblock \emph{The Physics of Fluids} 5, 417--425.
+
+\bibitem[Gauthier and Le~Creurer(2010)]{gauthier-lecruer-2010}
+Gauthier, S. \& Le~Creurer, B. 2010 Compressibility effects in {{Rayleigh}}--{{Taylor}} instability-induced flows.
+\newblock \emph{Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences} 368, 1681--1704.
+
+\bibitem[Govindarajan and Sahu(2014)]{govindarajan-sahu-2014}
+Govindarajan, R. \& Sahu, K.~C. 2014 Instabilities in {{Viscosity-Stratified Flow}}.
+\newblock \emph{Annual Review of Fluid Mechanics} 46, 331--353.
+
+\bibitem[Guo et~al.(2024)Guo, Wu and Zhang]{guo-wu-zhang-2024}
+Guo, Y., Wu, D. \& Zhang, J. 2024 Effects of mass diffusion on {{Rayleigh}}--{{Taylor}} instability under a large gravity.
+\newblock \emph{Physics of Plasmas} 31, 112106.
+
+\bibitem[Harris et~al.(2022)Harris, Poulin and Lamb]{harris-poulin-lamb-2022}
+Harris, M.~W., Poulin, F.~J. \& Lamb, K.~G. 2022 Inertial instabilities of stratified jets: {{Linear}} stability theory.
+\newblock \emph{Physics of Fluids} 34, 084102.
+
+\bibitem[Ke et~al.(2019)Ke, Williamson, Armfield, McBain and Norris]{junhao-et-al-2006}
+Ke, J., Williamson, N., Armfield, S.~W., McBain, G.~D. \& Norris, S.~E. 2019 Stability of a temporally evolving natural convection boundary layer on an isothermal wall.
+\newblock \emph{Journal of Fluid Mechanics} 877, 1163--1185.
+
+\bibitem[Keenan and Sauppe(2023)]{keenan-sauppe-2023}
+Keenan, B.~D. \& Sauppe, J.~P. 2023 Improved analytic modeling of the linear {{Rayleigh}}--{{Taylor}} instability with plasma transport.
+\newblock \emph{Physics of Plasmas} 30, 072106.
+
+\bibitem[Kirthy and Diwan(2021)]{kirthy-diwan-2020}
+Kirthy, K.~S. \& Diwan, S.~S. 2021 Energy budget analysis and neutral curve characteristics for the linear instability of {{Couette}}--{{Poiseuille}} flow.
+\newblock \emph{Physics of Fluids} 33.
+
+\bibitem[Kola et~al.(2026)Kola, Israel and Towne]{kola-israel-towne-2026}
+Kola, M., Israel, D.~M. \& Towne, A.
+\newblock Statistical {{Characterization}} of {{Transient Energy Growth}} in {{Rayleigh-Taylor Instability}} under {{Multimodal Perturbations}}.
+\newblock In \emph{{{AIAA SCITECH}} 2026 {{Forum}}}. {American Institute of Aeronautics and Astronautics}, 2026.
+
+\bibitem[Lafay et~al.(2007)Lafay, Le~Creurer and Gauthier]{lafay-et-al-2007}
+Lafay, M.-A., Le~Creurer, B. \& Gauthier, S. 2007 Compressibility effects on the {{Rayleigh-Taylor}} instability between miscible fluids.
+\newblock \emph{Europhysics Letters (EPL)} 79, 64002.
+
+\bibitem[Lindl(1995)]{lindl-1995}
+Lindl, J. 1995 Development of the indirect-drive approach to inertial confinement fusion and the target physics basis for ignition and gain.
+\newblock \emph{Physics of Plasmas} 2, 3933--4024.
+
+\bibitem[Livescu(2013)]{livescu-2013}
+Livescu, D. 2013 Numerical simulations of two-fluid turbulent mixing at large density ratios and applications to the {{Rayleigh}}--{{Taylor}} instability.
+\newblock \emph{Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences} 371, 20120185.
+
+\bibitem[Livescu(2020)]{livescu-2020}
+Livescu, D. 2020 Turbulence with {{Large Thermal}} and {{Compositional Density Variations}}.
+\newblock \emph{Annual Review of Fluid Mechanics} 52, 309--341.
+
+\bibitem[Livescu and Ristorcelli(2007)]{livescu-ristorcelli-2007}
+Livescu, D. \& Ristorcelli, J.~R. 2007 Buoyancy-driven variable-density turbulence.
+\newblock \emph{Journal of Fluid Mechanics} 591, 43--71.
+
+\bibitem[Livescu and Ristorcelli(2008)]{livescu-ristorcelli-2008}
+Livescu, D. \& Ristorcelli, J.~R. 2008 Variable-density mixing in buoyancy-driven turbulence.
+\newblock \emph{Journal of Fluid Mechanics} 605, 145--180.
+
+\bibitem[Livescu et~al.(2010)Livescu, Ristorcelli, Petersen and Gore]{livescu-et-al-2010}
+Livescu, D., Ristorcelli, J.~R., Petersen, M.~R. \& Gore, R.~A. 2010 New phenomena in variable-density {{Rayleigh}}--{{Taylor}} turbulence.
+\newblock \emph{Physica Scripta} 2010, 014015.
+
+\bibitem[Mikaelian(1996)]{mikaelian-1996}
+Mikaelian, K.~O. 1996 Rayleigh-{{Taylor}} instability in finite-thickness fluids with viscosity and surface tension.
+\newblock \emph{Physical Review E} 54, 3676--3680.
+
+\bibitem[Morgan et~al.(2016)Morgan, Likhachev and Jacobs]{morgan-likhachev-jacobs-2016}
+Morgan, R.~V., Likhachev, O.~A. \& Jacobs, J.~W. 2016 Rarefaction-driven {{Rayleigh}}--{{Taylor}} instability. {{Part}} 1. {{Diffuse-interface}} linear stability measurements and theory.
+\newblock \emph{Journal of Fluid Mechanics} 791, 34--60.
+
+\bibitem[Morgan et~al.(2018)Morgan, Cabot, Greenough and Jacobs]{morgan-et-al-2018}
+Morgan, R.~V., Cabot, W.~H., Greenough, J.~A. \& Jacobs, J.~W. 2018 Rarefaction-driven {{Rayleigh}}--{{Taylor}} instability. {{Part}} 2. {{Experiments}} and simulations in the nonlinear regime.
+\newblock \emph{Journal of Fluid Mechanics} 838, 320--355.
+
+\bibitem[Mueschke and Schilling(2009)]{mueschke-schilling-2009}
+Mueschke, N.~J. \& Schilling, O. 2009 Investigation of {{Rayleigh}}--{{Taylor}} turbulence and mixing using direct numerical simulation with experimentally measured initial conditions. {{I}}. {{Comparison}} to experimental data.
+\newblock \emph{Physics of Fluids} 21, 014106.
+
+\bibitem[Mueschke et~al.(2006)Mueschke, Andrews and Schilling]{mueschke-andrews-schilling-2006}
+Mueschke, N.~J., Andrews, M.~J. \& Schilling, O. 2006 Experimental characterization of initial conditions and spatio-temporal evolution of a small-{{Atwood-number Rayleigh}}--{{Taylor}} mixing layer.
+\newblock \emph{Journal of Fluid Mechanics} 567, 27--63.
+
+\bibitem[Mueschke et~al.(2009)Mueschke, Schilling, Youngs and Andrews]{Mueschke-et-al-2009}
+Mueschke, N.~J., Schilling, O., Youngs, D.~L. \& Andrews, M.~J. 2009 Measurements of molecular mixing in a high-{{Schmidt-number Rayleigh}}--{{Taylor}} mixing layer.
+\newblock \emph{Journal of Fluid Mechanics} 632, 17--48.
+
+\bibitem[M{\"u}ller(2020)]{muller-2020}
+M{\"u}ller, B. 2020 Hydrodynamics of core-collapse supernovae and their progenitors.
+\newblock \emph{Living Reviews in Computational Astrophysics} 6, 3.
+
+\bibitem[Prathama and Pantano(2021)]{prathama-pantano-2021}
+Prathama, A.~H. \& Pantano, C. 2021 Linear stability analysis of two fluid columns of different densities and viscosities in a gravity field.
+\newblock \emph{Journal of Fluid Mechanics} 920, A26.
+
+\bibitem[Rapaka et~al.(2008)Rapaka, Chen, Pawar, Stauffer and Zhang]{rapaka-et-al-2008}
+Rapaka, S., Chen, S., Pawar, R.~J., Stauffer, P.~H. \& Zhang, D. 2008 Non-modal growth of perturbations in density-driven convection in porous media.
+\newblock \emph{Journal of Fluid Mechanics} 609, 285--303.
+
+\bibitem[Rayleigh(1879)]{lord_rayleigh-1879}
+Rayleigh, L. 1879 On the {{Stability}}, or {{Instability}}, of certain {{Fluid Motions}}.
+\newblock \emph{Proceedings of the London Mathematical Society} s1-11, 57--72.
+
+\bibitem[Riaz et~al.(2006)Riaz, Hesse, Tchelepi and Orr]{riaz-et-al-2006}
+Riaz, A., Hesse, M., Tchelepi, H.~A. \& Orr, F.~M. 2006 Onset of convection in a gravitationally unstable diffusive boundary layer in porous media.
+\newblock \emph{Journal of Fluid Mechanics} 548, 87--111.
+
+\bibitem[Roberts and Jacobs(2016)]{roberts-jacobs-2016}
+Roberts, M.~S. \& Jacobs, J.~W. 2016 The effects of forced small-wavelength, finite-bandwidth initial perturbations and miscibility on the turbulent {{Rayleigh}}--{{Taylor}} instability.
+\newblock \emph{Journal of Fluid Mechanics} 787, 50--83.
+
+\bibitem[Sandoval(1995)]{sandoval-1995}
+Sandoval, D.~L. 1995 The dynamics of variable-density turbulence.
+\newblock \emph{Ph.D thesis}.
+
+\bibitem[Tan and Homsy(1986)]{tan-homsy-1986}
+Tan, C.~T. \& Homsy, G.~M. 1986 Stability of miscible displacements in porous media: {{Rectilinear}} flow.
+\newblock \emph{The Physics of Fluids} 29, 3549--3556.
+
+\bibitem[Taylor(1950)]{taylor-1950}
+Taylor, G.~I. 1950 The instability of liquid surfaces when accelerated in a direction perpendicular to their planes. {{I}}.
+\newblock \emph{Proceedings of the Royal Society of London. A. Mathematical and Physical Sciences} 201, 192--196.
+
+\bibitem[Trevelyan et~al.(2011)Trevelyan, Almarcha and Wit]{trevelyan-almarcha-wit}
+Trevelyan, P. M.~J., Almarcha, C. \& Wit, A.~D. 2011 Buoyancy-driven instabilities of miscible two-layer stratifications in porous media and {{Hele-Shaw}} cells.
+\newblock \emph{Journal of Fluid Mechanics} 670, 38--65.
+
+\bibitem[Turner(1973)]{turner-1973}
+Turner, J.~S.
+\newblock \emph{Buoyancy {{Effects}} in {{Fluids}}}.
+\newblock Cambridge University Press, Cambridge, 1973.
+
+\bibitem[Vold et~al.(2021)Vold, Yin and Albright]{vold-yin-albright-2021}
+Vold, E., Yin, L. \& Albright, B.~J. 2021 Plasma transport simulations of {{Rayleigh}}--{{Taylor}} instability in near-{{ICF}} deceleration regimes.
+\newblock \emph{Physics of Plasmas} 28, 092709.
+
+\bibitem[Wei and Livescu(2012)]{wei-livescu-2012}
+Wei, T. \& Livescu, D. 2012 Late-time quadratic growth in single-mode {{Rayleigh-Taylor}} instability.
+\newblock \emph{Physical Review E} 86, 046405.
+
+\bibitem[Weideman and Reddy(2000)]{weideman-reddy-2000}
+Weideman, J.~A. \& Reddy, S.~C. 2000 A {{MATLAB}} differentiation matrix suite.
+\newblock \emph{ACM Transactions on Mathematical Software} 26, 465--519.
+
+\bibitem[Zhou(2017{\natexlab{a}})]{zhou-2017-a}
+Zhou, Y. 2017{\natexlab{a}} Rayleigh--{{Taylor}} and {{Richtmyer}}--{{Meshkov}} instability induced flow, turbulence, and mixing. {{I}}.
+\newblock \emph{Physics Reports} 720--722, 1--136.
+
+\bibitem[Zhou(2017{\natexlab{b}})]{zhou-2017-b}
+Zhou, Y. 2017{\natexlab{b}} Rayleigh--{{Taylor}} and {{Richtmyer}}--{{Meshkov}} instability induced flow, turbulence, and mixing. {{II}}.
+\newblock \emph{Physics Reports} 723--725, 1--160.
+
+\bibitem[Zhou et~al.(2021)Zhou, Williams, Ramaprabhu, Groom, Thornber, Hillier, Mostert, Rollin, Balachandar, Powell, Mahalov and Attal]{zhou-et-al-2021}
+Zhou, Y., Williams, R. J.~R., Ramaprabhu, P., Groom, M., Thornber, B., Hillier, A., Mostert, W., Rollin, B., Balachandar, S., Powell, P.~D., Mahalov, A. \& Attal, N. 2021 Rayleigh--{{Taylor}} and {{Richtmyer}}--{{Meshkov}} instabilities: {{A}} journey through scales.
+\newblock \emph{Physica D: Nonlinear Phenomena} 423, 132838.
+
+\end{thebibliography}

@@ -1,0 +1,111 @@
+% This file was created by matlab2tikz.
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=11.254in,
+height=7.131in,
+at={(1.888in,0.962in)},
+scale only axis,
+clip=false,
+separate axis lines,
+every outer x axis line/.append style={black},
+every x tick label/.append style={font=\color{black}},
+every x tick/.append style={black},
+xmode=log,
+xmin=128,
+xmax=512,
+xtick={128,256,394,512},
+xticklabels={{128},{256},{394},{512}},
+xminorticks=true,
+xlabel={$L_z$},
+every outer y axis line/.append style={black},
+every y tick label/.append style={font=\color{black}},
+every y tick/.append style={black},
+ymin=-0.2,
+ymax=1.6,
+ylabel={$\omega_r$},
+axis background/.style={fill=white},
+axis lines=box,
+xtick pos=bottom,
+ytick pos=left,
+tick align=inside,
+major tick length=2pt,
+width=0.7\linewidth,
+height=0.7\linewidth,
+every axis/.append style={font=\fontsize{9}{9}\selectfont},xlabel style={font=\fontsize{9}{9}\selectfont},title style={font=\fontsize{9}{9}\selectfont},
+legend style={font=\fontsize{8}{9}\selectfont,inner sep=1pt,row sep=1pt,column sep=2pt,nodes={scale=1.00},draw=none},legend image post style={xscale=0.35},
+legend columns=1,
+scaled x ticks=false,
+tick label style={/pgf/number format/fixed,/pgf/number format/precision=2},
+every x tick label/.append style={font=\fontsize{9}{9}\selectfont\color{black}},
+every y tick label/.append style={font=\fontsize{9}{9}\selectfont\color{black}},
+,
+]
+\addplot [color=black, line width=1.2pt, mark size=1.5pt, mark=o, mark options={solid, black}, forget plot]
+  table[row sep=crcr]{%
+128	-0.000993738818195497\\
+256	-0.000963066287207783\\
+394	-0.00095720139304037\\
+512	-0.000955352731831857\\
+};
+\addplot [color=black, dashed, line width=1.2pt, mark size=1.5pt, mark=o, mark options={solid, black}, forget plot]
+  table[row sep=crcr]{%
+128	-0.00301357866828663\\
+256	-0.00301357894713315\\
+394	-0.00301356123358418\\
+512	-0.00301355375516784\\
+};
+\addplot [color=black, dotted, line width=1.2pt, mark size=1.5pt, mark=o, mark options={solid, black}, forget plot]
+  table[row sep=crcr]{%
+128	-0.00106993620529773\\
+256	-0.00105354514399411\\
+394	-0.00105173512675552\\
+512	-0.00105138789668784\\
+};
+\addplot [color=white!60!black, line width=1.2pt, mark size=1.5pt, mark=o, mark options={solid, white!60!black}, forget plot]
+  table[row sep=crcr]{%
+128	0.0983481730444459\\
+256	0.0983481466014763\\
+394	0.0983481318303684\\
+512	0.0983481900491758\\
+};
+\addplot [color=white!60!black, dashed, line width=1.2pt, mark size=1.5pt, mark=o, mark options={solid, white!60!black}, forget plot]
+  table[row sep=crcr]{%
+128	0.101561503288096\\
+256	0.101561492991516\\
+394	0.101561469830213\\
+512	0.101561522418988\\
+};
+\addplot [color=white!60!black, dotted, line width=1.2pt, mark size=1.5pt, mark=o, mark options={solid, white!60!black}, forget plot]
+  table[row sep=crcr]{%
+128	0.104171482262541\\
+256	0.104171491944937\\
+394	0.104171425254679\\
+512	0.104171508377285\\
+};
+\addplot [color=red!60!teal, line width=1.2pt, mark size=1.5pt, mark=o, mark options={solid, red!60!teal}, forget plot]
+  table[row sep=crcr]{%
+128	1.47146923305018\\
+256	1.47146925468717\\
+394	1.47146919382744\\
+512	1.47146914331479\\
+};
+\addplot [color=red!60!teal, dashed, line width=1.2pt, mark size=1.5pt, mark=o, mark options={solid, red!60!teal}, forget plot]
+  table[row sep=crcr]{%
+128	1.47611530597985\\
+256	1.47611530829694\\
+394	1.47611528570806\\
+512	1.47611532993755\\
+};
+\addplot [color=red!60!teal, dotted, line width=1.2pt, mark size=1.5pt, mark=o, mark options={solid, red!60!teal}, forget plot]
+  table[row sep=crcr]{%
+128	1.48563899531175\\
+256	1.48563902418337\\
+394	1.48563898126929\\
+512	1.48563899736668\\
+};
+\node[right, align=left, inner sep=0]
+at (rel axis cs:-0.25,1.15) {$(d)$};
+\end{axis}
+\end{tikzpicture}%
