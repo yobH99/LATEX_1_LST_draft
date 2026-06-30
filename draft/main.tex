@@ -62,7 +62,7 @@
 \newcommand{\Amu}{\mathrm{A}_{\mu}}
 \newcommand{\bnabla}{\boldsymbol{\nabla}}
 \newcommand{\bcdot}{\boldsymbol{\cdot}}
-\newcommand{\Rey}{\mathit{Re}}
+\newcommand{\Rey}{\mathrm{Re}}
 \newcommand{\Real}{\operatorname{Re}}
 \newcommand{\Imag}{\operatorname{Im}}
 \DeclareMathOperator{\erf}{erf}
@@ -90,11 +90,11 @@ We present a unified incompressible variable-density framework for the linear st
 
 \section{Introduction}%
 \label{sec:introduction}
-The Rayleigh--Taylor instability (RTI) arises when two superposed fluids of distinct densities are subjected to an acceleration directed against their density stratification, as first investigated by~\citet{lord_rayleigh-1879} and later extended by~\citet{taylor-1950}. It has since been recognized as a fundamental mechanism in a broad range of natural processes and engineering applications. In inertial confinement fusion (ICF), RTI represents a primary source of performance degradation~\citep{lindl-1995}, while in astrophysics it is a fundamental mechanism in core-collapse supernovae~\citep{muller-2020}, and in oceanography it drives overturning at stratified interfaces~\citep{turner-1973}.
+The Rayleigh--Taylor instability (RTI) arises when two superposed fluids of distinct densities are subjected to an acceleration directed against their density stratification. First investigated by~\citet{lord_rayleigh-1879} and later extended by~\citet{taylor-1950}, it has since been recognized as a fundamental mechanism in a broad range of natural processes and engineering applications. In inertial confinement fusion, RTI represents a primary source of performance degradation~\citep{lindl-1995}; in astrophysics, it is a fundamental mechanism in core-collapse supernovae~\citep{muller-2020}; and in oceanography, it drives overturning at stratified interfaces~\citep{turner-1973}.
 
-The RTI is commonly analyzed using linear stability theory (LST), in which infinitesimal perturbations to a prescribed base state are examined to determine whether they grow or decay in time, thereby classifying the flow as linearly stable or unstable. A comprehensive account of classical linear RTI theory and related developments is reported in the work of Zhou and co-workers~\citep{zhou-2017-a,zhou-2017-b,zhou-et-al-2021}. However, when diffusion is incorporated into RTI, linear stability analysis is not strictly applicable because of the time-dependent nature of the base state. Specifically, LST assumes the existence of a fixed point of the full nonlinear system about which linearization is performed, leading to a linear operator that is inherently time independent. This limitation was already recognized by~\citet{duff-harlow-hirt-1962}, who effectively circumvented it by treating the evolving base state as instantaneously frozen and subsequently validating the computed growth rates against experimental measurements. Although not stated explicitly, this assumption falls within the class of quasi-steady-state approximations described by~\citet{tan-homsy-1986}, in which the time scale associated with base-state evolution is much larger than that of perturbation growth, so that the diffusive base state may be treated as fixed.
+The RTI is commonly analyzed using linear stability theory (LST), in which infinitesimal perturbations to a prescribed base state are examined to determine whether they grow or decay in time, thereby classifying the flow as linearly stable or unstable. A comprehensive account of linear RTI theory and related developments is reported in the work of Zhou and co-workers~\citep{zhou-2017-a,zhou-2017-b,zhou-et-al-2021}. However, when diffusion is incorporated into RTI, linear stability analysis is not strictly applicable because of the time-dependent nature of the base state. Specifically, LST assumes the existence of a fixed point of the full nonlinear system about which linearization is performed, leading to a linear operator that is inherently time independent. This limitation was already recognized by~\citet{duff-harlow-hirt-1962}, who effectively circumvented it by treating the evolving base state as instantaneously frozen and subsequently validating the computed growth rates against experimental measurements. Although not stated explicitly, this assumption falls within the class of quasi-steady-state approximations described by~\citet{tan-homsy-1986}, in which the time scale associated with base-state evolution is much larger than that of perturbation growth, so that the diffusive base state may be treated as fixed.
 
-In their seminal contribution,~\citet{duff-harlow-hirt-1962} identified two distinct mechanisms through which diffusion influences RTI evolution. The first, termed \emph{dynamic diffusion}, acts on the instability via a base state whose interface broadens over time. The second, termed \emph{static diffusion}, enters as a viscosity-like damping mechanism that preferentially attenuates short-wavelength perturbations. They analyzed the role of dynamic diffusion by starting from the diffusion-free problem~\citep{chandrasekhar-1961} and arguing that the effect of an initial diffusive layer can be expressed as a correction to the inviscid growth rate. In this formulation, the inviscid growth rate was modified through a function \(\psi \ge 1\), yielding
+In their seminal contribution,~\citet{duff-harlow-hirt-1962} identified two distinct mechanisms through which diffusion influences RTI evolution. The first, termed \emph{dynamic diffusion}, acts on the instability via a base state whose interface broadens over time. The second, termed \emph{static diffusion}, enters as a viscosity-like damping mechanism that preferentially attenuates short-wavelength perturbations. They analyzed the dynamic diffusion by extending the inviscid problem of \citet{chandrasekhar-1961}, arguing that a finite interface thickness enters as a correction to the inviscid growth rate. In this formulation, the growth rate is modified through a function \(\psi \ge 1\), yielding
 \begin{equation}
    \omega_r = \sqrt{\frac{\Atw\,g\,k}{\psi(k,\delta,\Atw)}},
 \label{eq:duff_growth_rate_correction}
@@ -103,31 +103,30 @@ where
 \begin{equation} 
    \Atw = \frac{\rho_2 - \rho_1}{\rho_2 + \rho_1},
 \end{equation}
-denotes the density Atwood number, \(\rho_1\) and \(\rho_2\) are the constant densities of the two fluids, \(\delta\) is the thickness of the diffusive layer, \(k\) is the magnitude of the in-plane wavenumber, and \(g\) is the gravitational acceleration. The approach was later extended to incorporate viscous effects through an approximate treatment in which the coupling term associated with the combined action of viscosity and dynamic diffusion is omitted, leading to
+denotes the density Atwood number, \(\rho_1\) and \(\rho_2\) are the constant densities of the two fluids, \(\delta\) is the thickness of the diffusive layer, \(k\) is the magnitude of the in-plane wavenumber, and \(g\) is the gravitational acceleration. Within the same work, they incorporated viscous effects through an approximate treatment that omits the cross terms associated with the combined action of viscosity and dynamic diffusion, leading to
 \begin{equation}
    \omega_r = \left( \frac{\Atw \, g \,k}{\psi(k,\delta,\Atw)} + \nu^2\,k^{4} \right)^{1/2} - \nu\,k^{2},
 \label{eq:duff_quasi_viscous}
 \end{equation}
-where \(\nu\) represents the kinematic viscosity. This expression, originally proposed more than sixty years ago, was only recently re-examined by~\citet{morgan-likhachev-jacobs-2016}. To capture the coupling between viscous effects and dynamic diffusion, they solved the full viscous eigenvalue problem of~\citet{chandrasekhar-1961}, prescribing a frozen density profile of thickness \(\delta\) rather than applying a correction to the inviscid growth rate. In particular, they reported the asymptotic scaling \(\omega_r \propto k^{-2}\) for large \(k\), which is not reproduced by~\eqref{eq:duff_quasi_viscous}, highlighting the failure of this expression to capture the correct asymptotic behavior. Moreover, although the expression remains reasonably accurate for low-wavenumber modes, it fails to predict accurately the growth rate of the most unstable wavenumber.
+where \(\nu\) represents the kinematic viscosity. This expression, originally proposed more than sixty years ago, was only recently re-examined by~\citet{morgan-likhachev-jacobs-2016}. To account for the complete coupling between viscous effects and dynamic diffusion, they solved the viscous eigenvalue problem of~\citet{chandrasekhar-1961} by prescribing a frozen density profile of thickness \(\delta\), rather than introducing a correction to the inviscid growth rate. This analysis revealed a large-wavenumber scaling \(\omega_r \propto k^{-2}\), which~\eqref{eq:duff_quasi_viscous} does not reproduce, and showed that, although the expression remains reasonably accurate for low-wavenumber modes, it does not accurately predict the growth rate associated with the most unstable wavenumber.
 
-\citet{duff-harlow-hirt-1962} analyzed static diffusion by observing that, if gravity were hypothetically removed at any stage of the instability, perturbations would no longer grow but would instead decay through diffusive spreading. Motivated by this physical argument, static diffusion was modeled as an additional viscosity-like contribution to the dispersion relation, ultimately leading to the well-known expression
+On the other hand, \citet{duff-harlow-hirt-1962} analyzed the static effect by observing that, if gravity were hypothetically removed at any stage of the instability, perturbations would no longer grow but would instead decay through diffusive spreading. Motivated by this physical argument, static diffusion was modeled as an additional viscosity-like contribution to the dispersion relation, ultimately leading to the well-known expression
 \begin{equation}
   \omega_r = \left( \frac{\Atw \, g \,k}{\psi(k,\delta,\Atw)} + \nu^2\,k^{4} \right)^{1/2} - \left( \nu + \mathcal{D} \right) k^2,
 \label{eq:duff_static_diffusion}
 \end{equation}
-where \(\mathcal{D}\) denotes the mass diffusivity. By contrast, diffusion-dominated configurations~\citep{mueschke-schilling-2009} were excluded from the framework of~\citet{morgan-likhachev-jacobs-2016}, restricting their analysis to regimes in which diffusion is not dominant.
-Within the framework of linear stability analysis, the effect of diffusion on instability growth rates has received limited attention beyond the predictions of~\citet{duff-harlow-hirt-1962}. The most closely related work is that of~\citet{lafay-et-al-2007} and~\citet{gauthier-lecruer-2010}, who analyzed compressibility effects in miscible flows and identified a spectral cutoff beyond which the configuration becomes marginally stable. Although the role of diffusion has been extensively investigated in nonlinear and turbulent regimes through direct numerical simulations and experiments~\citep{Mueschke-et-al-2009,banerjee-mutnuri-et-al-2012}, existing treatments of its effect on linear growth rates rely on phenomenological corrections to the inviscid dispersion relation, as discussed above, rather than on derivations from the governing transport equations. This leaves open the question of the conditions under which such corrections are valid, and whether additional mechanisms emerge when the full coupling between viscosity and density stratification is retained. It is within this research context that the present work is developed.
+where \(\mathcal{D}\) denotes the mass diffusivity. By contrast, diffusion-dominated configurations were excluded from the analysis of~\citet{morgan-likhachev-jacobs-2016}. Within linear stability analysis, the static effect of diffusion has received limited attention beyond the predictions of~\citet{duff-harlow-hirt-1962}. The influence of diffusion in miscible compressible flows was examined by~\citet{lafay-et-al-2007} and~\citet{gauthier-lecruer-2010}, who reported an attenuation of the growth rate and the emergence of a spectral cutoff beyond which the configuration becomes marginally stable. The origin of this marginal stability was not clarified, since the diffusion correction of~\citet{duff-harlow-hirt-1962} predicts negative growth rates beyond the cutoff.
 
-We examine the linear stability of the miscible Rayleigh--Taylor problem within the incompressible variable-density equations~\citep{sandoval-1995}, retaining both mass diffusion and non-Boussinesq effects. We first derive the laminar self-similar base-state solutions for incompressible variable-density flow. Building on this structure, we show that the linearized problem admits a reduced coupled density--vertical-velocity formulation, from which the complete initial-value problem is derived. To investigate the linear stability of the system, we then adopt the quasi-steady-state approximation. Within this hypothesis, we identify a universal large-wavenumber scaling of the dispersion relation, \(\omega_r \sim -\lambda_m k^2\), thereby placing the static-diffusion argument of~\citet{duff-harlow-hirt-1962} on firmer theoretical footing and showing that the Duff scaling is recovered only when the two fluids share the same Schmidt number; otherwise, the large-wavenumber damping depends on the local stratification of density and dynamic viscosity. We also show that diffusion is not represented solely as a stabilizing correction, since the non-solenoidal nature of the flow can weaken its stabilizing effect.
+Although the effect of mixing has been extensively investigated in nonlinear and turbulent regimes through direct numerical simulations and experiments~\citep{cook-dimotakis-2001,mueschke-schilling-2009,mueschke-et-al-2009,banerjee-mutnuri-et-al-2012}, its role in setting linear growth rates remains less clearly understood. In particular, existing reduced descriptions often rely on corrections to the inviscid dispersion relation, as discussed above, while the range of validity of such corrections remains unclear. This leaves open the question of how diffusion enters the linear stability problem when the governing transport equations are retained, and whether additional effects arise when viscosity and density stratification are treated simultaneously. It is within this research context that the present work is developed.
+
+
+We examine the linear stability of the miscible Rayleigh--Taylor problem within the incompressible variable-density equations~\citep{sandoval-1995}, retaining both mass diffusion and non-Boussinesq effects. We first derive the laminar self-similar base-state solutions for incompressible variable-density flow. Building on this structure, we show that the linearized problem admits a reduced coupled density--vertical-velocity formulation, from which the complete initial-value problem is derived. To investigate the linear stability of the system, we then adopt the quasi-steady-state approximation. Within this hypothesis, we identify a large-wavenumber scaling of the dispersion relation, \(\omega_r \sim -\lambda_m k^2\), thereby placing the static-diffusion argument of~\citet{duff-harlow-hirt-1962} on firmer theoretical footing and showing that the Duff scaling is recovered only when the two fluids share the same Schmidt number; otherwise, the large-wavenumber damping depends on the local stratification of density and dynamic viscosity. We also show that diffusion cannot be characterized as a purely stabilizing correction because of the non-solenoidal nature of the flow.
+
 
 Although the limitations of the quasi-steady-state approximation, particularly during the early
-stages of instability evolution, are well known~\citep{tan-homsy-1986,riaz-et-al-2006,trevelyan-almarcha-wit}, it remains the natural starting point for the present analysis. In related diffusive instability problems, approaches based on adjoint optimization and non-modal stability theory have successfully moved beyond this approximation~\citep{rapaka-et-al-2008,don-nils-amir-2013,prathama-pantano-2021}, but only after a thorough quasi-steady-state analysis had established a clear picture of the instability mechanism and identified where the approximation breaks down. To the authors'knowledge, no such foundation exists for the miscible RTI problem when diffusion and strong non-Boussinesq effects are both retained, and the present work represents a first attempt to
-build it. Rather than relying on ad hoc corrections, the theoretical framework developed here
-proceeds directly from the governing equations, and the quasi-steady-state approximation serves
-as its natural entry point, with its predictions subsequently assessed against those of the full
-initial-value problem.
+stages of instability evolution, are well known~\citep{tan-homsy-1986,riaz-et-al-2006,trevelyan-almarcha-wit-2011}, it remains the natural starting point for the present analysis. In related diffusive instability problems, approaches based on adjoint optimization and non-modal stability theory have successfully moved beyond this approximation~\citep{rapaka-et-al-2008,don-nils-amir-2013,prathama-pantano-2021}, but only after a thorough quasi-steady-state analysis had established a clear picture of the instability mechanism and identified where the approximation breaks down. To the authors'knowledge, no such foundation exists for the miscible RTI problem when diffusion and strong non-Boussinesq effects are both retained, and the present work represents a first attempt to build it. Rather than relying on ad hoc corrections, the theoretical framework developed here proceeds directly from the governing equations, and the quasi-steady-state approximation serves as its natural entry point, with its predictions subsequently assessed against those of the full initial-value problem.
 
-The remainder of this paper is organized as follows. In \S~\ref{sec:governing_equation}, we examine the governing equations, adopting the incompressible variable-density formulation~\citep{sandoval-1995}, whose linear-stability properties have received little attention despite extensive nonlinear and turbulent-flow studies~\citep{livescu-ristorcelli-2007,wei-livescu-2012,baltzer-livescu-2020}. In \S~\ref{subsec:zeroth_order_self_similar}, we derive a laminar self-similar base state and discuss the quasi-steady-state approximation used to obtain a frozen, tractable linearized system. In \S~\ref{subsec:first_order_equation}, we show that the linearized governing equations admit a density--vertical-velocity formulation. The numerical solver developed for both the initial-value problem and the corresponding quasi-steady eigenvalue problem is described in \S~\ref{sec:numerical_implementation}. The main stability results are presented in \S~\ref{sec:result_and_discussion}, beginning with the maximum growth rate \(\omega_r^{\max}\), the wavenumber \(k^{\max}\) at which this maximum occurs, and the spectral cutoff wavenumber \(k_c\). This characterization is followed by the derivation of a universal large-wavenumber scaling and by an inviscid diffusive-limit analysis that isolates the effect of diffusion on the unstable spectrum. In \S~\ref{sec:IVP}, we compare the quasi-steady-state predictions with the corresponding initial-value problem. Finally, conclusions are drawn in \S~\ref{sec:conclusions}.
+The remainder of this paper is organized as follows. In \S\ref{sec:governing_equation}, we examine the governing equations, adopting the incompressible variable-density formulation~\citep{sandoval-1995}, whose linear-stability properties have received little attention despite extensive nonlinear and turbulent regimes studies~\citep{livescu-ristorcelli-2007,livescu-et-al-2010,wei-livescu-2012,livescu-2013,baltzer-livescu-2020}. In \S\ref{subsec:zeroth_order_self_similar}, we derive a laminar self-similar base state and discuss the quasi-steady-state approximation used to obtain a frozen, tractable linearized system. In \S\ref{subsec:first_order_equation}, we show that the linearized governing equations admit a density--vertical-velocity formulation. The numerical solver developed for both the initial-value problem and the corresponding quasi-steady eigenvalue problem is described in \S\ref{sec:numerical_implementation}. The main stability results are presented in \S\ref{sec:result_and_discussion}, beginning with the maximum growth rate \(\omega_r^{\max}\), the wavenumber \(k^{\max}\) at which this maximum occurs, and the spectral cutoff wavenumber \(k_c\). This characterization is followed by the derivation of a large-wavenumber scaling in \S\ref{subsec:kggkc} and by an inviscid diffusive-limit analysis that isolates the effect of diffusion on the unstable spectrum in \S\ref{subsec:budget_idl} . In \S\ref{sec:IVP}, we compare the quasi-steady-state predictions with the corresponding initial-value problem. Finally, conclusions are drawn in \S\ref{sec:conclusions}.
 
 \section{Governing equations}%
 \label{sec:governing_equation}
@@ -152,7 +151,7 @@ opposite to gravity. The viscous stress tensor \(\mathsfbi{\tau}\) is given by
 where \(\mu\) is the dynamic viscosity, \(\mathsfbi{S}\) is the strain-rate tensor, and
 \(\mathsfbi{I}\) is the identity tensor. To describe the mixing of the two fluids, we introduce the
 mass fractions \(Y_1(\boldsymbol{x},t)\) and \(Y_2(\boldsymbol{x},t)\), defined as the local mass
-of each species divided by the local total mass, such that \(Y_1 + Y_2 = 1\). For a binary mixture in which each pure fluid is individually incompressible~\citep{livescu-2020},
+of each species divided by the local total mass, such that \(Y_1 + Y_2 = 1\). For a binary mixture in which each pure fluid is individually incompressible it can be assumed that ~\citep{livescu-2020},
 \begin{equation}
     \label{eq:specific_volume}
     \frac{1}{\rho} = \frac{Y_1}{\rho_1} + \frac{Y_2}{\rho_2}.
@@ -206,49 +205,44 @@ Referring to the nondimensional variables with the same notation as their dimens
         \bnabla \bcdot \boldsymbol{u} &= -\Sch^{-1}\,\nabla^2 \log\rho.
     \end{align}
 \end{subequations}
-Introducing the state vector \(\boldsymbol{q}(\boldsymbol{x},t) = \left[ u, v, w, p, \rho \right]\),
-the nonlinear system~\eqref{eq:IVD_NL} can be written compactly as
+Introducing the state vector \(\boldsymbol{Q}(\boldsymbol{x},t) = \left[ u, v, w, p, \rho \right]\), the nonlinear system~\eqref{eq:IVD_NL} can be written compactly as
 \begin{equation}
     \label{eq:compact_non_linear_system}
-    \diff{\boldsymbol{q}}{t} = \mathcal{N}\!\left( \boldsymbol{q} \right).
+    \mathscr{M}\,\partial_t \boldsymbol{Q} = \mathcal{N}\!\left( \boldsymbol{Q} \right),
 \end{equation}
+where \(\mathscr{M}\) is the identity matrix with the entry corresponding to \(p\) set to zero, since the pressure is not dynamically evolved but instead enforces the divergence constraint.
 We consider the asymptotic expansion
 \begin{equation}
-    \boldsymbol{q}(\boldsymbol{x},t)
+    \boldsymbol{Q}(\boldsymbol{x},t)
     =
-    \boldsymbol{q}_0(\boldsymbol{x},t)
+    \boldsymbol{Q}_0(\boldsymbol{x},t)
     +
-    \epsilon \boldsymbol{q}'(\boldsymbol{x},t)
+    \epsilon \boldsymbol{Q}'(\boldsymbol{x},t)
     +
     O(\epsilon^2),
     \qquad 0<\epsilon\ll1 .
 \end{equation}
-Here, \(\boldsymbol{q}_0(\boldsymbol{x},t)\) is a solution of the nonlinear equation, while
-\(\boldsymbol{q}'(\boldsymbol{x},t)\) denotes the perturbation field. Equating terms
-at successive orders in \(\epsilon\) yields
+Here, \(\boldsymbol{Q}_0(\boldsymbol{x},t)\) is a solution of the nonlinear equation, while \(\boldsymbol{Q}'(\boldsymbol{x},t)\) denotes the perturbation field. Equating terms at successive orders in \(\epsilon\) yields
 \begin{subequations}
     \label{eq:compact_equations}
     \begin{align}
         \label{eq:compact_0th_equations}
-        \partial_t \boldsymbol{q}_0
+        \mathscr{M}\,\partial_t \boldsymbol{Q}_0
         &=
-        \mathcal{N}\!\left( \boldsymbol{q}_0 \right),
+        \mathcal{N}\!\left( \boldsymbol{Q}_0 \right),
         \\
         \label{eq:compact_1st_equations}
-        \partial_t \boldsymbol{q}'
+        \mathscr{M}\,\partial_t \boldsymbol{Q}'
         &=
         \left.
-        \frac{\delta \mathcal{N}}{\delta \boldsymbol{q}}
-        \right|_{\boldsymbol{q}_0}
-        \boldsymbol{q}' .
+        \frac{\delta \mathcal{N}}{\delta \boldsymbol{Q}}
+        \right|_{\boldsymbol{Q}_0}
+        \boldsymbol{Q}' .
     \end{align}
 \end{subequations}
-The linearization of the equations follows the classical LST procedure, and the full operator is not reported here for brevity; the derivation does, however, present some nonstandard features arising from the logarithmic dependence of the governing equations on density, which requires an explicit
-expansion,
-\begin{equation}
-    \log(\rho) = \log(\rho_0) + \log\left(1 + \epsilon \frac{\rho'}{\rho_0} + O\left(\epsilon^2\right)\right) = \log(\rho_0) + \epsilon \frac{\rho'}{\rho_0} + O\left(\epsilon^2\right).
-\end{equation}
-Moreover, since viscosity and density are both determined by the local composition, a mixing model is required to close the system. In the present work, we adopt the linear mixing law of \citet{morgan-likhachev-jacobs-2016}
+The linearization of the equations follows the classical LST procedure, and the full operator is reported in Appendix~\ref{sec:appendix_reducedIVD}.
+
+Since viscosity and density are both determined by the local composition, a mixing model is required to close the system. In the present work, we adopt the linear mixing law of \citet{morgan-likhachev-jacobs-2016}
 \begin{equation}
     \frac{\mu}{\rho} = \frac{1-A_{\mu}}{1-\Atw}Y_1 + \frac{1+A_{\mu}}{1+\Atw}Y_2.
     \label{eq:graham_mixing_law}
@@ -258,7 +252,7 @@ The choice of mixing law is, to some extent, arbitrary. A detailed justification
 
 \subsection{Zeroth-order equations: self-similar evolution of the base state}%
 \label{subsec:zeroth_order_self_similar}
-Unlike classical linear stability analyses, the base state is not obtained as a steady fixed point of the nonlinear operator but is instead a time-dependent solution upon which a quasi-steady-state approximation is imposed. To clarify the precise meaning and implications of this approximation, it is necessary to examine the equations governing the base state itself. Expanding the compact form of~\eqref{eq:compact_0th_equations} yields the zeroth-order system
+In this work the base state is not a steady fixed point but a time-dependent solution of the nonlinear governing equations upon which a quasi-steady-state approximation is imposed. To clarify the precise meaning and implications of this approximation, it is necessary to examine the equations governing the base state itself. Expanding the compact form of~\eqref{eq:compact_0th_equations} yields the zeroth-order system
 \begin{subequations}\label{eq:vd_zeroth_system}
 \begin{align}
     \partial_t \rho_0 + \bnabla\bcdot(\rho_0 \boldsymbol{U}_0) &= 0, \label{eq:vd_zeroth_system_mass} \\
@@ -282,7 +276,7 @@ Defining the similarity variable
 \begin{equation}
     \eta = z \sqrt{\frac{\Sch}{t}},
 \end{equation}
-the self-similar solutions of (\ref{eq:base_state_1D}) are
+a self-similar solution of~\eqref{eq:base_state_1D} is obtained,
 \begin{subequations}\label{eq:base_state_self_similar}
 \begin{align}
     \rho_{0}(\eta)
@@ -330,8 +324,8 @@ which leads to the Sturm--Liouville eigenvalue problem
 \label{eq:sturm_liouville}
 \begin{align}
     a(\eta)\,U_{\eta\eta} + b(\eta)\,U_{\eta} &= \alpha\,U, \\
-    a(\eta) &= \Sch\,\frac{\mu(\eta)}{\rho_0(\eta)}, \\
-    b(\eta) &= \frac{\eta}{2} + \frac{\rho_{0,\eta}}{\rho_0(\eta)} + \Sch\,\frac{\mu_{\eta}}{\rho_0(\eta)}, \\
+    a(\eta) &= \Sch\,\frac{\mu_0(\eta)}{\rho_0(\eta)}, \\
+    b(\eta) &= \frac{\eta}{2} + \frac{\rho_{0,\eta}}{\rho_0(\eta)} + \Sch\,\frac{\mu_{0,\eta}}{\rho_0(\eta)}, \\
     \lim_{|\eta|\to\infty} U &= \lim_{|\eta|\to\infty} U_{\eta} = 0.
 \end{align}
 \end{subequations}
@@ -395,15 +389,14 @@ details of the reduction are given in Appendix~\ref{sec:appendix_reducedIVD}.
 
 Before introducing the reduced momentum equation, two additional definitions are required. Since
 the density field is determined by the composition through~\eqref{eq:specific_volume}, the
-expansion \(\rho = \rho_0 + \varepsilon \rho'\) leads directly to \(\mu = \mu_0 + \varepsilon
-\mu'\). From~\eqref{eq:graham_mixing_law} and~\eqref{eq:self_similar_base_state_density}, the
+viscosity perturbation \(\mu\) follows directly from the density perturbation \(\rho\). From~\eqref{eq:graham_mixing_law} and~\eqref{eq:self_similar_base_state_density}, the
 base-state viscosity is
 \begin{equation}
     \mu_0 = 1 + A_{\mu}\,\erf\!\left(z/\delta\right),
 \end{equation}
 and the viscosity perturbation is linearly coupled to the density perturbation through
 \begin{equation}
-    \mu' = C_{\mu\rho}\,\rho', \qquad
+    \mu = C_{\mu\rho}\,\rho, \qquad
     C_{\mu\rho} = \left.\frac{\mathrm{d}\mu}{\mathrm{d}\rho}\right|_{\rho_0} = \frac{A_{\mu}}{\Atw}.
 \end{equation}
 We further define the time-differentiated operator
@@ -448,7 +441,7 @@ where the operators are defined as
     \mathscr{B}_{w\rho} &= \Big(\rho_0' + \rho_0\,\partial_z\Big)\mathscr{L}_{\rho}, \\
     \mathscr{A}_{ww} &= -\mu_0\,\nabla^4 - 2\,\mu_0'\,\partial_z\,\nabla^2 + \mu_0''\,\nabla^2 - 2\,\mu_0''\,\partial_{zz}, \\
     \mathscr{A}_{w_0 w} &= \Big(\rho_0\,w_0' + \rho_0\,w_0\,\partial_z\Big)\nabla^2 + w_0\,\rho_0'\,\partial_{zz}, \\
-    \mathscr{A}_{w\rho} &= \Big(\mu_0\,\partial_z\,\nabla^2 + 2\,\mu_0'\,\nabla^2 - \mu_0''\,\partial_z\Big)\mathscr{L}_\rho - 2\,\partial_z\!\left(w_0'\,C_{\mu\rho}(z)\,\nabla_{xy}^2\star\right) + \nabla_{xy}^2, \\
+    \mathscr{A}_{w\rho} &= \Big(\mu_0\,\partial_z\,\nabla^2 + 2\,\mu_0'\,\nabla^2 - \mu_0''\,\partial_z\Big)\mathscr{L}_\rho - 2\,\partial_z\!\left(w_0'\,C_{\mu\rho}\,\nabla_{xy}^2\star\right) + \nabla_{xy}^2, \\
     \mathscr{A}_{w_0 \rho} &= -\Big((\rho_0 w_0)'\,\partial_z + \rho_0 w_0\,\partial_{zz}\Big)\mathscr{L}_{\rho} + \left(\dot{w}_0 + w_0 w_0'\right)\nabla_{xy}^2 - \Big(\rho_0' + \rho_0\,\partial_z\Big)\dot{\mathscr{L}}_{\rho}.
 \end{align}
 \end{subequations}
@@ -474,12 +467,10 @@ for a time-dependent base state. In compact form,
         \rho
     \end{pmatrix}.
 \end{equation}
-
 The boundary conditions enforce vanishing vertical velocity and its vertical gradient at the domain boundaries and require the density perturbation to vanish in the far field so that the base-state stratification remains undisturbed away from the diffusive layer,
 \begin{equation}
     w(\pm L_z) = 0, \qquad \left.\frac{\partial w}{\partial z}\right|_{\pm L_z} = 0, \qquad \rho(\pm L_z) = 0.
 \end{equation}
-
 To perform a stability analysis, the quasi-steady-state approximation is introduced by freezing the base state at a prescribed diffusive layer width \(\delta_0\) and neglecting its temporal derivatives~\citep{junhao-et-al-2006}. Since the self-similar base state satisfies
 \begin{equation}
     t_0 = \frac{\Sch \delta_0^2}{4},
@@ -517,9 +508,9 @@ where the subscript \(k\) denotes the Fourier coefficient at wavenumber \(k\) an
 \end{equation}
 where the block matrices \(\mathsfbi{A}_{k}\) and \(\mathsfbi{B}_{k}\) follow from the discretization of~\eqref{eq:linearized_continuous_system}, and the growth rates are obtained by solving the generalized eigenvalue problem
 \begin{equation}
-    \mathsfbi{A}_{k}\,\hat{\boldsymbol{q}}_{k} = \lambda(k)\,\mathsfbi{B}_{k}\,\hat{\boldsymbol{q}}_{k},
+    \mathsfbi{A}_{k}\,\hat{\boldsymbol{q}}_{k} = \omega(k)\,\mathsfbi{B}_{k}\,\hat{\boldsymbol{q}}_{k},
 \end{equation}
-where \(\lambda(k)\) is the complex eigenvalue and its real part defines the temporal growth rate, \(\omega_r(k) = \Real\{\lambda(k)\}\).
+where \(\omega(k)\) is the complex eigenvalue and its real part defines the temporal growth rate, \(\omega_r(k)\)
 
 \section{Numerical implementation}%
 \label{sec:numerical_implementation}
@@ -574,9 +565,10 @@ A detailed verification of the solver is reported in Appendix~\ref{sec:appendix_
 
 \section{Results and Discussion}%
 \label{sec:result_and_discussion}
-Before examining the instability mechanisms that can be analyzed through this framework, we note that the classical viscous theory is recovered as an asymptotic limit. In the limit \(\Sch \to \infty\), mass diffusion vanishes, and the linearized IVD system reduces exactly to the equations of~\citet{chandrasekhar-1961}, as demonstrated in Appendix~\ref{sec:appendix_Sc_infinity_chandra_limit} and shown in figure~\ref{fig:duff_versus_prediction}(a). On this basis, we suggest that the formulation presented here may be viewed as a natural extension of Chandrasekhar's eigenvalue problem. At finite Schmidt number, however, the effects of mass diffusion can no longer be neglected. At \(\Sch = 1\), the growth-rate spectrum acquires a fundamentally different structure, as shown in figure~\ref{fig:duff_versus_prediction}(b). The universal \(k^{-2}\) decay predicted by~\citet{morgan-likhachev-jacobs-2016} is replaced by a spectral cutoff, and the Duff model overpredicts the maximum growth rate. While the Duff model does predict a power-law decay at large wavenumbers, the associated prefactor depends sensitively on the region of parameter space considered. These discrepancies motivate a systematic analysis, which is carried out in the remainder of this section.
+Before examining the instability mechanisms we note that the non-diffusive viscous theory of~\citet{chandrasekhar-1961} is recovered in the limit \(\Sch \to \infty\). In this limit mass diffusion vanishes, and the linearized IVD system reduces exactly to the equations of~\citet{chandrasekhar-1961}, as discussed in Appendix~\ref{sec:appendix_Sc_infinity_chandra_limit} and shown in figure~\ref{fig:duff_versus_prediction}(a). On this basis, we suggest that the formulation presented here may be viewed as an extension of Chandrasekhar's eigenvalue problem. At finite Schmidt number, however, the effects of mass diffusion can no longer be neglected. At \(\Sch = 1\), the dispersion relation acquires a fundamentally different structure, as shown in figure~\ref{fig:duff_versus_prediction}(b). The \(k^{-2}\) decay predicted by~\citet{morgan-likhachev-jacobs-2016} is replaced by a cutoff wavenumber beyond which growth rates are negative. The Duff model reported in figure~\ref{fig:duff_versus_prediction}(b) overpredicts the maximum growth rate and, while it does predict a power-law decay at large wavenumbers, the associated prefactor depends sensitively on the region of parameter space considered. These discrepancies motivate a systematic analysis, which is carried out in the remainder of this section.
 
-In \S~\ref{subsec:growth_rate_and_spectral_cutoff_characterization}, we analyze the maximum growth rate \(\omega_r^{\max}\), which identifies the peak of each stability curve, while \(k^{\max}\) denotes the wavenumber at which this maximum occurs. The spectral cutoff wavenumber \(k_c\), defined as the wavenumber at which the growth rate changes sign, marks the boundary between linearly unstable and stable disturbances and traces the locus of marginal stability across parameter space. In \S~\ref{subsec:kggkc}, we then examine the large-wavenumber regime \(k \gg k_c\), which characterizes the decay of the growth-rate curves beyond the cutoff. Finally, in \S~\ref{subsec:budget_idl}, we isolate the role of diffusion through the inviscid diffusive limit and use the perturbation energy budget to interpret the trends observed in the spectral diagnostics.
+In \S\ref{subsec:growth_rate_and_spectral_cutoff_characterization}, we analyze the maximum growth rate \(\omega_r^{\max}\), which identifies the peak of each stability curve, while \(k^{\max}\) denotes the wavenumber at which this maximum occurs. The spectral cutoff wavenumber \(k_c\), defined as the wavenumber at which the growth rate changes sign, marks the boundary between linearly unstable and stable disturbances and traces the locus of marginal stability across parameter space. In \S\ref{subsec:kggkc}, we then examine the large-wavenumber regime \(k \gg k_c\), which characterizes the decay of the growth-rate curves beyond the cutoff. Finally, in \S\ref{subsec:budget_idl}, we isolate the role of diffusion through the inviscid diffusive limit and use the perturbation energy budget to interpret the trends observed in the spectral diagnostics.
+
 
 \subsection{Growth rate and spectral cutoff characterization}
 \label{subsec:growth_rate_and_spectral_cutoff_characterization}
@@ -617,16 +609,14 @@ In \S~\ref{subsec:growth_rate_and_spectral_cutoff_characterization}, we analyze 
         \vspace{0pt}
         \figfile{figures/kmax_vs_Scinv_Amu_+0.9}
     \end{minipage}
-    \caption{Peak growth rate \(\omega_r^{\max}\) (top row, panels a--c) and corresponding wavenumber \(k^{\max}\) (bottom row, panels d--f) as functions of inverse Schmidt number, showing how diffusion and viscosity contrast shape the most amplified mode. Solid lines denote the present quasi-steady-state approximation results, and dashed lines denote Duff's prediction~\eqref{eq:duff_static_diffusion}. Columns correspond to \(\Amu = -0.9\), \(0.0\), and \(0.9\), respectively.}
+    \caption{Peak growth rate \(\omega_r^{\max}\) (top row, panels a--c) and corresponding wavenumber \(k^{\max}\) (bottom row, panels d--f) as functions of inverse Schmidt number. (\solidlegend) denotes the present quasi-steady-state approximation results, and (\dashlegend) denotes Duff's prediction~\eqref{eq:duff_static_diffusion}. Columns correspond to \(\Amu = -0.9\), \(0.0\), and \(0.9\), respectively.}
     \label{fig:wrmax_vs_Scinv}
 \end{figure}
-Figure~\ref{fig:wrmax_vs_Scinv} shows the peak growth rate \(\omega_r^{\max}\) and the corresponding wavenumber \(k^{\max}\) as functions of inverse Schmidt number. The peak growth rate is only weakly affected by the viscosity ratio across the parameter space examined. At a fixed viscosity ratio, however, its dependence on diffusion, and hence on the Schmidt number, varies with the degree of density stratification. For \(\Atw\) between approximately \(0.1\) and \(0.5\), the peak growth rate decreases monotonically as \(\Sch\) decreases. For \(\Atw > 0.5\), by contrast, the growth rate first decreases down to \(\Sch \approx 1\), and then increases as \(\Sch\) is reduced further. As discussed later in \S~\ref{subsec:budget_idl}, this non-monotonic behavior is consistent with a shift in the perturbation energy budget: once diffusion and stratification become simultaneously important, the instability is no longer governed solely by buoyancy production, and pressure work may become non-negligible.
+Figure~\ref{fig:wrmax_vs_Scinv} shows the peak growth rate \(\omega_r^{\max}\) and the corresponding wavenumber \(k^{\max}\) as functions of inverse Schmidt number. The peak growth rate is only weakly affected by the viscosity ratio across the parameter space examined, as can be seen from figures~\ref{fig:wrmax_vs_Scinv}(a,b,c), whose content is only slightly affected across different values of \(\Amu\). Fixing \(\Amu\), the dependence on diffusion, and hence on the Schmidt number, varies with the degree of density stratification. For \(\Atw\) between approximately \(0.1\) and \(0.5\), the peak growth rate decreases monotonically as \(\Sch^{-1}\) increases. For \(\Atw > 0.5\), by contrast, the growth rate first decreases down to \(\Sch \approx 1\) and then increases as \(\Sch^{-1}\) is increased further; a possible explanation of why the growth rate is destabilized as diffusion becomes more important is offered in \S\ref{subsec:budget_idl}. As \(\Sch^{-1}\) increases, the most amplified wavenumber \(k^{\max}\) generally shifts to smaller values, indicating that diffusion moves the dominant instability toward longer wavelengths. This trend is visible for all viscosity ratios, although the magnitude of the shift depends on both \(\Atw\) and \(\Amu\). Compared with the peak growth rate, \(k^{\max}\) is more visibly affected by viscosity stratification; \(\Amu > 0\) tends to maintain larger values of \(k^{\max}\), whereas \(\Amu < 0\) shifts the wavenumber toward smaller values. Thus, even when the maximum growth rate itself changes only weakly with \(\Amu\), the wavelength selected by the instability retains a clearer signature of viscosity stratification.
 
-The location of the maximum, \(k^{\max}\), exhibits a complementary response. As \(\Sch^{-1}\) increases, the most amplified wavenumber generally shifts to smaller values, indicating that diffusion moves the dominant instability toward longer wavelengths. This trend is visible for all viscosity ratios, although the magnitude of the shift depends on both \(\Atw\) and \(\Amu\). Compared with the peak growth rate, \(k^{\max}\) is more visibly affected by viscosity stratification: positive viscosity contrast tends to maintain larger values of \(k^{\max}\), whereas negative viscosity contrast shifts the maximum toward smaller wavenumbers. Thus, even when the maximum growth rate itself changes only weakly with \(\Amu\), the wavelength selected by the instability retains a clearer signature of viscosity stratification.
+A comparison with the Duff prediction further clarifies these trends. Over most of the parameter space, the dashed curves follow the same qualitative dependence on \(\Sch^{-1}\) as the present quasi-steady-state approximation results, indicating that the static-diffusion model captures the leading variation of \(\omega_r^{\max}\) and \(k^{\max}\) with diffusion. Quantitatively, however, the Duff prediction is generally slightly larger than the present results for \(\omega_r^{\max}\), with the discrepancies remaining modest across different viscosity and density ratios. For \(k^{\max}\), the discrepancy is more sensitive to the viscosity ratio and becomes increasingly evident as diffusion effects become dominant. Thus, viscosity stratification does not strongly alter the overall trend of the peak growth rate with \(\Sch^{-1}\), but it introduces a more visible correction to the wavenumber selected by the instability.
 
-A comparison with the Duff prediction further clarifies these trends. Over most of the parameter space, the dashed curves follow the same qualitative dependence on \(\Sch^{-1}\) as the present quasi-steady-state approximation results, indicating that the static-diffusion model captures the leading variation of \(\omega_r^{\max}\) and \(k^{\max}\) with diffusion. Quantitatively, however, the Duff prediction is generally slightly larger than the present results for \(\omega_r^{\max}\), with the discrepancies remaining modest across different viscosity and density ratios. For \(k^{\max}\), the discrepancy is more sensitive to the viscosity ratio and becomes increasingly evident as diffusion is increased. Thus, viscosity stratification does not strongly alter the overall trend of the peak growth rate with \(\Sch\), but it introduces a more visible correction to the wavenumber selected by the instability.
-
-A complementary picture is provided by the cutoff wavenumber \(k_c\), defined by the neutral-stability condition \(\omega_r(k_c)=0\). This quantity represents the largest wavenumber for which perturbations remain unstable, and its variation across the parameter space is summarized in figure~\ref{fig:kc_vs_Scinv}. At fixed Atwood number, \(k_c\) decreases monotonically as \(\Sch^{-1}\) increases, so that stronger diffusion stabilizes progressively larger portions of the high-wavenumber spectrum. Similarly to the peak growth rate, the cutoff wavenumber displays only weak sensitivity to the viscosity ratio across the parameter space examined. In all panels, the present quasi-steady-state approximation results lie above the dashed curves, showing that the full formulation predicts a broader unstable band. This difference is weak at small \(\Atw\) and becomes increasingly pronounced as the density stratification increases, especially for positive viscosity ratio. The effect of viscosity stratification is therefore more clearly expressed in the cutoff wavenumber and in the selected wavenumber \(k^{\max}\) than in the peak growth rate alone.
+A complementary picture is provided by the cutoff wavenumber \(k_c\), defined by the neutral-stability condition \(\omega_r(k_c)=0\). This quantity represents the largest wavenumber for which perturbations remain unstable, and its variation across the parameter space is summarized in figure~\ref{fig:kc_vs_Scinv}. At fixed Atwood number, \(k_c\) decreases monotonically as \(\Sch^{-1}\) increases, so that stronger diffusion stabilizes progressively larger portions of the spectrum. Similarly to the peak growth rate, the cutoff wavenumber displays only weak sensitivity to the viscosity ratio across the parameter space examined. In all panels, the present quasi-steady-state approximation results lie above Duff's model prediction, showing that the formulation we propose predicts a broader unstable band. This difference is weak at small \(\Atw\) and becomes increasingly pronounced as the density stratification increases, especially for positive viscosity ratio.
 \begin{figure}
     \centering
     \begin{minipage}[t]{0.32\textwidth}
@@ -646,11 +636,12 @@ A complementary picture is provided by the cutoff wavenumber \(k_c\), defined by
         \vspace{0pt}
         \figfile{figures/kc_vs_Scinv_Amu_+0.9}
     \end{minipage}
-    \caption{Cutoff wavenumber \(k_c\) as a function of inverse Schmidt number, showing how diffusion and viscosity contrast delimit the unstable band. Solid lines denote the present quasi-steady-state approximation results, and dashed lines denote Duff's prediction~\eqref{eq:duff_static_diffusion}. (a) \(\Amu = -0.9\). (b) \(\Amu = 0.0\). (c) \(\Amu = 0.9\).}
+    \caption{Cutoff wavenumber \(k_c\) as a function of inverse Schmidt number. (\solidlegend) denotes the present quasi-steady-state approximation results, and (\dashlegend) denotes Duff's prediction~\eqref{eq:duff_static_diffusion}.}
     \label{fig:kc_vs_Scinv}
 \end{figure}
 
-\subsection{Universal scaling for \texorpdfstring{\( k \gg k_c \)}{k >> kc}}
+
+\subsection{Scaling law for \texorpdfstring{\( k \gg k_c \)}{k >> kc}}
 \label{subsec:kggkc}
 The asymptotic structure of the growth-rate spectrum at large wavenumbers is obtained by rescaling time according to \(t = k^{2}\tau\) in~\eqref{eq:linearized_continuous_system} and expanding the dependent variables in inverse powers of \(k^{2}\),
 \begin{subequations}
@@ -766,10 +757,10 @@ which measures the relative strength of advective to diffusive transport at the 
         \vspace{0pt}
         \figfile{figures/diffusion_effect_psi_At0.75}
     \end{minipage}
-    \caption{IDL growth rates and correction functions compared with the classical corrected inviscid prediction, showing how diffusion modifies the unstable branch across density ratios and diffusive strengths. The dashed line denotes the prediction of~\citet{duff-harlow-hirt-1962}. (a) Growth rate \(\omega_r\) for \(\Atw=0.05\). (b) Growth rate \(\omega_r\) for \(\Atw=0.40\). (c) Growth rate \(\omega_r\) for \(\Atw=0.75\). (d) Correction function \(\psi(k)\) for \(\Atw=0.05\). (e) Correction function \(\psi(k)\) for \(\Atw=0.40\). (f) Correction function \(\psi(k)\) for \(\Atw=0.75\).}
+    \caption{IDL growth rates and correction functions compared with the classical corrected inviscid prediction. (\dashlegend) denotes the prediction of~\citet{duff-harlow-hirt-1962}. Columns correspond to \(\Atw = 0.05\), \(0.40\), and \(0.75\), respectively.}
     \label{fig:IDL_growth_rates}
 \end{figure}
-To assess the role of diffusion, we compare the IDL growth rates with the classical corrected inviscid prediction~\eqref{eq:duff_growth_rate_correction}. Figure~\ref{fig:IDL_growth_rates} reports the corresponding growth rates and correction functions for three density ratios, namely \(\Atw = 0.05\), representative of the Boussinesq limit, \(\Atw = 0.40\), representative of an intermediate regime, and \(\Atw = 0.75\), representative of strongly non-Boussinesq conditions. For each case, the diffusive strength is varied from a weakly diffusive regime at \(\mathrm{Pe}_\delta = 40\), through an intermediate regime at \(\mathrm{Pe}_\delta = 5\), to a strongly diffusive regime at \(\mathrm{Pe}_\delta = 1\). 
+To assess the role of diffusion, we compare the IDL growth rates with the classical corrected inviscid prediction~\eqref{eq:duff_growth_rate_correction}. Figure~\ref{fig:IDL_growth_rates} reports the corresponding growth rates and correction functions for three density ratios, namely \(\Atw = 0.05\), representative of the Boussinesq limit, \(\Atw = 0.40\), representative of an intermediate regime, and \(\Atw = 0.75\), representative of strong non-Boussinesq conditions. For each case, the diffusive strength is varied from a weakly diffusive regime at \(\mathrm{Pe}_\delta = 40\), through an intermediate regime at \(\mathrm{Pe}_\delta = 5\), to a high diffusive regime at \(\mathrm{Pe}_\delta = 1\). 
 
 Figure~\ref{fig:IDL_growth_rates} shows that, in the weakly diffusive regime \((\Pe_{\delta}=40)\), the IDL growth rates and correction functions are nearly indistinguishable from the classical corrected inviscid prediction across all Atwood numbers considered. As the diffusive strength increases, however, diffusion suppresses the growth rates more strongly over the range of wavenumbers considered here. This is reflected in the correction functions, which progressively depart from the classical prediction and indicate an increasingly stabilizing influence. At fixed \(\Pe_{\delta}\), this stabilization weakens as \(\Atw\) increases, revealing a nontrivial coupling between diffusion and density contrast. This trend is particularly evident in figures~\ref{fig:IDL_growth_rates}(a,b,c), where the \(\Pe_{\delta}=1\) curve moves closer to the classical prediction as \(\Atw\) increases, especially for the smaller-wavenumber modes. 
 
@@ -793,7 +784,7 @@ We explain these observations by examining the perturbation kinetic-energy budge
         \vspace{0pt}
         \figfile{figures/contribution_Pb_Pe1}
     \end{minipage}
-    \caption{Buoyancy production \(\Pi_b(z)\) at \(k=0.1\) in the IDL formulation, showing how its spatial structure changes with diffusive strength and density ratio. (a) \(\Pe_{\delta} = 40\). (b) \(\Pe_{\delta} = 5\). (c) \(\Pe_{\delta} = 1\).}
+    \caption{Buoyancy production \(\Pi_b(z)\) at \(k=0.1\) in the IDL formulation, showing how its spatial structure changes with diffusive strength and density ratio.}
     \label{fig:contribution_buoyant}
 \end{figure}
 Since the perturbation fields are expressed as normal-mode eigenfunctions, we define the perturbation kinetic energy per unit volume as
@@ -892,7 +883,7 @@ The wavenumber chosen for the comparison reported in figure~\ref{fig:IVP_growthr
         \vspace{0pt}
         \figfile{figures/IVP1_growthrate_vsdelta_Sc40.tex}
     \end{minipage}
-    \caption{Comparison between the growth rates predicted by the quasi-steady-state approximation and those obtained from the initial-value problem initialized with the quasi-steady-state approximation eigenvector at the most unstable wavenumber \(k^{\max}\). (\circlegend) denotes the quasi-steady-state approximation prediction and (\solidlegend) the growth rate \(\tilde{\omega}_r\) extracted from the initial-value problem. (a) \(\Sch = 1\). (b) \(\Sch = 5\). (c) \(\Sch = 40\).}
+    \caption{Comparison between the quasi-steady-state approximation growth rates and the growth rate \(\tilde{\omega}_r\) extracted from the initial-value problem at \(k^{\max}\). (\circlegend) denotes the quasi-steady-state approximation and (\solidlegend) the initial-value problem. Columns correspond to \(\Sch = 1\), \(5\), and \(40\), respectively.}
     \label{fig:IVP_growthrate}
 \end{figure}
 Discrepancies between the initial-value problem and quasi-steady-state approximation predictions at early times are to be expected, particularly in regimes where the base state evolves rapidly during the initial transient. Figure~\ref{fig:IVP_growthrate} shows, however, that the two approaches are in close agreement over most of the parameter space considered. The main exception arises for \(\Sch = 1\) at the largest Atwood number reported in figure~\ref{fig:IVP_growthrate}(a), precisely in the regime where the frozen-base approximation is expected to be least accurate based on the scaling analysis in~\eqref{eq:estimation_qssa_failure}. In this case, the initial-value problem predicts an initial decay before positive growth is recovered. As the diffusive layer broadens, however, the initial-value problem growth rate rapidly approaches the quasi-steady-state approximation prediction evaluated along the evolving base state. This observation indicates that a configuration predicted to be unstable by the frozen-base problem may nevertheless be transiently stable during the early stage of the evolution when the base state changes rapidly. The comparison also shows that the breakdown of the quasi-steady-state approximation is not controlled by diffusion alone. Although a small Schmidt number promotes rapid changes of the base state, the discrepancy between the initial-value problem and the quasi-steady-state approximation becomes significant only when strong diffusion is accompanied by sufficiently large density stratification. This indicates that a large Atwood number plays an independent role in reducing the separation between the time scale of perturbation growth and that of base-state evolution. Thus, even when diffusion is only moderate, sufficiently strong stratification may still induce rapid variations of the base state and thereby compromise the validity of the quasi-steady-state approximation.
@@ -910,25 +901,52 @@ The linearized IVD system is reduced to a coupled vertical-velocity--density for
 The analysis of the inviscid diffusive limit, introduced to isolate the relevant mechanism, reveals that the effect of mass diffusion on the instability is more nuanced than simple stabilization. At low to moderate density ratios, diffusion acts as a purely stabilizing mechanism. At large density ratios, however, a nontrivial coupling between diffusion and density stratification emerges. The buoyancy production develops a bimodal spatial distribution with a pronounced peak on the lighter side of the stratification, while the pressure production becomes comparable to the buoyancy production and acts as an energy source on the heavier side. Within the frozen-base framework, this coupling manifests itself as a weakening of diffusive stabilization rather than as a purely stabilizing correction. From the comparison with the initial-value problem, the strongly diffusive, strongly stratified regime should be interpreted as a regime in which diffusion--non-Boussinesq coupling becomes important, but also as one in which the quasi-steady-state approximation must be used with particular caution.
 
 Capturing the effect of diffusion during the linear stages may improve the modeling of RTI. \citet{kola-israel-towne-2026} showed that, when the instability is analyzed within a statistical linear framework, the mean can exhibit a transient decay before the onset of unstable growth. The duration of this delay depends on the imposed initial spectrum and varies non-monotonically with the spectral content of the interface perturbation, suggesting that the diffusive contribution plays an important role in characterizing the subsequent evolution of the instability. Since the initial perturbation spectrum in Rayleigh--Taylor instability is naturally broadband and retains energy at higher wavenumbers~\citep{mueschke-andrews-schilling-2006}, the ability to characterize both the spectral cutoff and the large-wavenumber growth rates at large Atwood and Schmidt numbers may be relevant to the later stages of the instability, where these modes contribute to the self-similar evolution observed in the nonlinear and turbulent regimes~\citep{dimonte-et-al-2004,dimonte-2004}. Diffusion has also been shown to play an important role in miscible flows beyond the linear regime. In~\citet{roberts-jacobs-2016}, when small-wavelength perturbations are seeded into the flow, the growth parameter of the mixing width differs significantly between the miscible and immiscible cases at \(\Atw = 0.48\), despite being independent of the spectral content of the perturbation. This discrepancy was attributed to miscibility effects acting during the later stages of the instability. In that study, the representative mixture Schmidt number is \(\Sch \approx 1.4\times 10^{4}\), indicating that the miscible experiments of~\citet{roberts-jacobs-2016} correspond to a \(\Sch \to \infty\) regime. The present analysis may therefore provide a basis for designing dedicated experiments to investigate miscibility effects in regimes where the Schmidt number is of order unity, potentially offering additional insight into the growth parameter during the later stages of the instability evolution. Overall, deriving the effect of diffusion from first principles, together with its coupling to viscosity and density stratification, may improve predictive models of Rayleigh--Taylor instability in regimes where mass diffusion plays a significant role, such as plasma applications~\citep{vold-yin-albright-2021,keenan-sauppe-2023}.
+\section*{Acknowledgments}
+The authors gratefully acknowledge Los Alamos National Laboratory and the University of Michigan SPARC program for their support of this work.
+
 \begin{appen}
 
 \section{Incompressible variable-density reduced formulation}
 \label{sec:appendix_reducedIVD}
-In this appendix, we derive the reduced vertical-velocity--density formulation used in the linear stability analysis.
-
-The linearized momentum equation obtained from \eqref{eq:compact_1st_equations} is
-\begin{equation}\label{eq:momentum_split}
-  \rho \frac{\partial u_{0i}}{\partial t}
-  + \rho_0 \frac{\partial u_i}{\partial t}
-  + \rho u_{0j} \frac{\partial u_{0i}}{\partial x_j}
-  + \rho_0 u_j \frac{\partial u_{0i}}{\partial x_j}
-  + \rho_0 u_{0j} \frac{\partial u_i}{\partial x_j}
-  =
-  - \frac{\partial p}{\partial x_i}
-  - \rho \tilde{g}_i
-  + \frac{\partial \tau_{ij}^{(1)}}{\partial x_j}.
+In this appendix, we discuss the linearized equations reported in compact form in \eqref{eq:compact_1st_equations} and briefly outline the derivation of the reduced vertical-velocity--density formulation used in the linear stability analysis. The set of linearized equation, using Einstein summation notation is given by
+\begin{subequations}\label{eq:linearized_set}
+\begin{align}
+    \frac{\partial \rho}{\partial t}
+    + \frac{\partial (\rho_0 u_j)}{\partial x_j}
+    + \frac{\partial (\rho u_{0j})}{\partial x_j}
+    &=
+    0,
+    \label{eq:linearized_set_continuity}
+    \\
+    \rho \frac{\partial u_{0i}}{\partial t}
+    + \rho_0 \frac{\partial u_i}{\partial t}
+    + \rho u_{0j} \frac{\partial u_{0i}}{\partial x_j}
+    + \rho_0 u_j \frac{\partial u_{0i}}{\partial x_j}
+    + \rho_0 u_{0j} \frac{\partial u_i}{\partial x_j}
+    &=
+    -\frac{\partial p}{\partial x_i}
+    - \rho \delta_{i3}
+    + \frac{\partial \tau_{ij}}{\partial x_j},
+    \label{eq:linearized_set_momentum}
+\end{align}
+\end{subequations}
+where the linearized viscous stress \(\tau_{ij}\) is given by
+\begin{subequations}\label{eq:linearized_set_tau}
+\begin{align}
+    \tau_{ij} &= \mu \tilde\tau_{ij}^{(0)} + \mu_0 \tilde\tau_{ij}^{(1)},
+    \\
+    \tilde\tau_{ij}^{(0)} &= 2S_{ij}^{(0)} - \frac{2}{3}\nabla \cdot \mathbf{u}_0\,\delta_{ij},
+    \\
+    \tilde\tau_{ij}^{(1)} &= 2S_{ij} - \frac{2}{3}\nabla \cdot \mathbf{u}\,\delta_{ij}.
+\end{align}
+\end{subequations}
+with the linearized divergence constraint given by
+\begin{equation}\label{eq:linearized_set_divergence}
+    \nabla \cdot \mathbf{u}
+    =
+    -Sc^{-1}\nabla^2\left(\frac{\rho}{\rho_0}\right).
 \end{equation}
-For the base state discussed in \S~\ref{subsec:zeroth_order_self_similar}, \eqref{eq:momentum_split} can be written as
+For the base state discussed in \S\ref{subsec:zeroth_order_self_similar}, \eqref{eq:linearized_set_momentum} can be written as
 \begin{equation}\label{eq:linear_momentum_vertical_base}
   \rho \frac{\partial w_0}{\partial t}\delta_{i3}
   + \rho_0 \frac{\partial u_i}{\partial t}
@@ -938,7 +956,7 @@ For the base state discussed in \S~\ref{subsec:zeroth_order_self_similar}, \eqre
   =
   - \frac{\partial p}{\partial x_i}
   - \rho \delta_{i3}
-  + \frac{\partial \tau_{ij}^{(1)}}{\partial x_j}.
+  + \frac{\partial \tau_{ij}}{\partial x_j}.
 \end{equation}
 The vertical momentum equation follows by setting \(i=3\) in \eqref{eq:linear_momentum_vertical_base}. This gives
 \begin{equation}\label{eq:vertical_momentum_step_5_1}
@@ -963,7 +981,6 @@ The vertical momentum equation follows by setting \(i=3\) in \eqref{eq:linear_mo
   +
   \frac{\partial \tau_{3j}^{(1)}}{\partial x_j}.
 \end{equation}
-
 We first define
 \begin{subequations}\label{eq:vertical_momentum_coefficients}
 \begin{gather}
@@ -1025,7 +1042,6 @@ Taking the Laplacian of \eqref{eq:vertical_momentum_step_5_1} and using \eqref{e
   \right).
 \end{split}
 \end{equation}
-
 We next define the operators
 \begin{subequations}\label{eq:poisson_operators}
 \begin{gather}
@@ -1092,7 +1108,7 @@ Taking the divergence of \eqref{eq:linear_momentum_vertical_base} and using \eqr
   -
   \frac{\partial \rho}{\partial z}
   +
-  \frac{\partial^2 \tau_{ij}^{(1)}}{\partial x_i \partial x_j}.
+  \frac{\partial^2 \tau_{ij}}{\partial x_i \partial x_j}.
 \end{split}
 \end{equation}
 Taking the vertical derivative of \eqref{eq:pressure_poisson_equation} gives
@@ -1146,11 +1162,10 @@ Taking the vertical derivative of \eqref{eq:pressure_poisson_equation} gives
   +
   \frac{\partial}{\partial z}
   \left(
-    \frac{\partial^2 \tau_{ij}^{(1)}}{\partial x_i \partial x_j}
+    \frac{\partial^2 \tau_{ij}}{\partial x_i \partial x_j}
   \right).
 \end{split}
 \end{equation}
-
 Subtracting \eqref{eq:z_derivative_pressure_poisson_equation} from \eqref{eq:laplacian_vertical_momentum} eliminates the pressure contribution. We define
 \begin{subequations}\label{eq:w0_xy_operators}
 \begin{gather}
@@ -1222,7 +1237,7 @@ Then the reduced equation obtained from \eqref{eq:laplacian_vertical_momentum} m
   +
   \frac{\partial}{\partial z}
   \left(
-    \frac{\partial^2 \tau_{ij}^{(1)}}{\partial x_i \partial x_j}
+    \frac{\partial^2 \tau_{ij}}{\partial x_i \partial x_j}
   \right)
   -
   \nabla^2
@@ -1236,7 +1251,7 @@ The remaining stress contribution in \eqref{eq:reduced_vertical_momentum_poisson
 \begin{split}
   \frac{\partial}{\partial z}
   \left(
-    \frac{\partial^2 \tau_{ij}^{(1)}}{\partial x_i \partial x_j}
+    \frac{\partial^2 \tau_{ij}}{\partial x_i \partial x_j}
   \right)
   -
   \nabla^2
@@ -1378,358 +1393,6 @@ The derivation may be summarized as follows:
   \item Finally, we use \eqref{eq:stress_pressure_vertical_momentum_difference}, \eqref{eq:w0_operators}, \eqref{eq:divergence_time_derivative_identity}, and \eqref{eq:mu_density_linear_relation} to rewrite \eqref{eq:reduced_vertical_momentum_poisson} in the final operator form \eqref{eq:A_B_operators}.
 \end{itemize}
 
-
-
-
-
-
-\section{Linearized IVD system in the limit \(\Sch \to \infty\)}%
-\label{sec:appendix_Sc_infinity_chandra_limit}
-
-In this appendix, we show that, in the limit \(\Sch \to \infty\), the incompressible variable-density formulation reduces to the classical non-diffusive Rayleigh--Taylor problem considered by~\citet{chandrasekhar-1961} and later employed by~\citet{morgan-likhachev-jacobs-2016}. In this way, the present framework recovers the correct non-diffusive limit and the numerical agreement observed in that regime is explained formally.
-
-Taking~\eqref{eq:A_B_operators} in the limit \(\Sch \to \infty\), the velocity field becomes divergence-free and the base-state velocity \(w_0\), given by~\eqref{eq:self_similar_base_state_velocity}, vanishes identically. The governing equations reduce to
-\begin{subequations}
-\begin{align}
-    \label{eq:appendix_chandraIVD_momentum}
-    -\left(
-        \rho_0' \partial_z
-        +
-        \rho_0 \nabla^2
-     \right)
-     \frac{\partial w}{\partial t}
-    &=
-    -\mu \nabla^4 w
-    -2\mu' \partial_z \nabla^2 w
-    +\mu'' \partial_z^2 w
-    -2\mu'' \partial_z^2 w
-    +\nabla_{xy}\rho,
-    \\
-    \label{eq:appendix_chandraIVD_density}
-    \frac{\partial \rho}{\partial t}
-    &=
-    -\rho_0' w.
-\end{align}
-\end{subequations}
-Since the in-plane directions \(x\) and \(y\) are homogeneous, we apply a Fourier transform in those directions. Let \(k_x\) and \(k_y\) denote the in-plane wavenumbers, and define \(k^2 = k_x^2 + k_y^2\). Using the identity
-\begin{align}
-    &-\mu \nabla^4 \hat{w}
-    -2\mu' \partial_z \nabla^2 \hat{w}
-    +\mu'' \partial_z^2 \hat{w}
-    -2\mu'' \partial_z^2 \hat{w}
-    =
-    \notag\\
-    &\qquad
-    -\partial_z
-    \left[
-        \mu'
-        \left(
-            \partial_z^2 + k^2
-        \right)
-        +
-        \mu
-        \left(
-            \partial_z^2 - k^2
-        \right)\partial_z
-    \right]\hat{w}
-    +
-    k^2
-    \left[
-        2\mu' \partial_z
-        +
-        \mu
-        \left(
-            \partial_z^2 - k^2
-        \right)
-    \right]\hat{w},
-\end{align}
-equation~\eqref{eq:appendix_chandraIVD_momentum} can be written as
-\begin{align}
-\label{eq:appendix_chandraIVD_momentum_fourier}
-&\partial_z
-\Bigg\{
-    \rho_0
-    \partial_z
-    \frac{\partial \hat{w}}{\partial t}
-    -
-    \mu'
-    \left(
-        \partial_z^2 - k^2
-    \right)\hat{w}
-    -
-    \mu
-    \left(
-        \partial_z^2 - k^2
-    \right)
-    \partial_z \hat{w}
-\Bigg\}
-=
-\notag\\
-&\qquad
-k^2
-\Bigg\{
-    \rho_0
-    \frac{\partial \hat{w}}{\partial t}
-    -
-    \mu
-    \left(
-        \partial_z^2 - k^2
-    \right)\hat{w}
-    +
-    \hat{\rho}
-    -
-    2\mu' \partial_z \hat{w}
-\Bigg\}.
-\end{align}
-Applying a Fourier transform in time, or equivalently adopting the normal-mode ansatz \(e^{nt}\) following~\citet{chandrasekhar-1961}, where \(n\) is the growth rate, reduces~\eqref{eq:appendix_chandraIVD_density} to
-\begin{equation}
-    \label{eq:appendix_density_fouriertime}
-    \hat{\rho}
-    =
-    -\frac{\rho_0'}{n}\hat{w}.
-\end{equation}
-Substituting~\eqref{eq:appendix_density_fouriertime} into~\eqref{eq:appendix_chandraIVD_momentum_fourier} gives
-\begin{align}
-    \label{eq:appendix_chandraIVD_final}
-    &\partial_z
-    \Bigg\{
-        \rho_0
-        \partial_z \hat{w}
-        -
-        \frac{\mu'}{n}
-        \left(
-            \partial_z^2 - k^2
-        \right)\hat{w}
-        -
-        \frac{\mu}{n}
-        \left(
-            \partial_z^2 - k^2
-        \right)
-        \partial_z \hat{w}
-    \Bigg\}
-    =
-    \notag\\
-    &\qquad
-    -k^2
-    \Bigg\{
-        \rho_0 \hat{w}
-        -
-        \frac{\mu}{n}
-        \left(
-            \partial_z^2 - k^2
-        \right)\hat{w}
-        -
-        \frac{\rho_0'}{n}\hat{w}
-        -
-        2\frac{\mu'}{n}
-        \partial_z \hat{w}
-    \Bigg\}.
-\end{align}
-Equation~\eqref{eq:appendix_chandraIVD_final} is precisely equation~(22) of~\citet{chandrasekhar-1961}, and is also the equation employed by~\citet{morgan-likhachev-jacobs-2016}. The incompressible variable-density formulation therefore recovers the classical non-diffusive limit exactly. More generally, this supports interpreting the present framework as a natural extension of the Rayleigh--Taylor problem to gaseous interfaces with diffusive effects retained consistently.
-
-A note is required regarding this limit. As \(\Sch\to\infty\) the interface thickness vanishes, \(\delta\to0\), so the initial density profile reduces to a sharp interface. This is consistent with the formulation of \citet{chandrasekhar-1961}, derived for two fluids of different density and viscosity, for which the appropriate interfacial boundary conditions can be recovered from the equations proposed here; we do not report them, and refer the interested reader to \citet{chandrasekhar-1961}. This limit also clarifies the meaning of the model of \citet{morgan-likhachev-jacobs-2016}, in which the present equations are applied to an interface of finite thickness, since the relation \(\delta(t)=\sqrt{4t/\Sch}\) shows that a finite thickness \(\delta_0\) at large \(\Sch\) is attained only at a correspondingly large time; linearizing about \(\delta_0\) for very large Schmidt number therefore corresponds to linearizing after a long evolution of the diffusive layer. This explanation is only partial, and a complete treatment would rest on expansion and scale-separation arguments. In this limit the divergence constraint is small compared to the remaining terms, which would suggest a scaled expansion in which the mixing is recovered as a first-order correction, and the diffusive nature of the problem, which leaves the base state itself diffusing as the perturbation evolves, would lead to a separation between the scale of the diffusive layer and the outer scale. We leave these arguments for future investigation.
-
-
-\section{Small-Atwood-number limit}
-
-We show that the variable-density formulation reduces to the Boussinesq system in the limit \(\Atw \to 0\). The base density is written as
-\begin{equation}
-    \rho_0
-    =
-    \frac{1-\Atw^2}{1+\Atw \chi_0},
-    \qquad
-    \chi_0 = 2c_0-1.
-\end{equation}
-For small \(\Atw\),
-\begin{equation}
-    \rho_0
-    =
-    1-\Atw\chi_0
-    +
-    O(\Atw^2),
-    \qquad
-    \rho_0'
-    =
-    -\Atw\chi_0'
-    +
-    O(\Atw^2).
-    \label{eq:rho0_small_Atw}
-\end{equation}
-The associated base vertical velocity satisfies
-\begin{equation}
-    w_0
-    =
-    \frac{\Atw}{\mathrm{Sc}}\chi_0'
-    +
-    O(\Atw^2),
-    \qquad
-    w_0'
-    =
-    \frac{\Atw}{\mathrm{Sc}}\chi_0''
-    +
-    O(\Atw^2).
-\end{equation}
-The perturbation density is related to the composition perturbation by
-\begin{equation}
-    \hat{\rho}
-    =
-    \frac{\rho_0^2\Atw}{\Atw^2-1}\hat{\chi}.
-\end{equation}
-Using \eqref{eq:rho0_small_Atw}, this gives
-\begin{equation}
-    \hat{\rho}
-    =
-    -\Atw\hat{\chi}
-    +
-    O(\Atw^2).
-    \label{eq:rhohat_small_Atw}
-\end{equation}
-The linearized density equation is
-\begin{equation}
-    \partial_t\hat{\rho}
-    =
-    A_{\rho w}\hat{w}
-    +
-    A_{\rho\rho}\hat{\rho}.
-\end{equation}
-The required small-\(\Atw\) operator limits are
-\begin{equation}
-    A_{\rho w}
-    =
-    \Atw\chi_0'
-    +
-    O(\Atw^2),
-    \label{eq:Arhow_small_Atw}
-\end{equation}
-and
-\begin{equation}
-    A_{\rho\rho}
-    =
-    -\mathcal{L}_{\rho} 
-    +
-    O(\Atw)
-    =
-    -\frac{1}{\mathrm{Sc}}\nabla^2
-    +
-    O(\Atw).
-    \label{eq:Arhorho_small_Atw}
-\end{equation}
-Substituting \eqref{eq:rhohat_small_Atw},
-\eqref{eq:Arhow_small_Atw}, and \eqref{eq:Arhorho_small_Atw} yields
-\begin{equation}
-    \partial_t\hat{\chi}
-    =
-    -\chi_0'\hat{w}
-    +
-    \frac{1}{\mathrm{Sc}}\nabla^2\hat{\chi}
-    +
-    O(\Atw).
-\end{equation}
-It follows immediately that
-\begin{equation}
-    \chi_0
-    =
-    -
-    \operatorname{erf}
-    \left(
-    \frac{z}{\delta}
-    \right).
-\end{equation}
-
-We now consider the vertical momentum equation. We restrict attention to the case \(A_{\mu}=0\), where the two fluids have the same viscosity. The relevant operator limits are
-\begin{subequations}
-\begin{align}
-    B_{ww}\hat{w}
-    &=
-    -\nabla^2\hat{w}
-    +
-    O(\Atw),
-    \\
-    B_{w\rho}\hat{\rho}
-    &=
-    O(\Atw),
-    \\
-    A_{ww}\hat{w}
-    &=
-    -\nabla^4\hat{w}
-    +
-    O(\Atw),
-    \\
-    A_{w_0w}\hat{w}
-    &=
-    O(\Atw),
-    \\
-    A_{w_0\rho}\hat{\rho}
-    &=
-    O(\Atw).
-\end{align}
-\end{subequations}
-The buoyancy term requires careful treatment since, assuming in this case that the Froude number has not been set to unity, we have
-\begin{equation}
-    \frac{1}{\Frd}\nabla_{xy}^2\hat{\rho}
-    =
-    \frac{\Atw}{Fr_g^2}
-    \nabla_{xy}^2\hat{\chi}.
-\end{equation}
-Therefore, if \(Fr_g\) is kept fixed, the buoyancy forcing vanishes as
-\(\Atw\to0\). To obtain a finite Boussinesq limit,
-\begin{equation}
-    \Frd^2
-    =
-    \Atw \mathrm{Fr}_{\Atw}^2.
-\end{equation}
-Choosing to set \(Fr_{\Atw}^2=1\), then
-\begin{equation}
-    \frac{1}{\Frd^2}\nabla_{xy}^2\hat{\rho}
-    =
-    \nabla_{xy}^2\hat{\chi}.
-\end{equation}
-Collecting the leading-order terms, the vertical momentum equation becomes, in the limit \(\Atw\to0\),
-\begin{equation}
-    \nabla^2\partial_t\hat{w}
-    =
-    \nabla^4\hat{w}
-    +
-    \nabla_{xy}^2\hat{\chi}.
-\end{equation}
-Therefore, in the small-Atwood-number limit, the variable-density formulation reduces to the Boussinesq system
-\begin{subequations}
-\begin{align}
-    \nabla^2\partial_t\hat{w}
-    &=
-    \nabla^4\hat{w}
-    +
-    \nabla_{xy}^2\hat{\chi},
-    \\
-    \partial_t\hat{\chi}
-    &=
-    -\chi_0'\hat{w}
-    +
-    \frac{1}{\mathrm{Sc}}\nabla^2\hat{\chi}.
-\end{align}
-\end{subequations}
-Since
-\begin{equation}
-    \chi_0 = 2c_0 -1,
-    \qquad
-    \hat{\chi} = 2 \hat{c},
-\end{equation}
-we conclude that
-\begin{align}
-    \nabla^2\partial_t\hat{w}
-    &=
-    \nabla^4\hat{w}
-    +
-    2\,\nabla_{xy}^2\hat{c},
-    \\
-    \partial_t\hat{c}
-    &=
-    -c_0'\hat{w}
-    +
-    \frac{1}{\mathrm{Sc}}\nabla^2\hat{c}.
-\end{align}
-
-
 \section{Viscosity Mixing Law}%
 \label{sec:appendix_viscosity_law}
 In this appendix, we examine the sensitivity of the growth rates to the mixing law used to describe viscosity. For clarity, the discussion is presented in dimensional form. Here, \(\mu_1\) and \(\mu_2\) denote the dynamic viscosities of the two pure fluids, \(\rho_1\) and \(\rho_2\) their densities, and \(\mu\) and \(\rho\) the corresponding viscosity and density of the mixture. Let \(W_{\alpha}\), \(X_{\alpha}\), and \(Y_{\alpha}\) denote the molar mass, molar fraction, and mass fraction of species \(\alpha\), respectively. For a binary mixture, the molar fraction is defined by
@@ -1741,7 +1404,7 @@ In this appendix, we examine the sensitivity of the growth rates to the mixing l
     \right)^{-1},
     \qquad \alpha = 1,2.
 \end{equation}
-In the incompressible limit of the Navier--Stokes equations for a binary mixture,~\citet{livescu-2020} showed that
+and for the case we are considering
 \begin{equation}
     \label{eq:amagat_law}
     \frac{1}{\rho} = \frac{Y_1}{\rho_1} + \frac{Y_2}{\rho_2}.
@@ -1778,40 +1441,27 @@ This recovers the molar-fraction profile employed by~\citet{morgan-likhachev-jac
         \centering
         \figfile{figures/verification_figures/V06_visc_law_Amu-0.05.tex}
     \end{minipage}
-    \caption{Sensitivity of the growth-rate spectrum to the viscosity mixing law for \(\Atw = 0.5\), \(\delta = 5\), and \(\Sch \to \infty\) for negative viscosity ratios, \(\Amu < 0\). The \(\Amu = 0\) reference is denoted by the dashed blue line \((\dashlegend)\).}
+    \caption{Sensitivity of the dispersion relation to the viscosity mixing law for \(\Atw = 0.5\), \(\delta = 5\), and \(\Sch \to \infty\) for negative viscosity ratios, \(\Amu < 0\). The \(\Amu = 0\) reference is denoted by the dashed blue line \((\dashlegend)\).}
     \label{fig:visc_law_comparison_neg}
 \end{figure}
-Three composition-dependent mixing laws for the dynamic viscosity are considered. The first is the linear law in molar fraction,
+Two composition-dependent mixing laws for the dynamic viscosity are considered. The first is the linear law in molar fraction,
 \begin{equation}
     \label{eq:mu_g}
     \mu_g = \mu_1 X_1 + \mu_2 X_2,
 \end{equation}
-as used by~\citet{morgan-likhachev-jacobs-2016} and equivalent to~\eqref{eq:graham_mixing_law} employed in the present work. The corresponding relation for the kinematic viscosity follows from combining~\eqref{eq:Y_from_X} with~\eqref{eq:mu_g} to obtain
+as used by~\citet{morgan-likhachev-jacobs-2016} and equivalent to~\eqref{eq:graham_mixing_law} employed in the present work. Combining~\eqref{eq:Y_from_X} with~\eqref{eq:mu_g} gives the corresponding kinematic viscosity,
 \begin{equation}
     \label{eq:nu_g}
     \nu_g = \nu_1 Y_1 + \nu_2 Y_2.
 \end{equation}
-The second, following~\citet{baltzer-livescu-2020}, is the harmonic law
-\begin{equation}
-    \label{eq:mu_h}
-    \frac{1}{\mu_h} = \frac{Y_1}{\mu_1} + \frac{Y_2}{\mu_2}.
-\end{equation}
-Converting this closure to kinematic viscosity, as in the derivation of~\eqref{eq:nu_g}, gives
+The second, following~\citet{baltzer-livescu-2020}, is the harmonic law; proceeding similarly,
 \begin{equation}
     \label{eq:nu_h}
+    \frac{1}{\mu_h} = \frac{Y_1}{\mu_1} + \frac{Y_2}{\mu_2}
+    \quad\implies\quad
     \frac{1}{\nu_h} = \frac{X_1}{\nu_1} + \frac{X_2}{\nu_2}.
 \end{equation}
-The third mixing law for the viscosity is the linear law in mass fraction,
-\begin{equation}
-    \label{eq:mu_p}
-    \mu_p = \mu_1 Y_1 + \mu_2 Y_2,
-\end{equation}
-as employed by~\citet{prathama-pantano-2021}. The corresponding relation for the kinematic viscosity is
-\begin{equation}
-    \label{eq:nu_p}
-    \nu_p = \frac{\mu_1 \rho_1 X_1 + \mu_2 \rho_2 X_2}{\rho^2}.
-\end{equation}
-To assess the sensitivity to the choice of mixing law, the limit \(\Sch \to \infty\) is considered so that the effect of viscosity stratification can be isolated in the absence of mass diffusion.
+To isolate the effect of viscosity stratification in the absence of mass diffusion, the limit \(\Sch \to \infty\) is considered.
 \begin{figure}
     \centering
     \begin{minipage}[t]{0.32\textwidth}
@@ -1826,29 +1476,178 @@ To assess the sensitivity to the choice of mixing law, the limit \(\Sch \to \inf
         \centering
         \figfile{figures/verification_figures/V06_visc_law_Amu+0.90.tex}
     \end{minipage}
-    \caption{Sensitivity of the growth-rate spectrum to the viscosity mixing law for \(\Atw = 0.5\), \(\delta = 5\), and \(\Sch \to \infty\) for positive viscosity ratios, \(\Amu > 0\). The \(\Amu = 0\) reference is denoted by the dashed blue line \((\dashlegend)\).}
+    \caption{Sensitivity of the dispersion relation to the viscosity mixing law for \(\Atw = 0.5\), \(\delta = 5\), and \(\Sch \to \infty\) for positive viscosity ratios, \(\Amu > 0\). The \(\Amu = 0\) reference is denoted by the dashed blue line \((\dashlegend)\).}
     \label{fig:visc_law_comparison_pos}
 \end{figure}
-Figures~\ref{fig:visc_law_comparison_neg} and~\ref{fig:visc_law_comparison_pos} show that the sensitivity to the closure depends on \(\Amu\). For \(\Amu < 0\), the harmonic law is consistently the most destabilizing and produces the largest departure from the linear law, especially away from the spectral peak and in the large-wavenumber tail. For \(\Amu > 0\), the three models are nearly indistinguishable up to \(\Amu = 0.50\), whereas at \(\Amu = 0.90\) the harmonic law again yields the largest growth rates.
+Figures~\ref{fig:visc_law_comparison_neg} and~\ref{fig:visc_law_comparison_pos} show that the sensitivity of the dispersion relation to the closure depends on \(\Amu\). For \(\Amu < 0\), the harmonic law is consistently the most destabilizing and produces the largest departure from the reference case. For \(\Amu > 0\), the two models are nearly indistinguishable up to \(\Amu = 0.50\), whereas at \(\Amu = 0.90\) the harmonic law again yields the largest growth rates. The choice of mixing law is therefore not innocuous; at large viscosity ratios it can materially affect the predicted growth rates.
 
-The choice of the linear mixing law used by~\citet{morgan-likhachev-jacobs-2016} rests on the following argument. The harmonic law is often employed because, as noted by~\citet{livescu-2020}, several direct numerical simulations of IVD flows impose
-\begin{equation}
-    \label{eq:Sc_definition}
-    \frac{\mu}{\rho \mathcal{D}} = \Sch = \mathrm{const.},
-\end{equation}
-thereby enforcing a constant local Schmidt number. Under this constraint, \(\mu\) is proportional to \(\rho\), which leads to a harmonic closure. However, when \(\nu_1=\nu_2\),~\eqref{eq:nu_g} and~\eqref{eq:nu_h} show that the harmonic law and the linear law coincide, and both yield a constant kinematic viscosity throughout the domain,
+The two closures can be related in the reference case \(\nu_1 = \nu_2\). When the kinematic viscosities of the pure fluids coincide,~\eqref{eq:nu_g} and~\eqref{eq:nu_h} show that the harmonic and linear laws are identical, and both yield a constant kinematic viscosity throughout the domain,
 \begin{equation}
     \label{eq:nu_const}
     \nu_g = \nu_h = \nu_1 = \nu_2.
 \end{equation}
-In this sense, the harmonic mixing law is a sufficient, but not necessary, condition for enforcing constant local kinematic viscosity, since the same property is also recovered by the linear law. This observation suggests that, once the constraint of constant kinematic viscosity is relaxed, the harmonic mixing law should be regarded as one admissible modeling choice. The \(\mu_p\) law is similarly discarded, since in the reference case \(\nu_1=\nu_2\) it does not impose a constant kinematic viscosity throughout the domain. Moreover, it is easy to show that \(\mu_p = \mu_h + O(\Amu^2)\), so that the sensitivity associated with these two mixing laws is similar for small to moderate viscosity ratios.
+The harmonic law is often motivated by the observation of~\citet{livescu-2020} that several direct numerical simulations of IVD flows impose
+\begin{equation}
+    \label{eq:Sc_definition}
+    \frac{\mu}{\rho \mathcal{D}} = \Sch = \mathrm{constant},
+\end{equation}
+thereby enforcing a constant local Schmidt number; under this constraint \(\mu\) is proportional to \(\rho\), which leads to the harmonic closure. Equation~\eqref{eq:nu_const} shows, however, that the linear law recovers the same constant kinematic viscosity in the reference case; the harmonic closure is thus a sufficient, but not necessary, route to constant local kinematic viscosity.
 
-At large viscosity ratios, however, the two closures differ substantially, as the harmonic law consistently predicts larger growth rates than the \(\Amu=0\) case. A possible explanation for this strong sensitivity is that the base-state viscosity obtained from~\eqref{eq:mu_h} is not symmetric with respect to the mid-plane \(z=0\), whereas the base-state viscosity obtained from the linear law~\eqref{eq:mu_g} inherits the symmetry of the error-function density profile. This asymmetry of the harmonic base-state viscosity may underlie the anomalously large growth rates observed when the harmonic law is employed at large viscosity ratios. A complete characterization of this mechanism is, however, beyond the scope of the present work. As noted by~\citet{govindarajan-sahu-2014} in the context of viscosity-stratified shear flows, the effect of viscosity stratification on hydrodynamic stability is not yet fully understood. Further investigation is therefore required to clarify its role in the Rayleigh--Taylor instability.
+At large viscosity ratios the harmonic closure differs substantially from the reference case. We argue that this behavior originates in the base-state viscosity, since the profile obtained from~\eqref{eq:nu_h} is not symmetric about the mid-plane \(z = 0\). This loss of symmetry may underlie the anomalously large growth rates produced by the harmonic law at large viscosity ratios. Aware of this sensitivity, in the present work we adopt the linear law~\eqref{eq:nu_g} since it coincides with the harmonic law in the reference case~\eqref{eq:nu_const} and is consistent with the observation that the growth rates are expected to be weakly dependent on the viscosity.
+An in depth analysis of how different closures shapes the growth-rate spectrum is beyond the scope of the presente work and left for future investigations; see \citet{govindarajan-sahu-2014} for a related discussion.
+
+
+
+\section{Linearized incompressible variable-density system in the limit of large Schmidt number}
+\label{sec:appendix_Sc_infinity_chandra_limit}
+In this appendix, we show that, in the limit \(\Sch \to \infty\), the incompressible variable-density formulation reduces to the classical non-diffusive Rayleigh--Taylor problem considered by~\citet{chandrasekhar-1961} and later employed by~\citet{morgan-likhachev-jacobs-2016}.
+
+Taking~\eqref{eq:A_B_operators} in the limit \(\Sch \to \infty\), the velocity field becomes divergence-free and the base-state velocity \(w_0\), given by~\eqref{eq:self_similar_base_state_velocity}, vanishes identically. The governing equations reduce to
+\begin{subequations}
+\begin{align}
+    \label{eq:appendix_chandraIVD_momentum}
+    -\left(
+        \rho_0' \partial_z
+        +
+        \rho_0 \nabla^2
+     \right)
+     \frac{\partial w}{\partial t}
+    &=
+    -\mu_0 \nabla^4 w
+    -2\mu_0' \partial_z \nabla^2 w
+    +\mu_0'' \partial_z^2 w
+    -2\mu_0'' \partial_z^2 w % FLAG: this pair collapses to -\mu_0'' \partial_z^2 w; combine, or add a note if the two terms are kept deliberately
+    +\nabla_{xy}\rho,
+    \\
+    \label{eq:appendix_chandraIVD_density}
+    \frac{\partial \rho}{\partial t}
+    &=
+    -\rho_0' w.
+\end{align}
+\end{subequations}
+Since the in-plane directions \(x\) and \(y\) are homogeneous, we apply a Fourier transform in those directions. Let \(k_x\) and \(k_y\) denote the in-plane wavenumbers, and define \(k^2 = k_x^2 + k_y^2\). Using the identity
+\begin{align}
+    &-\mu_0 \nabla^4 \hat{w}
+    -2\mu_0' \partial_z \nabla^2 \hat{w}
+    +\mu_0'' \partial_z^2 \hat{w}
+    -2\mu_0'' \partial_z^2 \hat{w} % FLAG: same pair as above
+    =
+    \notag\\
+    &\qquad
+    -\partial_z
+    \left[
+        \mu_0'
+        \left(
+            \partial_z^2 + k^2
+        \right)
+        +
+        \mu_0
+        \left(
+            \partial_z^2 - k^2
+        \right)\partial_z
+    \right]\hat{w}
+    +
+    k^2
+    \left[
+        2\mu_0' \partial_z
+        +
+        \mu_0
+        \left(
+            \partial_z^2 - k^2
+        \right)
+    \right]\hat{w},
+\end{align}
+equation~\eqref{eq:appendix_chandraIVD_momentum} can be written as
+\begin{align}
+\label{eq:appendix_chandraIVD_momentum_fourier}
+&\partial_z
+\Bigg\{
+    \rho_0
+    \partial_z
+    \frac{\partial \hat{w}}{\partial t}
+    -
+    \mu_0'
+    \left(
+        \partial_z^2 - k^2
+    \right)\hat{w}
+    -
+    \mu_0
+    \left(
+        \partial_z^2 - k^2
+    \right)
+    \partial_z \hat{w}
+\Bigg\}
+=
+\notag\\
+&\qquad
+k^2
+\Bigg\{
+    \rho_0
+    \frac{\partial \hat{w}}{\partial t}
+    -
+    \mu_0
+    \left(
+        \partial_z^2 - k^2
+    \right)\hat{w}
+    +
+    \hat{\rho}
+    -
+    2\mu_0' \partial_z \hat{w}
+\Bigg\}.
+\end{align}
+Applying a Fourier transform in time, or equivalently adopting the normal-mode ansatz \(e^{nt}\) following~\citet{chandrasekhar-1961}, where \(n\) is the growth rate, reduces~\eqref{eq:appendix_chandraIVD_density} to
+\begin{equation}
+    \label{eq:appendix_density_fouriertime}
+    \hat{\rho}
+    =
+    -\frac{\rho_0'}{n}\hat{w}.
+\end{equation}
+Substituting~\eqref{eq:appendix_density_fouriertime} into~\eqref{eq:appendix_chandraIVD_momentum_fourier} gives
+\begin{align}
+    \label{eq:appendix_chandraIVD_final}
+    &\partial_z
+    \Bigg\{
+        \rho_0
+        \partial_z \hat{w}
+        -
+        \frac{\mu_0'}{n}
+        \left(
+            \partial_z^2 - k^2
+        \right)\hat{w}
+        -
+        \frac{\mu_0}{n}
+        \left(
+            \partial_z^2 - k^2
+        \right)
+        \partial_z \hat{w}
+    \Bigg\}
+    =
+    \notag\\
+    &\qquad
+    -k^2
+    \Bigg\{
+        \rho_0 \hat{w}
+        -
+        \frac{\mu_0}{n}
+        \left(
+            \partial_z^2 - k^2
+        \right)\hat{w}
+        -
+        \frac{\rho_0'}{n}\hat{w}
+        -
+        2\frac{\mu_0'}{n}
+        \partial_z \hat{w}
+    \Bigg\}.
+\end{align}
+Equation~\eqref{eq:appendix_chandraIVD_final} is precisely equation~(22) of~\citet{chandrasekhar-1961}, and is also the equation employed by~\citet{morgan-likhachev-jacobs-2016}. We argue that this result justifies interpreting the present set of equations as the direct extension of the Rayleigh--Taylor problem to gaseous interfaces, with diffusive effects, viscosity, and density stratification retained consistently.
+
+A note is required regarding this limit. As \(\Sch\to\infty\) the interface thickness vanishes, \(\delta\to0\), so the initial density profile reduces to a sharp interface. This is consistent with the formulation of \citet{chandrasekhar-1961}, derived for two fluids of different density and viscosity, for which the appropriate interfacial boundary conditions can be recovered from the equations proposed here; we do not report them, and refer the interested reader to \citet{chandrasekhar-1961}. This limit also offers a partial explanation for the work of \citet{morgan-likhachev-jacobs-2016}, in which the present equations are applied to an interface of finite thickness, since the relation \(\delta(t)=\sqrt{4t/\Sch}\) shows that a finite thickness \(\delta_0\) at large \(\Sch\) is attained only at a correspondingly large time; linearizing about \(\delta_0\) for very large Schmidt number therefore corresponds to linearizing after a long evolution of the diffusive layer.
+
 
 \section{Numerical verification}
 \label{sec:appendix_numerical_verification}
 
-In this appendix, we document the numerical verification of the solver. We first examine the sensitivity of the results to the numerical parameters used in the discretization. We then compare the variable-density formulation against the analytical results of~\citet{chandrasekhar-1961}, followed by a comparison with the reference data of~\citet{morgan-likhachev-jacobs-2016}. Finally, the variable-density solver is assessed against the finite-layer semi-analytical results of~\citet{mikaelian-1996}.
+In this appendix, we document the numerical verification of the solver and organize the tests according to the numerical or physical limit being assessed. Section~\ref{subsec:numerical_convergence} first examines sensitivity to the domain half-height and grid resolution, isolating the discretization choices used in the computations. Section~\ref{subsec:chandrasekhar_vd} then verifies the non-diffusive variable-density formulation against the analytical sharp-interface results of~\citet{chandrasekhar-1961}. Section~\ref{subsec:morgan} compares the finite-thickness viscous predictions with the reference data of~\citet{morgan-likhachev-jacobs-2016}. Finally, Section~\ref{subsec:mikaelian} assesses the solver against the finite-layer semi-analytical results of~\citet{mikaelian-1996}, which include discontinuous density and viscosity.
 
 \subsection{Numerical convergence}
 \label{subsec:numerical_convergence}
@@ -1932,7 +1731,7 @@ Figures~\ref{fig:V16_wrLz} and~\ref{fig:V16_wrN} examine the sensitivity of the 
         \centering\vspace{0pt}
         \figfile{figures/verification_figures/V16_wN_k3_c.tex}
     \end{minipage}
-    \caption{Sensitivity of the leading growth rate \(\omega_r\) to the grid resolution \(N\) at fixed \(L_z=128\), showing convergence with respect to discretization across representative parameters. (a) \(k=10^{-2}\), \(\Sch=0.05\). (b) \(k=10^{-2}\), \(\Sch=5\). (c) \(k=10^{-2}\), \(\Sch=40\). (d) \(k=10^{-1}\), \(\Sch=0.05\). (e) \(k=10^{-1}\), \(\Sch=5\). (f) \(k=10^{-1}\), \(\Sch=40\). (g) \(k=10^{0}\), \(\Sch=0.05\). (h) \(k=10^{0}\), \(\Sch=5\). (i) \(k=10^{0}\), \(\Sch=40\).}
+    \caption{Sensitivity of the leading growth rate \(\omega_r\) to the grid resolution \(N\) at fixed \(L_z=128\), showing convergence with respect to discretization across representative parameters. Colors identify \(\Atw\), as indicated in (a), and line styles (\solidlegend, \dashlegend, \dottedlegend) identify \(\Amu \in \{-0.9, 0, 0.9\}\), respectively. (a) \(k=10^{-2}\), \(\Sch=0.05\). (b) \(k=10^{-2}\), \(\Sch=5\). (c) \(k=10^{-2}\), \(\Sch=40\). (d) \(k=10^{-1}\), \(\Sch=0.05\). (e) \(k=10^{-1}\), \(\Sch=5\). (f) \(k=10^{-1}\), \(\Sch=40\). (g) \(k=10^{0}\), \(\Sch=0.05\). (h) \(k=10^{0}\), \(\Sch=5\). (i) \(k=10^{0}\), \(\Sch=40\).}
     \label{fig:V16_wrN}
 \end{figure}
 
@@ -1942,14 +1741,14 @@ Figures~\ref{fig:V16_wrLz} and~\ref{fig:V16_wrN} examine the sensitivity of the 
 We first verify the variable-density solver against the non-diffusive constant-viscosity limit associated with~\citet{chandrasekhar-1961}. Starting from the general variable-density equations, this limit is obtained by setting \(\Sch^{-1}=0\) and neglecting viscosity stratification. In the present notation, the resulting linear operators are
 \begin{equation}
   \begin{aligned}
-    \mathscr{B}_{ww} &= -\left(\difft{\rho_0}{z}\,\diff{}{z} + \rho_0\,\nabla^2\right),
+    \mathscr{B}_{ww} &= -\left(\rho_0'\,\partial_z + \rho_0\,\nabla^2\right),
     &\qquad
     \mathscr{B}_{w\rho} &= 0,
     &\qquad
     \mathscr{A}_{\rho w} &= 0, \\
-    \mathscr{A}_{ww} &= -\frac{1}{\Rey}\,\nabla^2,
+    \mathscr{A}_{ww} &= -\nabla^2,
     &\qquad
-    \mathscr{A}_{w\rho} &= -k^{2},
+    \mathscr{A}_{w\rho} &= -\nabla_{xy}^2,
     &\qquad
     \mathscr{A}_{\rho\rho} &= 0.
   \end{aligned}
@@ -1976,7 +1775,7 @@ The sharp-interface limit is approximated numerically by setting \(\delta=0.025\
         \centering
         \figfile{figures/verification_figures/V03_chandra_validation_VD_2.tex}
     \end{minipage}
-    \caption{Verification of the variable-density solver against the analytical growth rates of~\citet{chandrasekhar-1961} in the sharp-interface limit. Symbols denote the analytical solution obtained from equation~\eqref{eq:chandrasekhar_polynomial_growth_rate}, and lines denote the numerical results. (a) \(\Atw\in[0.01,0.3]\). (b) \(\Atw\in[0.4,0.95]\).}
+    \caption{Verification of the variable-density solver against the analytical growth rates of~\citet{chandrasekhar-1961} in the sharp-interface limit. (\circlegend) denotes the analytical solution obtained from equation~\eqref{eq:chandrasekhar_polynomial_growth_rate}, and (\solidlegend) denotes the numerical results.}
     \label{fig:chandra_verification_vd}
 \end{figure}
 
@@ -1996,7 +1795,7 @@ A further verification is provided by comparison with~\citet{morgan-likhachev-ja
         \centering
         \figfile{figures/verification_figures/V06_visc_validation_VD_2.tex}
     \end{minipage}
-    \caption{Verification against the data reported by~\citet{morgan-likhachev-jacobs-2016}, showing that the present solver reproduces the trends with interface thickness and viscosity ratio. (a) \(\Amu=0\), \(\Atw=0.5\), with varying \(\delta\). (b) \(\Atw=0.5\), \(\delta=5\), with varying \(\Amu\).}
+    \caption{Verification against the data reported by~\citet{morgan-likhachev-jacobs-2016}, showing that the present solver reproduces the trends with interface thickness and viscosity ratio. (\solidlegend) denotes the present solver and (\circlegend) denotes the data of~\citet{morgan-likhachev-jacobs-2016}. Panel (a) corresponds to \(\Amu=0\), \(\Atw=0.5\), with varying \(\delta\); panel (b) corresponds to \(\Atw=0.5\), \(\delta=5\), with varying \(\Amu\).}
     \label{fig:visc_validation_VD}
 \end{figure}
 
@@ -2040,7 +1839,7 @@ which admits nontrivial solutions when
     \label{eq:mikaelian_determinant}
     \det\bigl(\boldsymbol{M}(\gamma, k)\bigr) = 0.
 \end{equation}
-Figure~\ref{fig:mikaelian_verification_Amu0} compares the present results with the semi-analytical solutions for three representative Atwood numbers at fixed viscosity ratio, and shows good agreement throughout the tested parameter range.
+Figures~\ref{fig:mikaelian_verification_Amu_neg09}--\ref{fig:mikaelian_verification_Amu_pos09} compare the present results with the semi-analytical solutions for three representative Atwood numbers at fixed viscosity ratio, and show good agreement throughout the tested parameter range.
 
 \begin{figure}
     \centering
@@ -2058,8 +1857,48 @@ Figure~\ref{fig:mikaelian_verification_Amu0} compares the present results with t
         \centering
         \figfile{figures/verification_figures/V05_mikaelian_validation_VD_At0.9_Amu-0.9.tex}
     \end{minipage}
-    \caption{Verification against the semi-analytical growth rates of~\citet{mikaelian-1996} for finite layers with discontinuous density and viscosity, showing good agreement across density ratios at fixed \(\Amu=-0.9\). \(H\) denotes the domain half-height. Symbols denote the semi-analytical solution obtained from equation~\eqref{eq:mikaelian_determinant}, and lines denote the numerical results. (a) \(\Atw=0.1\). (b) \(\Atw=0.5\). (c) \(\Atw=0.9\).}
+    \caption{Verification against the semi-analytical growth rates of~\citet{mikaelian-1996} at fixed \(\Amu=-0.9\). \(H\) denotes the domain half-height. (\circlegend) denotes the semi-analytical solution obtained from equation~\eqref{eq:mikaelian_determinant}, and (\solidlegend) denotes the numerical results.}
+    \label{fig:mikaelian_verification_Amu_neg09}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{minipage}[t]{0.32\textwidth}
+        \centering
+        \figfile{figures/verification_figures/V05_mikaelian_validation_VD_At0.1_Amu0.0.tex}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.32\textwidth}
+        \centering
+        \figfile{figures/verification_figures/V05_mikaelian_validation_VD_At0.5_Amu0.0.tex}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.32\textwidth}
+        \centering
+        \figfile{figures/verification_figures/V05_mikaelian_validation_VD_At0.9_Amu0.0.tex}
+    \end{minipage}
+    \caption{Verification against the semi-analytical growth rates of~\citet{mikaelian-1996} at fixed \(\Amu=0.0\). \(H\) denotes the domain half-height. (\circlegend) denotes the semi-analytical solution obtained from equation~\eqref{eq:mikaelian_determinant}, and (\solidlegend) denotes the numerical results.}
     \label{fig:mikaelian_verification_Amu0}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{minipage}[t]{0.32\textwidth}
+        \centering
+        \figfile{figures/verification_figures/V05_mikaelian_validation_VD_At0.1_Amu0.9.tex}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.32\textwidth}
+        \centering
+        \figfile{figures/verification_figures/V05_mikaelian_validation_VD_At0.5_Amu0.9.tex}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.32\textwidth}
+        \centering
+        \figfile{figures/verification_figures/V05_mikaelian_validation_VD_At0.9_Amu0.9.tex}
+    \end{minipage}
+    \caption{Verification against the semi-analytical growth rates of~\citet{mikaelian-1996} at fixed \(\Amu=0.9\). \(H\) denotes the domain half-height. (\circlegend) denotes the semi-analytical solution obtained from equation~\eqref{eq:mikaelian_determinant}, and (\solidlegend) denotes the numerical results.}
+    \label{fig:mikaelian_verification_Amu_pos09}
 \end{figure}
 
 
@@ -2067,7 +1906,7 @@ Figure~\ref{fig:mikaelian_verification_Amu0} compares the present results with t
 
 \clearpage
 \bibliographystyle{plainnat}
-\bibliography{references}
+\bibliography{references_1}
 
 
 \clearpage
