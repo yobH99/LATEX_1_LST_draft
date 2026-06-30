@@ -10,7 +10,7 @@ width=11.252in,
 height=7.131in,
 at={(1.887in,0.962in)},
 scale only axis,
-clip=false,
+clip=true,
 xmode=log,
 xmin=0.1,
 xmax=100,
@@ -24,6 +24,8 @@ ylabel style={font=\color{mycolor2}},
 ylabel={$\lambda_m$},
 axis background/.style={fill=white},
 legend style={at={(0.97,0.03)}, anchor=south east, legend cell align=left, align=left},
+clip=true,
+clip mode=individual,
 axis lines=box,
 xtick pos=bottom,
 ytick pos=left,
@@ -240,7 +242,7 @@ every y tick label/.append style={font=\fontsize{9}{9}\selectfont\color{black}},
 63.0957344480193	-0.0157462353938479\\
 100	-0.00987689109746054\\
 };
-\node[right, align=left, inner sep=0, font=\color{mycolor2}]
+\node[overlay,right, align=left, inner sep=0, font=\color{mycolor2}]
 at (rel axis cs:-0.15,1.1) {$(b)$};
 \end{axis}
 \end{tikzpicture}%

@@ -1,6 +1,7 @@
 % This file was created by matlab2tikz.
 %
 \definecolor{mycolor1}{rgb}{0.20000,0.40000,0.60000}%
+\definecolor{mycolor2}{rgb}{0.12941,0.12941,0.12941}%
 %
 \begin{tikzpicture}
 
@@ -9,23 +10,19 @@ width=11.252in,
 height=7.131in,
 at={(1.887in,0.962in)},
 scale only axis,
-clip=false,
-separate axis lines,
-every outer x axis line/.append style={black},
-every x tick label/.append style={font=\color{black}},
-every x tick/.append style={black},
+clip=true,
 xmin=0,
 xmax=0.3,
 xtick={   0, 0.08, 0.15, 0.23,  0.3},
+xlabel style={font=\color{mycolor2}},
 xlabel={$k$},
-every outer y axis line/.append style={black},
-every y tick label/.append style={font=\color{black}},
-every y tick/.append style={black},
 ymin=1,
 ymax=2,
 ytick={   1, 1.25,  1.5, 1.75,    2},
 axis background/.style={fill=white},
 legend style={at={(0.03,0.97)}, anchor=north west, legend cell align=left, align=left},
+clip=true,
+clip mode=individual,
 axis lines=box,
 xtick pos=bottom,
 ytick pos=left,
@@ -446,7 +443,7 @@ every y tick label/.append style={font=\fontsize{9}{9}\selectfont\color{black}},
 };
 \addlegendentry{$\mathrm{Pe}_{\delta}=1$}
 
-\node[right, align=left, inner sep=0]
+\node[overlay,right, align=left, inner sep=0, font=\color{mycolor2}]
 at (rel axis cs:-0.25,1.15) {$(f)$};
 \end{axis}
 \end{tikzpicture}%
