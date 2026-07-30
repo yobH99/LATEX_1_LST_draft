@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.24)  30 JUN 2026 16:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.24)  30 JUL 2026 10:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -615,15 +615,15 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (3.89392pt too wide) in paragraph at lines 120--121
+Overfull \hbox (3.89392pt too wide) in paragraph at lines 119--120
 \OT1/cmr/m/n/10.95 regimes through di-rect nu-mer-i-cal sim-u-la-tions and ex-per-i-ments ([][]Cook and Di-mo-takis[][], [][]2001[][]; [][]Mueschke
  []
 
-[3]
-LaTeX Font Info:    Trying to load font information for OT1+phv on input line 143.
+[3{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 142.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
-) [4{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}] [5] (../figures/w0_profile.tex) (../figures/eigenvector_k1_comparison.tex) [6] [7] [8] [9] (../figures/numerical_vs_duff_1.tex) (../figures/numerical_vs_duff_2.tex) [10] [11] (../figures/wrm_vs_Scinv_Amu_-0.9.tex
+) [4{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}] [5] (../figures/w0_profile.tex) (../figures/eigenvector_k1_comparison.tex) [6] [7] [8] [9] (../figures/numerical_vs_duff_1.tex) (../figures/numerical_vs_duff_2.tex) [10] [11] (../figures/wrm_vs_Scinv_Amu_-0.9.tex
 Package pgfplots info on input line 47: Using 'lua backend=false' for axis: xmode=log unsupported (yet).
 ) (../figures/wrm_vs_Scinv_Amu_+0.0.tex
 Package pgfplots info on input line 45: Using 'lua backend=false' for axis: xmode=log unsupported (yet).
@@ -643,28 +643,28 @@ Package pgfplots info on input line 45: Using 'lua backend=false' for axis: xmod
 Package pgfplots info on input line 45: Using 'lua backend=false' for axis: xmode=log unsupported (yet).
 ) [14] (../figures/wr_Amu_0.036_At_0.247.tex) (../figures/kgg1_factor_Amu_0.036.tex
 Package pgfplots info on input line 44: Using 'lua backend=false' for axis: xmode=log unsupported (yet).
-) (../figures/diffusion_effect_At0.05.tex)
-Overfull \hbox (2.18896pt too wide) in paragraph at lines 461--730
+) [15] (../figures/diffusion_effect_At0.05.tex)
+Overfull \hbox (2.18896pt too wide) in paragraph at lines 461--726
  [][] 
  []
 
 (../figures/diffusion_effect_At0.40.tex) (../figures/diffusion_effect_At0.75.tex) (../figures/diffusion_effect_psi_At0.05.tex)
-Overfull \hbox (5.314pt too wide) in paragraph at lines 442--747
+Overfull \hbox (5.314pt too wide) in paragraph at lines 442--743
  [][] 
  []
 
-(../figures/diffusion_effect_psi_At0.40.tex) (../figures/diffusion_effect_psi_At0.75.tex) [15] (../figures/contribution_Pb_Pe40.tex)
-Overfull \hbox (3.5029pt too wide) in paragraph at lines 530--774
+(../figures/diffusion_effect_psi_At0.40.tex) (../figures/diffusion_effect_psi_At0.75.tex) (../figures/contribution_Pb_Pe40.tex)
+Overfull \hbox (3.5029pt too wide) in paragraph at lines 530--770
  [][] 
  []
 
 (../figures/contribution_Pb_Pe5.tex) (../figures/contribution_Pb_Pe1.tex) [16] [17] (../figures/contribution_Pp_Pe40.tex)
-Overfull \hbox (9.22781pt too wide) in paragraph at lines 530--815
+Overfull \hbox (9.22781pt too wide) in paragraph at lines 530--811
  [][] 
  []
 
 (../figures/contribution_Pp_Pe5.tex) (../figures/contribution_Pp_Pe1.tex) [18] (../figures/contribution_sum_Pe40.tex)
-Overfull \hbox (2.03342pt too wide) in paragraph at lines 530--840
+Overfull \hbox (2.03342pt too wide) in paragraph at lines 530--836
  [][] 
  []
 
@@ -683,7 +683,7 @@ Package pgfplots info on input line 43: Using 'lua backend=false' for axis: xmod
 ) (../figures/verification_figures/V16_wLz_k3_a.tex
 Package pgfplots info on input line 44: Using 'lua backend=false' for axis: xmode=log unsupported (yet).
 )
-Overfull \hbox (4.37566pt too wide) in paragraph at lines 111--1683
+Overfull \hbox (4.37566pt too wide) in paragraph at lines 111--1679
  [][] 
  []
 
@@ -692,12 +692,12 @@ Package pgfplots info on input line 43: Using 'lua backend=false' for axis: xmod
 ) (../figures/verification_figures/V16_wLz_k3_c.tex
 Package pgfplots info on input line 43: Using 'lua backend=false' for axis: xmode=log unsupported (yet).
 ) (../figures/verification_figures/V16_wN_k1_a.tex) (../figures/verification_figures/V16_wN_k1_b.tex) (../figures/verification_figures/V16_wN_k1_c.tex) (../figures/verification_figures/V16_wN_k2_a.tex) (../figures/verification_figures/V16_wN_k2_b.tex) (../figures/verification_figures/V16_wN_k2_c.tex) (../figures/verification_figures/V16_wN_k3_a.tex)
-Overfull \hbox (2.26932pt too wide) in paragraph at lines 117--1725
+Overfull \hbox (2.26932pt too wide) in paragraph at lines 117--1721
  [][] 
  []
 
 (../figures/verification_figures/V16_wN_k3_b.tex) (../figures/verification_figures/V16_wN_k3_c.tex) [28] [29] [30] (../figures/verification_figures/V03_chandra_validation_VD_1.tex) (../figures/verification_figures/V03_chandra_validation_VD_2.tex) (../figures/verification_figures/V06_visc_validation_VD_1.tex) (../figures/verification_figures/V06_visc_validation_VD_2.tex)
-Overfull \hbox (30.358pt too wide) detected at line 1836
+Overfull \hbox (30.358pt too wide) detected at line 1832
 [][][][] [] \OT1/cmr/m/n/10.95 = []\OML/cmm/m/it/10.95 ;
  []
 
@@ -714,16 +714,16 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  33895 strings out of 474222
  803394 string characters out of 5748733
- 2420997 words of memory out of 5000000
+ 2418358 words of memory out of 5000000
  55130 multiletter control sequences out of 15000+600000
  579686 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,22n,87p,2492b,2588s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb>
-Output written on .auxiliary/main.pdf (37 pages, 875457 bytes).
+Output written on .auxiliary/main.pdf (37 pages, 875365 bytes).
 PDF statistics:
- 1079 PDF objects out of 1200 (max. 8388607)
- 941 compressed objects within 10 object streams
+ 1092 PDF objects out of 1200 (max. 8388607)
+ 948 compressed objects within 10 object streams
  274 named destinations out of 1000 (max. 500000)
  165 words of extra memory for PDF output out of 10000 (max. 10000000)
 
