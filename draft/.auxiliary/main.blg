@@ -2,41 +2,41 @@ This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: plainnat.bst
-Database file #1: references_1.bib
+Database file #1: references.bib
 Warning--empty publisher in chandrasekhar-1961
 You've used 45 entries,
             2773 wiz_defined-function locations,
-            902 strings with 13877 characters,
-and the built_in function-call counts, 22128 in all, are:
-= -- 2042
+            850 strings with 12856 characters,
+and the built_in function-call counts, 21239 in all, are:
+= -- 1894
 > -- 1279
 < -- 28
 + -- 436
 - -- 390
-* -- 1969
-:= -- 3484
-add.period$ -- 185
+* -- 1740
+:= -- 3337
+add.period$ -- 136
 call.type$ -- 45
-change.case$ -- 263
+change.case$ -- 262
 chr.to.int$ -- 44
 cite$ -- 91
-duplicate$ -- 919
-empty$ -- 1733
+duplicate$ -- 916
+empty$ -- 1701
 format.name$ -- 465
-if$ -- 4552
+if$ -- 4371
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 47
-newline$ -- 281
+missing$ -- 46
+newline$ -- 233
 num.names$ -- 180
-pop$ -- 419
+pop$ -- 468
 preamble$ -- 1
 purify$ -- 220
 quote$ -- 0
-skip$ -- 654
+skip$ -- 694
 stack$ -- 0
 substring$ -- 935
-swap$ -- 89
+swap$ -- 47
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
@@ -44,5 +44,5 @@ type$ -- 485
 warning$ -- 1
 while$ -- 201
 width$ -- 0
-write$ -- 687
+write$ -- 590
 (There was 1 warning)

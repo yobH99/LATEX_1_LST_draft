@@ -437,7 +437,7 @@ where the operators are defined as
     \mathscr{B}_{w\rho} &= \Big(\rho_0' + \rho_0\,\partial_z\Big)\mathscr{L}_{\rho}, \\
     \mathscr{A}_{ww} &= -\mu_0\,\nabla^4 - 2\,\mu_0'\,\partial_z\,\nabla^2 + \mu_0''\,\nabla^2 - 2\,\mu_0''\,\partial_{zz}, \\
     \mathscr{A}_{w_0 w} &= \Big(\rho_0\,w_0' + \rho_0\,w_0\,\partial_z\Big)\nabla^2 + w_0\,\rho_0'\,\partial_{zz}, \\
-    \mathscr{A}_{w\rho} &= \Big(\mu_0\,\partial_z\,\nabla^2 + 2\,\mu_0'\,\nabla^2 - \mu_0''\,\partial_z\Big)\mathscr{L}_\rho - 2\,\partial_z\!\left(w_0'\,C_{\mu\rho}\,\nabla_{xy}^2\star\right) + \nabla_{xy}^2, \\
+    \mathscr{A}_{w\rho} &= \Big(\mu_0\,\partial_z\,\nabla^2 + 2\,\mu_0'\,\nabla^2 + \mu_0''\,\partial_z\Big)\mathscr{L}_\rho - 2\,\partial_z\!\left(w_0'\,C_{\mu\rho}\,\nabla_{xy}^2\star\right) + \nabla_{xy}^2, \\
     \mathscr{A}_{w_0 \rho} &= -\Big((\rho_0 w_0)'\,\partial_z + \rho_0 w_0\,\partial_{zz}\Big)\mathscr{L}_{\rho} + \left(\dot{w}_0 + w_0 w_0'\right)\nabla_{xy}^2 - \Big(\rho_0' + \rho_0\,\partial_z\Big)\dot{\mathscr{L}}_{\rho}.
 \end{align}
 \end{subequations}
@@ -1162,7 +1162,7 @@ Taking the vertical derivative of \eqref{eq:pressure_poisson_equation} gives
   \right).
 \end{split}
 \end{equation}
-Subtracting \eqref{eq:z_derivative_pressure_poisson_equation} from \eqref{eq:laplacian_vertical_momentum} eliminates the pressure contribution. We define
+Subtracting \eqref{eq:laplacian_vertical_momentum} from \eqref{eq:z_derivative_pressure_poisson_equation} eliminates the pressure contribution. We define
 \begin{subequations}\label{eq:w0_xy_operators}
 \begin{gather}
   \mathscr{L}_{w_0\rho}
@@ -1191,7 +1191,7 @@ Subtracting \eqref{eq:z_derivative_pressure_poisson_equation} from \eqref{eq:lap
   \label{eq:w0_xy_operators_b}
 \end{gather}
 \end{subequations}
-Then the reduced equation obtained from \eqref{eq:laplacian_vertical_momentum} minus \eqref{eq:z_derivative_pressure_poisson_equation} is
+Then the reduced equation obtained from \eqref{eq:z_derivative_pressure_poisson_equation} minus \eqref{eq:laplacian_vertical_momentum} is
 \begin{equation}\label{eq:reduced_vertical_momentum_poisson}
 \begin{split}
   &
@@ -1319,7 +1319,7 @@ Using the definitions in \eqref{eq:poisson_operators} and \eqref{eq:vertical_mom
   \label{eq:w0_operators_a} \\
   \mathscr{L}_{w_0 w}
   =
-  \rho_0'' w_0
+  \rho_0' w_0
   \frac{\partial^2}{\partial z^2}
   +
   \left(
@@ -1384,7 +1384,7 @@ The derivation may be summarized as follows:
 
   \item Second, we take the divergence of \eqref{eq:linear_momentum_vertical_base}, obtaining \eqref{eq:pressure_poisson_equation}. We then take the vertical derivative of \eqref{eq:pressure_poisson_equation}, obtaining \eqref{eq:z_derivative_pressure_poisson_equation}.
 
-  \item Third, we subtract \eqref{eq:z_derivative_pressure_poisson_equation} from \eqref{eq:laplacian_vertical_momentum}, which eliminates the pressure term and gives \eqref{eq:reduced_vertical_momentum_poisson}.
+  \item Third, we subtract \eqref{eq:laplacian_vertical_momentum} from \eqref{eq:z_derivative_pressure_poisson_equation}, which eliminates the pressure term and gives \eqref{eq:reduced_vertical_momentum_poisson}.
 
   \item Finally, we use \eqref{eq:stress_pressure_vertical_momentum_difference}, \eqref{eq:w0_operators}, \eqref{eq:divergence_time_derivative_identity}, and \eqref{eq:mu_density_linear_relation} to rewrite \eqref{eq:reduced_vertical_momentum_poisson} in the final operator form \eqref{eq:A_B_operators}.
 \end{itemize}
@@ -1511,9 +1511,9 @@ Taking~\eqref{eq:A_B_operators} in the limit \(\Sch \to \infty\), the velocity f
     &=
     -\mu_0 \nabla^4 w
     -2\mu_0' \partial_z \nabla^2 w
-    +\mu_0'' \partial_z^2 w
-    -2\mu_0'' \partial_z^2 w % FLAG: this pair collapses to -\mu_0'' \partial_z^2 w; combine, or add a note if the two terms are kept deliberately
-    +\nabla_{xy}\rho,
+    +\mu_0'' \nabla^2 w
+    -2\mu_0'' \partial_z^2 w
+    +\nabla_{xy}^2\rho,
     \\
     \label{eq:appendix_chandraIVD_density}
     \frac{\partial \rho}{\partial t}
@@ -1525,8 +1525,8 @@ Since the in-plane directions \(x\) and \(y\) are homogeneous, we apply a Fourie
 \begin{align}
     &-\mu_0 \nabla^4 \hat{w}
     -2\mu_0' \partial_z \nabla^2 \hat{w}
-    +\mu_0'' \partial_z^2 \hat{w}
-    -2\mu_0'' \partial_z^2 \hat{w} % FLAG: same pair as above
+    +\mu_0'' \nabla^2 \hat{w}
+    -2\mu_0'' \partial_z^2 \hat{w}
     =
     \notag\\
     &\qquad
@@ -1902,7 +1902,7 @@ Figures~\ref{fig:mikaelian_verification_Amu_neg09}--\ref{fig:mikaelian_verificat
 
 \clearpage
 \bibliographystyle{plainnat}
-\bibliography{references_1}
+\bibliography{references}
 
 
 \clearpage
