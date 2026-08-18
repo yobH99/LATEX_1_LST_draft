@@ -5,9 +5,9 @@
 \begin{tikzpicture}
 
 \begin{axis}[%
-width=11.252in,
+width=11.255in,
 height=7.131in,
-at={(1.887in,0.962in)},
+at={(1.888in,0.962in)},
 scale only axis,
 clip=true,
 xmin=60,
@@ -31,7 +31,7 @@ major tick length=2pt,
 width=0.7\linewidth,
 height=0.65\linewidth,
 every axis/.append style={font=\fontsize{9}{9}\selectfont},xlabel style={font=\fontsize{9}{9}\selectfont},title style={font=\fontsize{9}{9}\selectfont},
-legend style={font=\fontsize{8}{9}\selectfont,inner sep=1pt,row sep=1pt,column sep=2pt,nodes={scale=1.00},draw=none},legend image post style={xscale=0.35},
+legend style={font=\fontsize{8}{9}\selectfont,inner sep=1pt,row sep=1pt,column sep=2pt,nodes={scale=0.70},draw=none},legend image post style={xscale=0.35},
 legend columns=1,
 scaled x ticks=false,
 tick label style={/pgf/number format/fixed,/pgf/number format/precision=2},
@@ -46,73 +46,61 @@ colormap={sigmamap}{rgb(0.0000)=(0.0200,0.1880,0.3800); rgb(0.1000)=(0.0743,0.34
 96	0.0443788281912469\\
 128	0.0443788288459807\\
 };
-\addlegendentry{$A_t=0.05,\,\mathrm{Sc}=1$}
+\addlegendentry{$A_t=0.05$}
 
-\addplot [color=black, line width=1.4pt, mark=square, mark options={solid, black}]
+\addplot [color=black, line width=1.4pt, mark=square, mark options={solid, black}, forget plot]
   table[row sep=crcr]{%
 64	0.0539217868460844\\
 96	0.0539217641399865\\
 128	0.0539217643577263\\
 };
-\addlegendentry{$A_t=0.05,\,\mathrm{Sc}=5$}
-
-\addplot [color=black, line width=1.4pt, mark=triangle, mark options={solid, black}]
+\addplot [color=black, line width=1.4pt, mark=triangle, mark options={solid, black}, forget plot]
   table[row sep=crcr]{%
 64	0.058756927614896\\
 96	0.0587569223426357\\
 128	0.0587569222433593\\
 };
-\addlegendentry{$A_t=0.05,\,\mathrm{Sc}=40$}
-
 \addplot [color=white!35!black, line width=1.4pt, mark=o, mark options={solid, white!35!black}]
   table[row sep=crcr]{%
 64	0.174650427323149\\
 96	0.174659111973447\\
 128	0.174659112011224\\
 };
-\addlegendentry{$A_t=0.40,\,\mathrm{Sc}=1$}
+\addlegendentry{$A_t=0.40$}
 
-\addplot [color=white!35!black, line width=1.4pt, mark=square, mark options={solid, white!35!black}]
+\addplot [color=white!35!black, line width=1.4pt, mark=square, mark options={solid, white!35!black}, forget plot]
   table[row sep=crcr]{%
 64	0.213160923955891\\
 96	0.213159891296268\\
 128	0.21315989116325\\
 };
-\addlegendentry{$A_t=0.40,\,\mathrm{Sc}=5$}
-
-\addplot [color=white!35!black, line width=1.4pt, mark=triangle, mark options={solid, white!35!black}]
+\addplot [color=white!35!black, line width=1.4pt, mark=triangle, mark options={solid, white!35!black}, forget plot]
   table[row sep=crcr]{%
 64	0.23018948168439\\
 96	0.230189220066269\\
 128	0.230189220202142\\
 };
-\addlegendentry{$A_t=0.40,\,\mathrm{Sc}=40$}
-
 \addplot [color=white!60!black, line width=1.4pt, mark=o, mark options={solid, white!60!black}]
   table[row sep=crcr]{%
 64	-0.00339581687047088\\
 96	0.293787046295921\\
 128	0.293783951621569\\
 };
-\addlegendentry{$A_t=0.75,\,\mathrm{Sc}=1$}
+\addlegendentry{$A_t=0.75$}
 
-\addplot [color=white!60!black, line width=1.4pt, mark=square, mark options={solid, white!60!black}]
+\addplot [color=white!60!black, line width=1.4pt, mark=square, mark options={solid, white!60!black}, forget plot]
   table[row sep=crcr]{%
 64	0.329202257585031\\
 96	0.329384988406487\\
 128	0.329384676395385\\
 };
-\addlegendentry{$A_t=0.75,\,\mathrm{Sc}=5$}
-
-\addplot [color=white!60!black, line width=1.4pt, mark=triangle, mark options={solid, white!60!black}]
+\addplot [color=white!60!black, line width=1.4pt, mark=triangle, mark options={solid, white!60!black}, forget plot]
   table[row sep=crcr]{%
 64	0.351903462325624\\
 96	0.351902156699996\\
 128	0.351902148322234\\
 };
-\addlegendentry{$A_t=0.75,\,\mathrm{Sc}=40$}
-
-\node[overlay,right, align=left, inner sep=0, font=\color{mycolor1}]
+\node[right, align=left, inner sep=0, font=\color{mycolor1}]
 at (rel axis cs:-0.15,1.1) {$(a)$};
 \end{axis}
 \end{tikzpicture}%

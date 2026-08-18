@@ -3,11 +3,11 @@
 \begin{tikzpicture}
 
 \begin{axis}[%
-width=11.254in,
+width=11.255in,
 height=7.131in,
 at={(1.888in,0.962in)},
 scale only axis,
-clip=false,
+clip=true,
 separate axis lines,
 every outer x axis line/.append style={black},
 every x tick label/.append style={font=\color{black}},
@@ -25,6 +25,8 @@ every y tick/.append style={black},
 ymin=0.01,
 ymax=0.09,
 axis background/.style={fill=white},
+clip=true,
+clip mode=individual,
 axis lines=box,
 xtick pos=bottom,
 ytick pos=left,
@@ -39,70 +41,71 @@ scaled x ticks=false,
 tick label style={/pgf/number format/fixed,/pgf/number format/precision=2},
 every x tick label/.append style={font=\fontsize{9}{9}\selectfont\color{black}},
 every y tick label/.append style={font=\fontsize{9}{9}\selectfont\color{black}},
-,
+,,
+colormap={sigmamap}{rgb(0.0000)=(0.0200,0.1880,0.3800); rgb(0.1000)=(0.0743,0.3456,0.5616); rgb(0.2000)=(0.1918,0.4980,0.7060); rgb(0.3000)=(0.3890,0.6708,0.8226); rgb(0.4000)=(0.7552,0.8682,0.9228); rgb(0.5000)=(0.9690,0.9689,0.9689); rgb(0.6000)=(0.9425,0.8044,0.7614); rgb(0.7000)=(0.8767,0.4910,0.4020); rgb(0.8000)=(0.7869,0.2866,0.2470); rgb(0.9000)=(0.6186,0.1239,0.1568); rgb(1.0000)=(0.4040,0.0000,0.1220)}
 ]
 \addplot [color=black, line width=1.2pt, mark size=1.5pt, mark=o, mark options={solid, black}, forget plot]
   table[row sep=crcr]{%
-128	0.0196439519670896\\
-256	0.0214646949811342\\
-394	0.0216117039971923\\
-512	0.0216206998645929\\
+128	0.0196439567233836\\
+256	0.0214647547529239\\
+394	0.021611332365737\\
+512	0.0216208340459056\\
 };
 \addplot [color=black, dashed, line width=1.2pt, mark size=1.5pt, mark=o, mark options={solid, black}, forget plot]
   table[row sep=crcr]{%
-128	0.0194199787114405\\
-256	0.0213088000054849\\
-394	0.0214609473448342\\
-512	0.0214701535919637\\
+128	0.0194199983019396\\
+256	0.0213087455223332\\
+394	0.0214608155727251\\
+512	0.021470187319374\\
 };
 \addplot [color=black, dotted, line width=1.2pt, mark size=1.5pt, mark=o, mark options={solid, black}, forget plot]
   table[row sep=crcr]{%
-128	0.0196565678257797\\
-256	0.0214773147742001\\
-394	0.0216243341699039\\
-512	0.0216334569069858\\
+128	0.019656550828726\\
+256	0.0214770622312565\\
+394	0.0216243966971243\\
+512	0.0216330843207822\\
 };
 \addplot [color=white!60!black, line width=1.2pt, mark size=1.5pt, mark=o, mark options={solid, white!60!black}, forget plot]
   table[row sep=crcr]{%
-128	0.056739586940187\\
-256	0.0615102567083576\\
-394	0.0618967179594159\\
-512	0.0619206203723851\\
+128	0.0567396021543479\\
+256	0.0615101810743804\\
+394	0.0618964135209898\\
+512	0.0619198787968389\\
 };
 \addplot [color=white!60!black, dashed, line width=1.2pt, mark size=1.5pt, mark=o, mark options={solid, white!60!black}, forget plot]
   table[row sep=crcr]{%
-128	0.056509561438461\\
-256	0.0613856016869168\\
-394	0.0617806995845873\\
-512	0.0618047599632153\\
+128	0.0565094818669938\\
+256	0.0613858332659709\\
+394	0.061780194548576\\
+512	0.061804248673023\\
 };
 \addplot [color=white!60!black, dotted, line width=1.2pt, mark size=1.5pt, mark=o, mark options={solid, white!60!black}, forget plot]
   table[row sep=crcr]{%
-128	0.0569329554688536\\
-256	0.0617217748236139\\
-394	0.0621100118365463\\
-512	0.0621335856007243\\
+128	0.0569328808131031\\
+256	0.0617218920089409\\
+394	0.062110490369209\\
+512	0.0621354690331453\\
 };
 \addplot [color=red!60!teal, line width=1.2pt, mark size=1.5pt, mark=o, mark options={solid, red!60!teal}, forget plot]
   table[row sep=crcr]{%
-128	0.0784639590713503\\
-256	0.0848526188814258\\
-394	0.0853699401442729\\
-512	0.0854017942302877\\
+128	0.0784638381384213\\
+256	0.0848530942065096\\
+394	0.0853709095211397\\
+512	0.0854009979705437\\
 };
 \addplot [color=red!60!teal, dashed, line width=1.2pt, mark size=1.5pt, mark=o, mark options={solid, red!60!teal}, forget plot]
   table[row sep=crcr]{%
-128	0.0783563966987877\\
-256	0.0848663788617208\\
-394	0.0853940363994276\\
-512	0.0854265424194394\\
+128	0.0783562037416023\\
+256	0.084867131697303\\
+394	0.0853942751987869\\
+512	0.0854277114636466\\
 };
 \addplot [color=red!60!teal, dotted, line width=1.2pt, mark size=1.5pt, mark=o, mark options={solid, red!60!teal}, forget plot]
   table[row sep=crcr]{%
-128	0.0788068547627399\\
-256	0.0852542562140243\\
-394	0.0857777820574879\\
-512	0.0858102699323593\\
+128	0.0788068491041872\\
+256	0.0852543709366611\\
+394	0.0857780113428995\\
+512	0.085810613990898\\
 };
 \node[right, align=left, inner sep=0]
 at (rel axis cs:-0.25,1.15) {$(b)$};
