@@ -22,13 +22,14 @@
 \citation{morgan-likhachev-jacobs-2016}
 \citation{chandrasekhar-1961}
 \citation{duff-harlow-hirt-1962}
-\newlabel{eq:duff_growth_rate_correction}{{1}{2}{Introduction}{equation.1.1}{}}
-\newlabel{eq:duff_quasi_viscous}{{3}{2}{Introduction}{equation.1.3}{}}
 \citation{morgan-likhachev-jacobs-2016}
 \citation{duff-harlow-hirt-1962}
 \citation{lafay-et-al-2007}
 \citation{gauthier-lecruer-2010}
 \citation{duff-harlow-hirt-1962}
+\newlabel{eq:duff_growth_rate_correction}{{1}{2}{Introduction}{equation.1.1}{}}
+\newlabel{eq:duff_quasi_viscous}{{3}{2}{Introduction}{equation.1.3}{}}
+\newlabel{eq:duff_static_diffusion}{{4}{2}{Introduction}{equation.1.4}{}}
 \citation{cook-dimotakis-2001}
 \citation{mueschke-schilling-2009}
 \citation{mueschke-et-al-2009}
@@ -47,9 +48,9 @@
 \citation{wei-livescu-2012}
 \citation{livescu-2013}
 \citation{baltzer-livescu-2020}
-\newlabel{eq:duff_static_diffusion}{{4}{3}{Introduction}{equation.1.4}{}}
 \citation{livescu-2020}
 \citation{livescu-2013}
+\citation{chandrasekhar-1961}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Governing equations}{4}{section.2}\protected@file@percent }
 \newlabel{sec:governing_equation}{{2}{4}{Governing equations}{section.2}{}}
 \newlabel{eq:dimensional_continuity}{{5a}{4}{Governing equations}{equation.2.5a}{}}
@@ -58,9 +59,8 @@
 \newlabel{eq:species}{{8}{4}{Governing equations}{equation.2.8}{}}
 \newlabel{eq:dimensional_logrho}{{9}{4}{Governing equations}{equation.2.9}{}}
 \newlabel{eq:dimensional_divergence}{{10}{4}{Governing equations}{equation.2.10}{}}
-\citation{chandrasekhar-1961}
+\newlabel{eq:Re_Fr_definitions}{{11}{4}{Governing equations}{equation.2.11}{}}
 \citation{morgan-likhachev-jacobs-2016}
-\newlabel{eq:Re_Fr_definitions}{{11}{5}{Governing equations}{equation.2.11}{}}
 \newlabel{eq:chandrasekhar_scaling}{{12}{5}{Governing equations}{equation.2.12}{}}
 \newlabel{eq:IVD_NL}{{15}{5}{Governing equations}{equation.2.15}{}}
 \newlabel{eq:IVD_NL_continuity}{{15a}{5}{Governing equations}{equation.2.15a}{}}
@@ -111,8 +111,9 @@
 \citation{chandrasekhar-1961}
 \citation{chandrasekhar-1961}
 \citation{morgan-likhachev-jacobs-2016}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Comparison of the present growth rates with classical predictions for \(\mathrm  {A}_{\mu }= 0.0\) and \(\mathrm  {A_t}= 0.5\). (\solidlegend  ) denotes the present solver. (a) Diffusion-free limit, \(\mathrm  {Sc}\to \infty \); (\circlegend  ) denotes the viscous growth rates reported by~\citet  {morgan-likhachev-jacobs-2016}. (b) \(\mathrm  {Sc}= 1\); (\dashlegend  ) denotes \citet  {duff-harlow-hirt-1962} prediction.}}{11}{figure.2}\protected@file@percent }
-\newlabel{fig:duff_versus_prediction}{{2}{11}{Comparison of the present growth rates with classical predictions for \(\Amu = 0.0\) and \(\Atw = 0.5\). (\solidlegend ) denotes the present solver. (a) Diffusion-free limit, \(\Sch \to \infty \); (\circlegend ) denotes the viscous growth rates reported by~\citet {morgan-likhachev-jacobs-2016}. (b) \(\Sch = 1\); (\dashlegend ) denotes \citet {duff-harlow-hirt-1962} prediction}{figure.2}{}}
+\citation{morgan-likhachev-jacobs-2016}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Growth-rate comparison for \(\mathrm  {A}_{\mu }= 0.0\) and \(\mathrm  {A_t}= 0.5\). (\solidlegend  ) denotes results based on the present analysis. (a) Diffusion-free limit, \(\mathrm  {Sc}\to \infty \); (\circlegend  ) denotes the viscous growth rates reported by~\citet  {morgan-likhachev-jacobs-2016}. (b) \(\mathrm  {Sc}= 1\); (\dashlegend  ) denotes \citet  {duff-harlow-hirt-1962} prediction.}}{11}{figure.2}\protected@file@percent }
+\newlabel{fig:duff_versus_prediction}{{2}{11}{Growth-rate comparison for \(\Amu = 0.0\) and \(\Atw = 0.5\). (\solidlegend ) denotes results based on the present analysis. (a) Diffusion-free limit, \(\Sch \to \infty \); (\circlegend ) denotes the viscous growth rates reported by~\citet {morgan-likhachev-jacobs-2016}. (b) \(\Sch = 1\); (\dashlegend ) denotes \citet {duff-harlow-hirt-1962} prediction}{figure.2}{}}
 \newlabel{eq:coordinate_transformation}{{50}{11}{Numerical implementation}{equation.3.50}{}}
 \citation{duff-harlow-hirt-1962}
 \citation{duff-harlow-hirt-1962}
@@ -132,34 +133,36 @@
 \newlabel{eq:linearized_continuous_system_kgg1}{{57}{14}{Scaling law for \texorpdfstring {\( k \gg k_c \)}{k >> kc}}{equation.4.57}{}}
 \newlabel{eq:theoretical_kgg1_lambdam}{{59}{14}{Scaling law for \texorpdfstring {\( k \gg k_c \)}{k >> kc}}{equation.4.59}{}}
 \citation{livescu-2020}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Large-wavenumber asymptotic behavior of the growth-rate spectrum at \(\mathrm  {A}_{\mu }= 0\). (a) Growth rates for different Schmidt numbers at \(\mathrm  {A_t}= 0.5\). (b) Comparison across Atwood numbers between the numerically extracted leading-order coefficient and the theoretical prediction~\eqref  {eq:theoretical_kgg1_lambdam}.}}{15}{figure.5}\protected@file@percent }
-\newlabel{fig:plot_kgg1}{{5}{15}{Large-wavenumber asymptotic behavior of the growth-rate spectrum at \(\Amu = 0\). (a) Growth rates for different Schmidt numbers at \(\Atw = 0.5\). (b) Comparison across Atwood numbers between the numerically extracted leading-order coefficient and the theoretical prediction~\eqref {eq:theoretical_kgg1_lambdam}}{figure.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Large-wavenumber asymptotic behavior of the growth-rate spectrum at \(\mathrm  {A}_{\mu }\approx 0\). (a) Growth rates for different Schmidt numbers at \(\mathrm  {A_t}= 0.5\). (b) Comparison across Atwood numbers between the numerically extracted leading-order coefficient and the theoretical prediction~\eqref  {eq:theoretical_kgg1_lambdam}.}}{15}{figure.5}\protected@file@percent }
+\newlabel{fig:plot_kgg1}{{5}{15}{Large-wavenumber asymptotic behavior of the growth-rate spectrum at \(\Amu \approx 0\). (a) Growth rates for different Schmidt numbers at \(\Atw = 0.5\). (b) Comparison across Atwood numbers between the numerically extracted leading-order coefficient and the theoretical prediction~\eqref {eq:theoretical_kgg1_lambdam}}{figure.5}{}}
 \citation{duff-harlow-hirt-1962}
 \citation{duff-harlow-hirt-1962}
-\citation{kirthy-diwan-2020}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3}The effect of diffusion for \(k < k_c\)}{16}{subsection.4.3}\protected@file@percent }
 \newlabel{subsec:budget_idl}{{4.3}{16}{The effect of diffusion for \texorpdfstring {\(k < k_c\)}{k < kc}}{subsection.4.3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces IDL growth rates and correction functions compared with the classical corrected inviscid prediction. (\dashlegend  ) denotes the prediction of~\citet  {duff-harlow-hirt-1962}. Columns correspond to \(\mathrm  {A_t}= 0.05\), \(0.40\), and \(0.75\), respectively.}}{17}{figure.6}\protected@file@percent }
 \newlabel{fig:IDL_growth_rates}{{6}{17}{IDL growth rates and correction functions compared with the classical corrected inviscid prediction. (\dashlegend ) denotes the prediction of~\citet {duff-harlow-hirt-1962}. Columns correspond to \(\Atw = 0.05\), \(0.40\), and \(0.75\), respectively}{figure.6}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Buoyancy production \(\Pi _b(z)\) at \(k=0.1\) in the IDL formulation, showing how its spatial structure changes with diffusive strength and density ratio.}}{17}{figure.7}\protected@file@percent }
 \newlabel{fig:contribution_buoyant}{{7}{17}{Buoyancy production \(\Pi _b(z)\) at \(k=0.1\) in the IDL formulation, showing how its spatial structure changes with diffusive strength and density ratio}{figure.7}{}}
+\citation{kirthy-diwan-2020}
 \citation{livescu-ristorcelli-2007}
 \citation{livescu-ristorcelli-2008}
 \citation{baltzer-livescu-2020}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Pressure production \(\Pi _p(z)\) at \(k=0.1\) in the IDL formulation, showing when pressure work becomes dynamically important. (a) \(\mathrm  {Pe}_{\delta } = 40\). (b) \(\mathrm  {Pe}_{\delta } = 5\). (c) \(\mathrm  {Pe}_{\delta } = 1\).}}{18}{figure.8}\protected@file@percent }
-\newlabel{fig:contribution_pressure}{{8}{18}{Pressure production \(\Pi _p(z)\) at \(k=0.1\) in the IDL formulation, showing when pressure work becomes dynamically important. (a) \(\Pe _{\delta } = 40\). (b) \(\Pe _{\delta } = 5\). (c) \(\Pe _{\delta } = 1\)}{figure.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Pressure production \(\Pi _p(z)\) at \(k=0.1\) in the IDL formulation, showing when pressure work becomes dynamically important.}}{18}{figure.8}\protected@file@percent }
+\newlabel{fig:contribution_pressure}{{8}{18}{Pressure production \(\Pi _p(z)\) at \(k=0.1\) in the IDL formulation, showing when pressure work becomes dynamically important}{figure.8}{}}
 \newlabel{eq:energy_balance}{{66}{18}{The effect of diffusion for \texorpdfstring {\(k < k_c\)}{k < kc}}{equation.4.66}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Net production \(\Pi _b(z) + \Pi _p(z)\) at \(k=0.1\) in the IDL formulation, showing how the overall energy input changes with diffusive strength.}}{19}{figure.9}\protected@file@percent }
+\newlabel{fig:contribution_sum_peclet}{{9}{19}{Net production \(\Pi _b(z) + \Pi _p(z)\) at \(k=0.1\) in the IDL formulation, showing how the overall energy input changes with diffusive strength}{figure.9}{}}
 \citation{tan-homsy-1986}
 \citation{rapaka-et-al-2008}
 \citation{don-nils-amir-2013}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Net production \(\Pi _b(z) + \Pi _p(z)\) at \(k=0.1\) in the IDL formulation, showing how the overall energy input changes with diffusive strength. (a) \(\mathrm  {Pe}_{\delta } = 40\). (b) \(\mathrm  {Pe}_{\delta } = 5\). (c) \(\mathrm  {Pe}_{\delta } = 1\).}}{19}{figure.9}\protected@file@percent }
-\newlabel{fig:contribution_sum_peclet}{{9}{19}{Net production \(\Pi _b(z) + \Pi _p(z)\) at \(k=0.1\) in the IDL formulation, showing how the overall energy input changes with diffusive strength. (a) \(\Pe _{\delta } = 40\). (b) \(\Pe _{\delta } = 5\). (c) \(\Pe _{\delta } = 1\)}{figure.9}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Comparison between the quasi-steady-state approximation growth rates and the growth rate \(\tilde  {\omega }_r\) extracted from the initial-value problem at \(k^{\max }\). (\circlegend  ) denotes the quasi-steady-state approximation and (\solidlegend  ) the initial-value problem. Columns correspond to \(\mathrm  {Sc}= 1\), \(5\), and \(40\), respectively.}}{20}{figure.10}\protected@file@percent }
 \newlabel{fig:IVP_growthrate}{{10}{20}{Comparison between the quasi-steady-state approximation growth rates and the growth rate \(\tilde {\omega }_r\) extracted from the initial-value problem at \(k^{\max }\). (\circlegend ) denotes the quasi-steady-state approximation and (\solidlegend ) the initial-value problem. Columns correspond to \(\Sch = 1\), \(5\), and \(40\), respectively}{figure.10}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Initial-value problem comparison with the quasi-steady-state approximation}{20}{section.5}\protected@file@percent }
 \newlabel{sec:IVP}{{5}{20}{Initial-value problem comparison with the quasi-steady-state approximation}{section.5}{}}
 \citation{chandrasekhar-1961}
 \citation{duff-harlow-hirt-1962}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusions}{21}{section.6}\protected@file@percent }
+\newlabel{sec:conclusions}{{6}{21}{Conclusions}{section.6}{}}
 \citation{kola-israel-towne-2026}
 \citation{mueschke-andrews-schilling-2006}
 \citation{dimonte-et-al-2004}
@@ -168,14 +171,12 @@
 \citation{roberts-jacobs-2016}
 \citation{vold-yin-albright-2021}
 \citation{keenan-sauppe-2023}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusions}{21}{section.6}\protected@file@percent }
-\newlabel{sec:conclusions}{{6}{21}{Conclusions}{section.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {A}Incompressible variable-density reduced formulation}{22}{appendix.A}\protected@file@percent }
 \newlabel{sec:appendix_reducedIVD}{{A}{22}{Incompressible variable-density reduced formulation}{appendix.A}{}}
 \newlabel{eq:linearized_set}{{68}{22}{Incompressible variable-density reduced formulation}{equation.A.68}{}}
 \newlabel{eq:linearized_set_continuity}{{68a}{22}{Incompressible variable-density reduced formulation}{equation.A.68a}{}}
 \newlabel{eq:linearized_set_momentum}{{68b}{22}{Incompressible variable-density reduced formulation}{equation.A.68b}{}}
-\newlabel{eq:linearized_set_tau}{{69}{22}{Incompressible variable-density reduced formulation}{equation.A.69}{}}
+\newlabel{eq:linearized_set_tau}{{69}{23}{Incompressible variable-density reduced formulation}{equation.A.69}{}}
 \newlabel{eq:linearized_set_divergence}{{70}{23}{Incompressible variable-density reduced formulation}{equation.A.70}{}}
 \newlabel{eq:linear_momentum_vertical_base}{{71}{23}{Incompressible variable-density reduced formulation}{equation.A.71}{}}
 \newlabel{eq:vertical_momentum_step_5_1}{{72}{23}{Incompressible variable-density reduced formulation}{equation.A.72}{}}
@@ -188,9 +189,9 @@
 \newlabel{eq:poisson_operators_b}{{75b}{23}{Incompressible variable-density reduced formulation}{equation.A.75b}{}}
 \newlabel{eq:pressure_poisson_equation}{{76}{23}{Incompressible variable-density reduced formulation}{equation.A.76}{}}
 \newlabel{eq:z_derivative_pressure_poisson_equation}{{77}{23}{Incompressible variable-density reduced formulation}{equation.A.77}{}}
-\newlabel{eq:w0_xy_operators}{{78}{23}{Incompressible variable-density reduced formulation}{equation.A.78}{}}
-\newlabel{eq:w0_xy_operators_a}{{78a}{23}{Incompressible variable-density reduced formulation}{equation.A.78a}{}}
-\newlabel{eq:w0_xy_operators_b}{{78b}{23}{Incompressible variable-density reduced formulation}{equation.A.78b}{}}
+\newlabel{eq:w0_xy_operators}{{78}{24}{Incompressible variable-density reduced formulation}{equation.A.78}{}}
+\newlabel{eq:w0_xy_operators_a}{{78a}{24}{Incompressible variable-density reduced formulation}{equation.A.78a}{}}
+\newlabel{eq:w0_xy_operators_b}{{78b}{24}{Incompressible variable-density reduced formulation}{equation.A.78b}{}}
 \newlabel{eq:reduced_vertical_momentum_poisson}{{79}{24}{Incompressible variable-density reduced formulation}{equation.A.79}{}}
 \newlabel{eq:stress_pressure_vertical_momentum_difference}{{80}{24}{Incompressible variable-density reduced formulation}{equation.A.80}{}}
 \newlabel{eq:w0_operators}{{81}{24}{Incompressible variable-density reduced formulation}{equation.A.81}{}}
