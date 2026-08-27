@@ -91,7 +91,6 @@ Comparison with the corresponding initial-value problem shows that the quasi-ste
 
 
 \section{Introduction}%
-\label{sec:introduction}
 The Rayleigh--Taylor instability (RTI) arises when two superposed fluids of distinct densities are subjected to an acceleration directed against their density stratification. First investigated by~\citet{lord_rayleigh-1879} and later extended by~\citet{taylor-1950}, it has since been recognized as a fundamental mechanism in a broad range of natural processes and engineering applications. In inertial confinement fusion, RTI represents a primary source of performance degradation~\citep{lindl-1995}; in astrophysics, it is a fundamental mechanism in core-collapse supernovae~\citep{muller-2020}; and in oceanography, it drives overturning at stratified interfaces~\citep{turner-1973}.
 The RTI is commonly analyzed using linear stability theory (LST), in which infinitesimal perturbations to a prescribed base state are examined to determine whether they grow or decay in time, thereby classifying the flow as linearly stable or unstable. A comprehensive account of linear RTI theory and related developments is reported in the work of Zhou and co-workers~\citep{zhou-2017-a,zhou-2017-b,zhou-et-al-2021}. However, when diffusion is incorporated into RTI, linear stability analysis is not strictly applicable because of the time-dependent nature of the base state. Specifically, LST assumes the existence of a fixed point of the full nonlinear system about which linearization is performed, leading to a linear operator that is inherently time independent. This limitation was already recognized by~\citet{duff-harlow-hirt-1962}, who effectively circumvented it by treating the evolving base state as instantaneously frozen and subsequently validating the computed growth rates against experimental measurements. Although not stated explicitly, this assumption falls within the class of quasi-steady-state approximations described by~\citet{tan-homsy-1986}, in which the time scale associated with base-state evolution is much larger than that of perturbation growth, so that the diffusive base state may be treated as fixed.
 
@@ -139,7 +138,6 @@ dimensional form read
 \begin{align}
     \label{eq:dimensional_continuity}
     \partial_t \rho + \bnabla\bcdot(\rho \boldsymbol{u}) &= 0, \\
-    \label{eq:dimensional_momentum}
     \rho\,\partial_t \boldsymbol{u} + \rho\,(\boldsymbol{u}\bcdot\bnabla)\boldsymbol{u} &= -\bnabla p + \bnabla\bcdot\mathsfbi{\tau} - \rho g \boldsymbol{e}_z,
 \end{align}
 \end{subequations}
@@ -171,14 +169,12 @@ equivalently rewritten as an evolution equation for the density,
 \end{equation}
 Comparing~\eqref{eq:dimensional_logrho} with~\eqref{eq:dimensional_continuity}, it follows that the velocity field satisfies the divergence constraint
 \begin{equation}
-    \label{eq:dimensional_divergence}
     \bnabla\bcdot\boldsymbol{u} = -\mathcal{D}\,\nabla^2 \log\rho,
 \end{equation}
 leading to a set of equations in which each of the two fluids is individually incompressible, yet the flow is not divergence-free~\citep{livescu-2013}.
 To render the governing equations dimensionless, we introduce reference quantities for density \(\rho_r\), length \(L_r\), velocity \(U_r\), dynamic viscosity \(\mu_r\), gravitational acceleration \(g\), and mass diffusivity \(\mathcal{D}\). The Reynolds, Froude, and Schmidt numbers
 follow as
 \begin{equation}
-    \label{eq:Re_Fr_definitions}
     \Rey = \frac{\rho_r L_r U_r}{\mu_r}, \qquad \Frd = \frac{U_r}{\sqrt{g L_r}}, \qquad \Sch = \frac{\mu_r/\rho_r}{\mathcal{D}}.
 \end{equation}
 Since the present problem is not characterized by externally imposed length or velocity scales, it is convenient to adopt the classical viscous-gravitational reference scales introduced by~\citet{chandrasekhar-1961}. With this choice, the Reynolds and Froude numbers are set to unity, corresponding to
@@ -198,16 +194,13 @@ Referring to the nondimensional variables with the same notation as their dimens
 \begin{subequations}
     \label{eq:IVD_NL}
     \begin{align}
-        \label{eq:IVD_NL_continuity}
         \partial_t \rho + \bnabla\bcdot(\rho \boldsymbol{u}) &= 0, \\
-        \label{eq:IVD_NL_momentum}
         \rho\,\partial_t \boldsymbol{u} + \rho\,(\boldsymbol{u}\bcdot\bnabla)\boldsymbol{u} &= -\,\bnabla p + \bnabla\bcdot\mathsfbi{\tau} - \rho\,\boldsymbol{e}_z, \\
         \bnabla \bcdot \boldsymbol{u} &= -\Sch^{-1}\,\nabla^2 \log\rho.
     \end{align}
 \end{subequations}
 Introducing the state vector \(\boldsymbol{Q}(\boldsymbol{x},t) = \left[ u, v, w, p, \rho \right]\), the nonlinear system~\eqref{eq:IVD_NL} can be written compactly as
 \begin{equation}
-    \label{eq:compact_non_linear_system}
     \mathscr{M}\,\partial_t \boldsymbol{Q} = \mathcal{N}\!\left( \boldsymbol{Q} \right),
 \end{equation}
 where \(\mathscr{M}\) is the identity matrix with the entry corresponding to \(p\) set to zero, since the pressure is not dynamically evolved but instead enforces the divergence constraint.
@@ -224,7 +217,6 @@ We consider the asymptotic expansion
 \end{equation}
 Here, \(\boldsymbol{Q}_0(\boldsymbol{x},t)\) is a solution of the nonlinear equation, while \(\boldsymbol{Q}'(\boldsymbol{x},t)\) denotes the perturbation field. Equating terms at successive orders in \(\epsilon\) yields
 \begin{subequations}
-    \label{eq:compact_equations}
     \begin{align}
         \label{eq:compact_0th_equations}
         \mathscr{M}\,\partial_t \boldsymbol{Q}_0
@@ -251,10 +243,10 @@ The choice of mixing law is, to some extent, arbitrary. A detailed justification
 \subsection{Zeroth-order equations: self-similar evolution of the base state}%
 \label{subsec:zeroth_order_self_similar}
 In this work the base state is not a steady fixed point but a time-dependent solution of the nonlinear governing equations upon which a quasi-steady-state approximation is imposed. To clarify the precise meaning and implications of this approximation, it is necessary to examine the equations governing the base state itself. Expanding the compact form of~\eqref{eq:compact_0th_equations} yields the zeroth-order system
-\begin{subequations}\label{eq:vd_zeroth_system}
+\begin{subequations}
 \begin{align}
     \partial_t \rho_0 + \bnabla\bcdot(\rho_0 \boldsymbol{U}_0) &= 0, \label{eq:vd_zeroth_system_mass} \\
-    \rho_0\,\partial_t \boldsymbol{U}_0 + \rho_0\,(\boldsymbol{U}_0\bcdot\bnabla)\boldsymbol{U}_0 &= -\,\bnabla p_0 + \bnabla\bcdot\mathsfbi{\tau}_0 + \rho_0\,\boldsymbol{g}, \label{eq:vd_zeroth_system_momentum} \\
+    \rho_0\,\partial_t \boldsymbol{U}_0 + \rho_0\,(\boldsymbol{U}_0\bcdot\bnabla)\boldsymbol{U}_0 &= -\,\bnabla p_0 + \bnabla\bcdot\mathsfbi{\tau}_0 + \rho_0\,\boldsymbol{g}, \\
     \bnabla\bcdot\boldsymbol{U}_0 &= -\Sch^{-1}\nabla^2 \log(\rho_0). \label{eq:vd_zeroth_system_divergence}
 \end{align}
 \end{subequations}
@@ -266,8 +258,8 @@ Equations~\eqref{eq:vd_zeroth_system_mass} and~\eqref{eq:vd_zeroth_system_diverg
 \begin{subequations}
 \label{eq:base_state_1D}
 \begin{align}
-    \partial_t \rho_0 + \partial_z (\rho_0 w_0) &= 0, \label{eq:base_state_1D_mass} \\
-    \partial_z w_0 + \Sch^{-1}\,\partial_{zz} \log(\rho_0) &= 0. \label{eq:base_state_1D_divergence}
+    \partial_t \rho_0 + \partial_z (\rho_0 w_0) &= 0, \\
+    \partial_z w_0 + \Sch^{-1}\,\partial_{zz} \log(\rho_0) &= 0.
 \end{align}
 \end{subequations}
 Defining the similarity variable
@@ -275,7 +267,7 @@ Defining the similarity variable
     \eta = z \sqrt{\frac{\Sch}{t}},
 \end{equation}
 a self-similar solution of~\eqref{eq:base_state_1D} is obtained,
-\begin{subequations}\label{eq:base_state_self_similar}
+\begin{subequations}
 \begin{align}
     \rho_{0}(\eta)
     &=
@@ -375,9 +367,9 @@ equation can be written in compact form as
 \begin{subequations}
 \label{eq:linearized_density}
 \begin{align}
-    \partial_t \rho &= \mathscr{A}_{\rho w}\,w + \mathscr{A}_{\rho\rho}\,\rho, \label{eq:mixing_compact_a} \\
-    \mathscr{A}_{\rho w} &= -\,\partial_z \rho_0, \label{eq:mixing_compact_b} \\
-    \mathscr{A}_{\rho\rho} &= -\left(w_0\,\partial_z + w_0'\right) - \rho_0\,\mathscr{L}_\rho. \label{eq:mixing_compact_c}
+    \partial_t \rho &= \mathscr{A}_{\rho w}\,w + \mathscr{A}_{\rho\rho}\,\rho, \\
+    \mathscr{A}_{\rho w} &= -\,\partial_z \rho_0, \\
+    \mathscr{A}_{\rho\rho} &= -\left(w_0\,\partial_z + w_0'\right) - \rho_0\,\mathscr{L}_\rho.
 \end{align}
 \end{subequations}
 Concerning the momentum equation, the key observation is that the linearized divergence constraint
@@ -413,7 +405,6 @@ where overdots denote derivatives with respect to time, and
 \(\nabla_{xy}^2 = \partial_{xx} + \partial_{yy}\) is the horizontal Laplacian. With these
 definitions in hand, the reduced momentum equation reads
 \begin{equation}
-    \label{eq:reduced_formulation}
     \mathscr{B}_{ww}\,\partial_t w
     +
     \mathscr{B}_{w\rho}\,\partial_t \rho
@@ -491,7 +482,6 @@ Upon freezing the base state, the temporal derivatives of the base-state quantit
 \end{equation}
 Assuming homogeneity in the in-plane directions \((x,y)\), the perturbation fields are decomposed into Fourier modes. The linearized operators in~\eqref{eq:A_B_operators} depend only on \(k^{2} = k_{x}^{2} + k_{y}^{2}\), where \(k_x\) and \(k_y\) are the wavenumbers in the \(x\) and \(y\) directions, respectively, and the state vector can therefore be expressed as
 \begin{equation}
-    \label{eq:vd_compact_linear_system}
     \hat{\boldsymbol{q}}_{k}(z,t) =
     \begin{bmatrix}
         \hat{w}(z,k,t) \\
@@ -530,7 +520,6 @@ where \(\omega(k)\) is the complex eigenvalue and its real part defines the temp
 Following the derivation of the governing equations, a solver employing a Chebyshev spectral method is developed using the MATLAB differentiation suite of~\cite{weideman-reddy-2000}. To resolve the sharp gradient of the initial profile, a coordinate transformation that concentrates collocation points within the diffusive layer is introduced. For a physical domain \([a,b]=[-L_{z},L_{z}]\), the mapping is
 \begin{equation}
     z(\xi) = \frac{a+b}{2} + \frac{b-a}{2}\,\frac{\sinh\!\bigl(\beta\,\xi\bigr)}{\sinh(\beta)}, \quad \xi\in[-1,1],\; z\in[a,b],
-    \label{eq:coordinate_transformation}
 \end{equation}
 where the free parameter \(\beta\) controls the clustering, and for \(\beta\gg1\) most points fall near \(z=0\). The inverse mapping, required to construct the spectral matrices, follows from
 \begin{equation}
@@ -649,7 +638,6 @@ The asymptotic structure of the growth-rate spectrum at large wavenumbers is obt
 \end{subequations}
 Letting \(k\to\infty\) yields the leading-order system
 \begin{equation}
-    \label{eq:linearized_continuous_system_kgg1}
     \begin{pmatrix}
         \partial_\tau \hat{w}^{(0)}\\[4pt]
         \partial_\tau \hat{\rho}^{(0)}
@@ -794,7 +782,6 @@ where \(\hat{u}_i\) denotes the eigenmode velocity component and the superscript
 \end{equation}
 so that the different production terms can be compared directly across density ratios and diffusive strengths \citep{kirthy-diwan-2020}. The budget equation for the linearized kinetic energy is
 \begin{equation}
-    \label{eq:energy_balance}
     \int \rho_0 \, \frac{\partial E_c}{\partial t}
     =
     - \int\underbrace{ \left( \rho_0 w_0' \hat{w}^{*}\hat{w} + \rho_0 w_0 \, \frac{\partial E_c}{\partial z} \right)}_{\text{energy transfer with the base state}}
@@ -906,14 +893,13 @@ The authors gratefully acknowledge support provided by Michigan SPARC through th
 \section{Incompressible variable-density reduced formulation}
 \label{sec:appendix_reducedIVD}
 In this appendix, we discuss the linearized equations reported in compact form in \eqref{eq:compact_1st_equations} and briefly outline the derivation of the reduced vertical-velocity--density formulation used in the linear stability analysis. The set of linearized equation, using Einstein summation notation is given by
-\begin{subequations}\label{eq:linearized_set}
+\begin{subequations}
 \begin{align}
     \frac{\partial \rho}{\partial t}
     + \frac{\partial (\rho_0 u_j)}{\partial x_j}
     + \frac{\partial (\rho u_{0j})}{\partial x_j}
     &=
     0,
-    \label{eq:linearized_set_continuity}
     \\
     \rho \frac{\partial u_{0i}}{\partial t}
     + \rho_0 \frac{\partial u_i}{\partial t}
@@ -928,7 +914,7 @@ In this appendix, we discuss the linearized equations reported in compact form i
 \end{align}
 \end{subequations}
 where the linearized viscous stress \(\tau_{ij}\) is given by
-\begin{subequations}\label{eq:linearized_set_tau}
+\begin{subequations}
 \begin{align}
     \tau_{ij} &= \mu \tilde\tau_{ij}^{(0)} + \mu_0 \tilde\tau_{ij}^{(1)},
     \\
@@ -938,7 +924,7 @@ where the linearized viscous stress \(\tau_{ij}\) is given by
 \end{align}
 \end{subequations}
 with the linearized divergence constraint given by
-\begin{equation}\label{eq:linearized_set_divergence}
+\begin{equation}
     \nabla \cdot \mathbf{u}
     =
     -Sc^{-1}\nabla^2\left(\frac{\rho}{\rho_0}\right).
@@ -986,13 +972,12 @@ We first define
   \frac{\partial w_0}{\partial t}
   +
   w_0 w_0',
-  \label{eq:vertical_momentum_coefficients_a} \\
+  \\
   C_0
   =
   \rho_0 w_0'
   +
   \rho_0 w_0 \frac{\partial}{\partial z}.
-  \label{eq:vertical_momentum_coefficients_b}
 \end{gather}
 \end{subequations}
 Taking the Laplacian of \eqref{eq:vertical_momentum_step_5_1} and using \eqref{eq:vertical_momentum_coefficients} gives
@@ -1059,7 +1044,7 @@ We next define the operators
       w_0 w_0'
     \right)'
   \right],
-  \label{eq:poisson_operators_a} \\
+  \\
   B_0
   =
   \left[
@@ -1075,7 +1060,6 @@ We next define the operators
     \right)'
     \frac{\partial}{\partial z}
   \right].
-  \label{eq:poisson_operators_b}
 \end{gather}
 \end{subequations}
 Taking the divergence of \eqref{eq:linear_momentum_vertical_base} and using \eqref{eq:poisson_operators} gives the pressure Poisson equation
@@ -1177,7 +1161,7 @@ Subtracting \eqref{eq:laplacian_vertical_momentum} from \eqref{eq:z_derivative_p
   \frac{\partial A_0}{\partial z}
   -
   A_0 \frac{\partial}{\partial z},
-  \label{eq:w0_xy_operators_a} \\
+  \\
   \mathscr{L}_{w_0 w}
   =
   C_0''
@@ -1189,7 +1173,6 @@ Subtracting \eqref{eq:laplacian_vertical_momentum} from \eqref{eq:z_derivative_p
   \frac{\partial B_0}{\partial z}
   -
   B_0 \frac{\partial}{\partial z}.
-  \label{eq:w0_xy_operators_b}
 \end{gather}
 \end{subequations}
 Then the reduced equation obtained from \eqref{eq:z_derivative_pressure_poisson_equation} minus \eqref{eq:laplacian_vertical_momentum} is
@@ -1317,7 +1300,7 @@ Using the definitions in \eqref{eq:poisson_operators} and \eqref{eq:vertical_mom
     w_0 w_0'
   \right)
   \nabla_{xy}^2,
-  \label{eq:w0_operators_a} \\
+  \\
   \mathscr{L}_{w_0 w}
   =
   \rho_0' w_0
@@ -1329,7 +1312,6 @@ Using the definitions in \eqref{eq:poisson_operators} and \eqref{eq:vertical_mom
     \rho_0 w_0 \frac{\partial}{\partial z}
   \right)
   \nabla^2.
-  \label{eq:w0_operators_b}
 \end{gather}
 \end{subequations}
 The last remaining term to rewrite is the time derivative of the velocity divergence. We use
@@ -1349,7 +1331,7 @@ The last remaining term to rewrite is the time derivative of the velocity diverg
   \left(
     \rho
   \right),
-  \label{eq:divergence_time_derivative_identity_a} \\
+  \\
   \mathscr{L}_{\rho}\left(\star\right)
   =
   -
@@ -1358,7 +1340,7 @@ The last remaining term to rewrite is the time derivative of the velocity diverg
   \left(
     \frac{\star}{\rho_0}
   \right),
-  \label{eq:divergence_time_derivative_identity_b} \\
+  \\
   \dot{\mathscr{L}}_{\rho}\left(\star\right)
   =
   -
@@ -1370,7 +1352,6 @@ The last remaining term to rewrite is the time derivative of the velocity diverg
       \frac{\star}{\rho_0}
     \right)
   \right].
-  \label{eq:divergence_time_derivative_identity_c}
 \end{gather}
 \end{subequations}
 Finally, using
@@ -1392,7 +1373,7 @@ The derivation may be summarized as follows:
 
 \section{Viscosity Mixing Law}%
 \label{sec:appendix_viscosity_law}
-In this appendix, we examine the sensitivity of the growth rates to the mixing law used to describe viscosity. For clarity, the discussion is presented in dimensional form. Here, \(\mu_1\) and \(\mu_2\) denote the dynamic viscosities of the two pure fluids, \(\rho_1\) and \(\rho_2\) their densities, and \(\mu\) and \(\rho\) the corresponding viscosity and density of the mixture. Let \(W_{\alpha}\), \(X_{\alpha}\), and \(Y_{\alpha}\) denote the molar mass, molar fraction, and mass fraction of species \(\alpha\), respectively. For a binary mixture, the molar fraction is defined by
+In this appendix, we examine the sensitivity of the growth rates to the mixing law used to describe viscosity. For clarity, the discussion is presented in dimensional form. Here, \(\mu_1\) and \(\mu_2\) denote the dynamic viscosities of the two pure fluids, \(\rho_1\) and \(\rho_2\) their densities, and \(\mu\) and \(\rho\) the corresponding viscosity and density of the mixture. Let \(W_{\alpha}\), \(X_{\alpha}\), and \(Y_{\alpha}\) denote the molar mass, mole fraction, and mass fraction of species \(\alpha\), respectively. For a binary mixture, the mole fraction is defined by
 \begin{equation}
     \label{eq:molar_fraction_definition}
     X_{\alpha} = \frac{Y_{\alpha}}{W_{\alpha}}
@@ -1415,15 +1396,13 @@ The kinematic viscosity of the mixture is defined by \(\nu = \mu/\rho\), and the
 \end{equation}
 Using~\eqref{eq:molar_fraction_definition}, the density law~\eqref{eq:amagat_law} can be expressed as
 \begin{equation}
-    \label{eq:density_molar}
     \rho = \rho_1 X_1 + \rho_2 X_2.
 \end{equation}
 In particular, once the base-state density is specified by the self-similar diffusive profile~\eqref{eq:self_similar_base_state_density}, it follows that
 \begin{equation}
-    \label{eq:X1_profile}
     X_1 = \frac{1}{2}\left(1 - \Atw \erf\left(\frac{z}{\delta}\right)\right).
 \end{equation}
-This recovers the molar-fraction profile employed by~\citet{morgan-likhachev-jacobs-2016}, but here it arises directly from the governing equations rather than as an independent modeling prescription.
+This recovers the mole-fraction profile employed by~\citet{morgan-likhachev-jacobs-2016}, but here it arises directly from the governing equations rather than as an independent modeling prescription.
 \begin{figure}
     \centering
     \begin{minipage}[t]{0.32\textwidth}
@@ -1441,7 +1420,7 @@ This recovers the molar-fraction profile employed by~\citet{morgan-likhachev-jac
     \caption{Sensitivity of the dispersion relation to the viscosity mixing law for \(\Atw = 0.5\), \(\delta = 5\), and \(\Sch \to \infty\) for negative viscosity ratios, \(\Amu < 0\). The \(\Amu = 0\) reference is denoted by the dashed blue line \((\dashlegend)\).}
     \label{fig:visc_law_comparison_neg}
 \end{figure}
-Two composition-dependent mixing laws for the dynamic viscosity are considered. The first is the linear law in molar fraction,
+Two composition-dependent mixing laws for the dynamic viscosity are considered. The first is the linear law in mole fraction,
 \begin{equation}
     \label{eq:mu_g}
     \mu_g = \mu_1 X_1 + \mu_2 X_2,
@@ -1485,7 +1464,6 @@ The two closures can be related in the reference case \(\nu_1 = \nu_2\). When th
 \end{equation}
 The harmonic law is often motivated by the observation of~\citet{livescu-2020} that several direct numerical simulations of IVD flows impose
 \begin{equation}
-    \label{eq:Sc_definition}
     \frac{\mu}{\rho \mathcal{D}} = \Sch = \mathrm{constant},
 \end{equation}
 thereby enforcing a constant local Schmidt number; under this constraint \(\mu\) is proportional to \(\rho\), which leads to the harmonic closure. Equation~\eqref{eq:nu_const} shows, however, that the linear law recovers the same constant kinematic viscosity in the reference case; the harmonic closure is thus a sufficient, but not necessary, route to constant local kinematic viscosity.
@@ -1815,7 +1793,6 @@ A final and more general verification is provided by comparison with the semi-an
 \end{equation}
 The amplitude coefficients satisfy the linear system
 \begin{equation}
-    \label{eq:linear_system}
     \begin{pmatrix}
         1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 \\
         k & q_{1} & -k & -q_{1} & k & q_{2} & -k & -q_{2} \\
@@ -1875,7 +1852,6 @@ Figures~\ref{fig:mikaelian_verification_Amu_neg09}--\ref{fig:mikaelian_verificat
         \figfile{figures/verification_figures/V05_mikaelian_validation_VD_At0.9_Amu0.0.tex}
     \end{minipage}
     \caption{Verification against the semi-analytical growth rates of~\citet{mikaelian-1996} at fixed \(\Amu=0.0\). \(H\) denotes the domain half-height. (\circlegend) denotes the semi-analytical solution obtained from equation~\eqref{eq:mikaelian_determinant}, and (\solidlegend) denotes the numerical results.}
-    \label{fig:mikaelian_verification_Amu0}
 \end{figure}
 
 \begin{figure}
