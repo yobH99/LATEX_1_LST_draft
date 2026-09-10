@@ -472,7 +472,7 @@ The validity of the quasi-steady-state approximation relies on a separation of t
 \end{equation}
 The quasi-steady-state approximation is therefore not uniformly valid across all Schmidt and Atwood numbers for a fixed \(\delta_0\). The magnitude of the neglected temporal derivatives increases with \(\Atw\) and decreases with \(\Sch\), so that for sufficiently small \(\Sch\) or sufficiently large \(\Atw\) the base state evolves on a time scale comparable to that of the perturbation growth and the frozen-profile assumption breaks down. In the present work, cases down to \(\Sch = 0.75\) and up to \(\Atw = 0.75\) are nevertheless considered, for which the separation of time scales may not be fully respected. Accordingly, results in that regime should be interpreted as indicative of the trends predicted by the quasi-steady-state approximation, rather than as outcomes supported by a clear asymptotic separation of scales.
 
-Upon freezing the base state, the temporal derivatives of the base-state quantities are set to zero in~\eqref{eq:A_B_operators}. The resulting frozen operator system is then discretized and used to compute the growth rates. The state vector associated with the reduced perturbation field is
+Upon freezing the base state, the temporal derivatives of the base-state quantities are set to zero in~\eqref{eq:A_B_operators}. The resulting frozen operator system is then discretized and used to compute the growth rates. For the state vectors, we use bold italic symbols for vectors of continuous functions and bold roman symbols for spatially discretized vectors. The state vector associated with the reduced perturbation field is
 \begin{equation}
     \boldsymbol{q}(\mathbf{x},t) =
     \begin{bmatrix}
@@ -486,16 +486,15 @@ Assuming homogeneity in the in-plane directions \((x,y)\), the perturbation fiel
     \begin{bmatrix}
         \hat{w}(z,k,t) \\
         \hat{\rho}(z,k,t)
-    \end{bmatrix}
-    \in \mathbb{C}^{2N_{z}},
+    \end{bmatrix},
 \end{equation}
-where the subscript \(k\) denotes the Fourier coefficient at wavenumber \(k\) and \(N_z\) is the number of discretization points in the vertical direction. This leads to the semi-discrete system
+where the subscript \(k\) denotes the Fourier coefficient at wavenumber \(k\). Evaluating the two components at the \(N_z\) vertical collocation points and stacking their values gives the spatially discretized state \(\hat{\mathbf{q}}_k(t)\in\mathbb{C}^{2N_z}\). This leads to the semi-discrete system
 \begin{equation}
-    \mathsfbi{B}_{k}\,\difft{\hat{\boldsymbol{q}}_{k}}{t} = \mathsfbi{A}_{k}\,\hat{\boldsymbol{q}}_{k},
+    \mathsfbi{B}_{k}\,\difft{\hat{\mathbf{q}}_{k}}{t} = \mathsfbi{A}_{k}\,\hat{\mathbf{q}}_{k},
 \end{equation}
 where the block matrices \(\mathsfbi{A}_{k}\) and \(\mathsfbi{B}_{k}\) follow from the discretization of~\eqref{eq:linearized_continuous_system}, and the growth rates are obtained by solving the generalized eigenvalue problem
 \begin{equation}
-    \mathsfbi{A}_{k}\,\hat{\boldsymbol{q}}_{k} = \omega(k)\,\mathsfbi{B}_{k}\,\hat{\boldsymbol{q}}_{k},
+    \mathsfbi{A}_{k}\,\hat{\mathbf{q}}_{k} = \omega(k)\,\mathsfbi{B}_{k}\,\hat{\mathbf{q}}_{k},
 \end{equation}
 where \(\omega(k)\) is the complex eigenvalue and its real part defines the temporal growth rate, \(\omega_r(k)\)
 
@@ -845,7 +844,7 @@ The quasi-steady-state approximation provides a local-in-time prediction of the 
 \begin{equation}
     \tilde{\omega}_r\!\left(k,t_0(\delta_0)\right)
     =
-    \frac{1}{2}\difft{}{t}\log\!\left(\left\lVert \mathbf{q}_k \right\rVert^2\right).
+    \frac{1}{2}\difft{}{t}\log\!\left(\left\lVert \hat{\mathbf{q}}_k \right\rVert^2\right).
 \end{equation}
 The wavenumber chosen for the comparison reported in figure~\ref{fig:IVP_growthrate} is the most unstable wavenumber, \(k^{\max}\), predicted by the quasi-steady-state approximation at the initial thickness \(\delta_0\).
 \begin{figure}
