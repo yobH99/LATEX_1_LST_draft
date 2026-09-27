@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1790527502.74015 "main.aux" "main.bbl" "main" 1790527520.1813 0
+["bibtex main"] 1790527502.74015 "main.aux" "main.bbl" "main" 1790550475.90546 0
   "./references.bib" 1790527352.12198 16747 507e60976afeb02dd2c824882cf62832 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1233624470 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "main.aux" 1790527519.87839 33207 8d9fdfbf573254bfcce9017144ad8eaf "pdflatex"
+  "main.aux" 1790550475.62866 33207 8d9fdfbf573254bfcce9017144ad8eaf "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1790527502.84087 "/home/yobh/Desktop/1_LST_draft/draft/main.tex" "main.pdf" "main" 1790527520.18148 0
+["pdflatex"] 1790550459.923 "/home/yobh/Desktop/1_LST_draft/draft/main.tex" "main.pdf" "main" 1790550475.90564 0
   "../figures/IVP1_growthrate_vsdelta_Sc1.tex" 1790526434.9574 115399 83ead3b798b140f6bbf38eb07195d9fd ""
   "../figures/IVP1_growthrate_vsdelta_Sc40.tex" 1790526435.30584 116249 01c4e6891b2ee7954a35ed1b62122924 ""
   "../figures/IVP1_growthrate_vsdelta_Sc5.tex" 1790526435.13533 115899 43a160012cdf9c35d330136d554eaf7e ""
@@ -79,7 +79,7 @@
   "../figures/wrm_vs_Scinv_Amu_+0.9.tex" 1787022923.45193 7604 e475f33c8771e6cc4b2c48aecb248a1c ""
   "../figures/wrm_vs_Scinv_Amu_-0.9.tex" 1787022922.97346 7771 ff8299c37f2ac477d66843b326af0722 ""
   "/etc/texmf/web2c/texmf.cnf" 1771940403.39642 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/yobh/Desktop/1_LST_draft/draft/main.tex" 1790471470.78209 118423 eb9d43d06278a6a8e1c252e307eef9c3 ""
+  "/home/yobh/Desktop/1_LST_draft/draft/main.tex" 1790550454.01687 118416 4255542ab27a1f5e04bc1bcdcc207f38 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvbo7t.tfm" 1136768653 2492 944eaaf64cd820f73cb5bff1e7b2f0c2 ""
@@ -333,10 +333,10 @@
   "AMSfonts.sty" 1777414110 7278 2ea76d4fdadcca290c98b418e398f832 ""
   "AMSgen.sty" 1777414110 5608 4e265ca12cb115cb359ee09bd5a307e2 ""
   "AMSsymb.sty" 1777414110 15157 cd1c0319619cc0e236fe3332b7a3e63e ""
-  "main.aux" 1790527519.87839 33207 8d9fdfbf573254bfcce9017144ad8eaf "pdflatex"
+  "main.aux" 1790550475.62866 33207 8d9fdfbf573254bfcce9017144ad8eaf "pdflatex"
   "main.bbl" 1790527502.83595 13249 5624de1f9196893e5363146af3bdc23d "bibtex main"
-  "main.out" 1790527519.87939 4922 16ead9103cd8cab1d1994f6f62cf8204 "pdflatex"
-  "main.tex" 1790471470.78209 118423 eb9d43d06278a6a8e1c252e307eef9c3 ""
+  "main.out" 1790550475.63066 4922 16ead9103cd8cab1d1994f6f62cf8204 "pdflatex"
+  "main.tex" 1790550454.01687 118416 4255542ab27a1f5e04bc1bcdcc207f38 ""
   "natbib.sty" 1777414110 34200 87849b76a569f4ada77acbf28ba8602b ""
   (generated)
   "main.aux"
