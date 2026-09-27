@@ -1,25 +1,29 @@
 % This file was created by matlab2tikz.
 %
 \definecolor{mycolor1}{rgb}{0.20000,0.40000,0.60000}%
-\definecolor{mycolor2}{rgb}{0.12941,0.12941,0.12941}%
 %
 \begin{tikzpicture}
 
 \begin{axis}[%
-width=11.255in,
+width=11.252in,
 height=7.131in,
-at={(1.888in,0.962in)},
+at={(1.887in,0.962in)},
 scale only axis,
 clip=true,
+separate axis lines,
+every outer x axis line/.append style={black},
+every x tick label/.append style={font=\color{black}},
+every x tick/.append style={black},
 xmin=0,
 xmax=1.4,
 xtick={  0, 0.2, 0.4, 0.6, 0.8,   1, 1.2, 1.4},
-xlabel style={font=\color{mycolor2}},
 xlabel={$k$},
+every outer y axis line/.append style={black},
+every y tick label/.append style={font=\color{black}},
+every y tick/.append style={black},
 ymin=-1.65,
 ymax=0.2,
 ytick={-1.6, -1.4, -1.2,   -1, -0.8, -0.6, -0.4, -0.2,    0},
-ylabel style={font=\color{mycolor2}},
 ylabel={$\omega_r$},
 axis background/.style={fill=white},
 legend style={at={(0.03,0.03)}, anchor=south west, legend cell align=left, align=left},
@@ -1628,7 +1632,7 @@ colormap={sigmamap}{rgb(0.0000)=(0.0200,0.1880,0.3800); rgb(0.1000)=(0.0743,0.34
 1.3859649122807	-0.962729924613052\\
 };
 \node[right, align=left, inner sep=0, font=\color{black!20!pink}]
-at (axis cs:0.02,-0.38) {{\fontsize{6}{7}\selectfont$-\max_{z}\left(\frac{\mu_0}{\rho_0}\right)k^2$}};
+at (axis cs:0.02,-0.38) {{\fontsize{6}{7}\selectfont$-\min_{z}\left(\frac{\mu_0}{\rho_0}\right)k^2$}};
 \node[right, align=left, inner sep=0, rotate=-36, font=\color{white!60!black}]
 at (axis cs:1.05,-0.68) {{\fontsize{6}{7}\selectfont$-\mathrm{Sc}^{-1} k^2$}};
 \addplot [color=black, dashed, line width=0.6pt, forget plot]
@@ -1636,7 +1640,7 @@ at (axis cs:1.05,-0.68) {{\fontsize{6}{7}\selectfont$-\mathrm{Sc}^{-1} k^2$}};
 0	0\\
 1.3859649122807	0\\
 };
-\node[right, align=left, inner sep=0, font=\color{mycolor2}]
+\node[right, align=left, inner sep=0]
 at (rel axis cs:-0.15,1.1) {$(a)$};
 \end{axis}
 \end{tikzpicture}%

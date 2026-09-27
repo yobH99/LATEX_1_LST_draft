@@ -1,26 +1,30 @@
 % This file was created by matlab2tikz.
 %
 \definecolor{mycolor1}{rgb}{0.20000,0.40000,0.60000}%
-\definecolor{mycolor2}{rgb}{0.12941,0.12941,0.12941}%
 %
 \begin{tikzpicture}
 
 \begin{axis}[%
-width=11.255in,
+width=11.252in,
 height=7.131in,
-at={(1.888in,0.962in)},
+at={(1.887in,0.962in)},
 scale only axis,
 clip=true,
+separate axis lines,
+every outer x axis line/.append style={black},
+every x tick label/.append style={font=\color{black}},
+every x tick/.append style={black},
 xmode=log,
 xmin=0.1,
 xmax=100,
 xminorticks=true,
-xlabel style={font=\color{mycolor2}},
 xlabel={$Sc^{-1}$},
+every outer y axis line/.append style={black},
+every y tick label/.append style={font=\color{black}},
+every y tick/.append style={black},
 ymin=-1,
 ymax=0,
 ytick={   -1, -0.75,  -0.5, -0.25,     0},
-ylabel style={font=\color{mycolor2}},
 ylabel={$\lambda_m$},
 axis background/.style={fill=white},
 legend style={at={(0.97,0.03)}, anchor=south east, legend cell align=left, align=left},
@@ -243,7 +247,7 @@ colormap={sigmamap}{rgb(0.0000)=(0.0200,0.1880,0.3800); rgb(0.1000)=(0.0743,0.34
 63.0957344480193	-0.0157669206900122\\
 100	-0.00989208135430435\\
 };
-\node[right, align=left, inner sep=0, font=\color{mycolor2}]
+\node[right, align=left, inner sep=0]
 at (rel axis cs:-0.15,1.1) {$(b)$};
 \end{axis}
 \end{tikzpicture}%
