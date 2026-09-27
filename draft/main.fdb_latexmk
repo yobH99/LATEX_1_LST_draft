@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1790466984.18526 "main.aux" "main.bbl" "main" 1790526458.53409 0
-  "./references.bib" 1785873868.07486 16732 98f31f7be2542885d40afb79ddfcffd3 ""
+["bibtex main"] 1790527502.74015 "main.aux" "main.bbl" "main" 1790527520.1813 0
+  "./references.bib" 1790527352.12198 16747 507e60976afeb02dd2c824882cf62832 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1233624470 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "main.aux" 1790526458.23624 33207 f8ad80f15b70966db22f17f5ded756fa "pdflatex"
+  "main.aux" 1790527519.87839 33207 8d9fdfbf573254bfcce9017144ad8eaf "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1790526442.28658 "/home/yobh/Desktop/1_LST_draft/draft/main.tex" "main.pdf" "main" 1790526458.5343 0
+["pdflatex"] 1790527502.84087 "/home/yobh/Desktop/1_LST_draft/draft/main.tex" "main.pdf" "main" 1790527520.18148 0
   "../figures/IVP1_growthrate_vsdelta_Sc1.tex" 1790526434.9574 115399 83ead3b798b140f6bbf38eb07195d9fd ""
   "../figures/IVP1_growthrate_vsdelta_Sc40.tex" 1790526435.30584 116249 01c4e6891b2ee7954a35ed1b62122924 ""
   "../figures/IVP1_growthrate_vsdelta_Sc5.tex" 1790526435.13533 115899 43a160012cdf9c35d330136d554eaf7e ""
@@ -333,9 +333,9 @@
   "AMSfonts.sty" 1777414110 7278 2ea76d4fdadcca290c98b418e398f832 ""
   "AMSgen.sty" 1777414110 5608 4e265ca12cb115cb359ee09bd5a307e2 ""
   "AMSsymb.sty" 1777414110 15157 cd1c0319619cc0e236fe3332b7a3e63e ""
-  "main.aux" 1790526458.23624 33207 f8ad80f15b70966db22f17f5ded756fa "pdflatex"
-  "main.bbl" 1790466984.29741 13277 2e05d1c2308bdc87ffe4556352c84778 "bibtex main"
-  "main.out" 1790526458.23724 4922 16ead9103cd8cab1d1994f6f62cf8204 "pdflatex"
+  "main.aux" 1790527519.87839 33207 8d9fdfbf573254bfcce9017144ad8eaf "pdflatex"
+  "main.bbl" 1790527502.83595 13249 5624de1f9196893e5363146af3bdc23d "bibtex main"
+  "main.out" 1790527519.87939 4922 16ead9103cd8cab1d1994f6f62cf8204 "pdflatex"
   "main.tex" 1790471470.78209 118423 eb9d43d06278a6a8e1c252e307eef9c3 ""
   "natbib.sty" 1777414110 34200 87849b76a569f4ada77acbf28ba8602b ""
   (generated)
