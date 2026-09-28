@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1790527502.74015 "main.aux" "main.bbl" "main" 1790550475.90546 0
+["bibtex main"] 1790527502.74015 "main.aux" "main.bbl" "main" 1790556735.11708 0
   "./references.bib" 1790527352.12198 16747 507e60976afeb02dd2c824882cf62832 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1233624470 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "main.aux" 1790550475.62866 33207 8d9fdfbf573254bfcce9017144ad8eaf "pdflatex"
+  "main.aux" 1790556734.80164 33207 8d9fdfbf573254bfcce9017144ad8eaf "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1790550459.923 "/home/yobh/Desktop/1_LST_draft/draft/main.tex" "main.pdf" "main" 1790550475.90564 0
+["pdflatex"] 1790556718.66521 "/home/yobh/Desktop/1_LST_draft/draft/main.tex" "main.pdf" "main" 1790556735.11725 0
   "../figures/IVP1_growthrate_vsdelta_Sc1.tex" 1790526434.9574 115399 83ead3b798b140f6bbf38eb07195d9fd ""
   "../figures/IVP1_growthrate_vsdelta_Sc40.tex" 1790526435.30584 116249 01c4e6891b2ee7954a35ed1b62122924 ""
   "../figures/IVP1_growthrate_vsdelta_Sc5.tex" 1790526435.13533 115899 43a160012cdf9c35d330136d554eaf7e ""
@@ -30,7 +30,7 @@
   "../figures/kc_vs_Scinv_Amu_+0.0.tex" 1787022924.43527 7446 61db7440ffb776e25db6fd757795dcc6 ""
   "../figures/kc_vs_Scinv_Amu_+0.9.tex" 1787022924.54642 7438 33de0202292ebb253e3565ca5ad656b5 ""
   "../figures/kc_vs_Scinv_Amu_-0.9.tex" 1787022924.33649 7600 5c9c60d3731336ed238502f748a0cff6 ""
-  "../figures/kgg1_factor_Amu_0.036.tex" 1790447731.02124 8857 aed9d2464769568bc457eaebb38ff935 ""
+  "../figures/kgg1_factor_Amu_0.036.tex" 1790552544.30491 8862 d4039635a121f9eed84339fbd249cb6f ""
   "../figures/kmax_vs_Scinv_Amu_+0.0.tex" 1787022923.89138 7551 d3c4210b8581fdde7dc39be1a913ae62 ""
   "../figures/kmax_vs_Scinv_Amu_+0.9.tex" 1787022924.01446 7552 09a765fba54fcf9b4982341276869326 ""
   "../figures/kmax_vs_Scinv_Amu_-0.9.tex" 1787022923.63471 7609 88e0af65c785021c3697074c4d0e3e81 ""
@@ -54,7 +54,7 @@
   "../figures/verification_figures/V06_visc_law_Amu-0.50.tex" 1787025235.65775 8425 4859fd6c3bbfe43e0b609a0c9941874b ""
   "../figures/verification_figures/V06_visc_law_Amu-0.90.tex" 1787025224.08146 8414 4b06cdf818104421209f25957050b0fb ""
   "../figures/verification_figures/V06_visc_validation_VD_1.tex" 1787025114.67877 11431 1d06c0d260579c367184a521754df156 ""
-  "../figures/verification_figures/V06_visc_validation_VD_2.tex" 1787025121.85764 13854 bd4ed7fa9d84a5d64f475d2a2f6af10d ""
+  "../figures/verification_figures/V06_visc_validation_VD_2.tex" 1790556686.73241 11470 87e681b75aa7e34ef138c2c98591c0db ""
   "../figures/verification_figures/V16_wLz_k1_a.tex" 1787069985.13145 4288 4a0376ecffde91f5516120cc3f388471 ""
   "../figures/verification_figures/V16_wLz_k1_b.tex" 1787069985.41364 4172 d5231b27c614d8a4424feb11d2add417 ""
   "../figures/verification_figures/V16_wLz_k1_c.tex" 1787069985.60122 4177 6ef745dd7be2592a8acc687d155c24ed ""
@@ -74,7 +74,7 @@
   "../figures/verification_figures/V16_wN_k3_b.tex" 1787069987.52931 4340 b77bbb1575fe72c2544756858b6a83aa ""
   "../figures/verification_figures/V16_wN_k3_c.tex" 1787069987.61944 4321 b7b69a5be26d9ee17b29896a41c5ba8c ""
   "../figures/w0_profile.tex" 1790449420.75881 164011 7400a5e2fdec6334da4d09854fe08283 ""
-  "../figures/wr_Amu_0.036_At_0.247.tex" 1790447731.50832 63341 f1747d92fda344632277b8b876e02db8 ""
+  "../figures/wr_Amu_0.036_At_0.247.tex" 1790552544.77701 63341 b473d2f4580ec62c6b6d728b86b8968b ""
   "../figures/wrm_vs_Scinv_Amu_+0.0.tex" 1787022923.24861 7597 fa828985d5064ba2af63101789921928 ""
   "../figures/wrm_vs_Scinv_Amu_+0.9.tex" 1787022923.45193 7604 e475f33c8771e6cc4b2c48aecb248a1c ""
   "../figures/wrm_vs_Scinv_Amu_-0.9.tex" 1787022922.97346 7771 ff8299c37f2ac477d66843b326af0722 ""
@@ -333,9 +333,9 @@
   "AMSfonts.sty" 1777414110 7278 2ea76d4fdadcca290c98b418e398f832 ""
   "AMSgen.sty" 1777414110 5608 4e265ca12cb115cb359ee09bd5a307e2 ""
   "AMSsymb.sty" 1777414110 15157 cd1c0319619cc0e236fe3332b7a3e63e ""
-  "main.aux" 1790550475.62866 33207 8d9fdfbf573254bfcce9017144ad8eaf "pdflatex"
+  "main.aux" 1790556734.80164 33207 8d9fdfbf573254bfcce9017144ad8eaf "pdflatex"
   "main.bbl" 1790527502.83595 13249 5624de1f9196893e5363146af3bdc23d "bibtex main"
-  "main.out" 1790550475.63066 4922 16ead9103cd8cab1d1994f6f62cf8204 "pdflatex"
+  "main.out" 1790556734.80264 4922 16ead9103cd8cab1d1994f6f62cf8204 "pdflatex"
   "main.tex" 1790550454.01687 118416 4255542ab27a1f5e04bc1bcdcc207f38 ""
   "natbib.sty" 1777414110 34200 87849b76a569f4ada77acbf28ba8602b ""
   (generated)
